@@ -11,11 +11,12 @@ public class UserBean implements Serializable {
     Date birthdate;
     String phoneNumber;
     UserRole userRole;
+    String username;
     String password;
 
     public UserBean() {}
 
-    public UserBean(int id, String name, String surname, String email, Date birthdate, String phoneNumber, UserRole userRole, String password) {
+    public UserBean(int id, String name, String surname, String email, Date birthdate, String phoneNumber, UserRole userRole, String username, String password) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -23,6 +24,7 @@ public class UserBean implements Serializable {
         this.birthdate = birthdate;
         this.phoneNumber = phoneNumber;
         this.userRole = userRole;
+        this.username = username;
         this.password = password;
     }
 
@@ -80,6 +82,14 @@ public class UserBean implements Serializable {
 
     public void setUserRole(UserRole userRole) {
         this.userRole = userRole;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {

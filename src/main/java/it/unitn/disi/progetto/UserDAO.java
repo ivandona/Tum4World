@@ -8,7 +8,7 @@ Classe contenente i metodi per poter interagire con il database
 */
 
 public class UserDAO {
-    public UserBean getUserById(int id) {
+   public UserBean getUserById(int id) {
         String query = "SELECT * FROM users WHERE id = ?";
         try (Connection connection = DBConnection.getConnection();
              PreparedStatement statement = connection.prepareStatement(query)) {
@@ -23,6 +23,7 @@ public class UserDAO {
                     user.setBirthdate(resultSet.getDate("birthdate"));
                     user.setPhoneNumber(resultSet.getString("phone_number"));
                     user.setUserRole(UserRole.valueOf(resultSet.getString("user_role")));
+                    user.setPassword(resultSet.getString("username"));
                     user.setPassword(resultSet.getString("password"));
                     return user;
                 }
@@ -34,7 +35,7 @@ public class UserDAO {
     }
 
     public void saveUser(UserBean user) {
-        String query = "INSERT INTO users (name, surname, email, birthdate, phone_number, user_role, password) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO users (name, surname, email, birthdate, phone_number, user_role, username, password) VALUES (?, ?, ?, ?, ?, ?, ?)";
         try (Connection connection = DBConnection.getConnection();
              PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, user.getName());
