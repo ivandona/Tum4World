@@ -1,0 +1,39 @@
+img.prima {
+    position: relative;
+    left: 300px;
+}
+/*solo le img della classe seconda vengono affette da questo css*/
+img.seconda {
+    position: absolute;
+    bottom: 100px;
+    left: 400px;
+}
+/*class selector*/
+.left {
+    text-align: left !important
+}
+
+.center {
+    text-align: center !important
+}
+
+.right {
+    text-align: right !important
+}
+
+.max-width {
+    width: 1200px;
+}
+.third {
+    float: left;
+    width: 33.33333%;
+}
+
+.row-padding,
+.row-padding>.third {
+    padding: 0 8px;
+}
+
+.terzo {
+    width: 33.3333%;
+}
