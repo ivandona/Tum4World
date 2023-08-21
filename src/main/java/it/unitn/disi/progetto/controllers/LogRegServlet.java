@@ -20,7 +20,7 @@ import java.time.format.DateTimeFormatter;
 
 @WebServlet(name = "LogRegServlet", value = "/logRegServlet")
 public class LogRegServlet extends HttpServlet {
-    private static final String DB_URL = "jdbc:derby://localhost:1527/tum-db";
+    private static final String DB_URL = "jdbc:derby://localhost:1527/tumb-db";
     private static final String DB_USERNAME = "APP";
     private static final String DB_PASSWORD = "password";
     UserDAO db = new UserDAO();
