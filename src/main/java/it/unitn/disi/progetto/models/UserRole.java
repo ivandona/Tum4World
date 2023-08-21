@@ -1,7 +1,7 @@
-package it.unitn.disi.progetto;
+package it.unitn.disi.progetto.models;
 
 public enum UserRole {
-    ADMIN("Admin"),
+    AMMINISTRATORE("Amministratore"),
     ADERENTE("Aderente"),
     SIMPATIZZANTE("Simpatizzante");
 

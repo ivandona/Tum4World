@@ -1,4 +1,4 @@
-package it.unitn.disi.progetto;
+package it.unitn.disi.progetto.controllers;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -21,8 +21,8 @@ public class PageControllerServlet extends HttpServlet {
             case "aderente":
                 request.getRequestDispatcher("/WEB-INF/aderente.jsp").forward(request, response);
                 break;
-            case "admin":
-                request.getRequestDispatcher("/WEB-INF/admin.jsp").forward(request, response);
+            case "amministratore":
+                request.getRequestDispatcher("/WEB-INF/amministratore.jsp").forward(request, response);
                 break;
             case "info-cookie":
                 request.getRequestDispatcher("/WEB-INF/info-cookie.jsp").forward(request, response);

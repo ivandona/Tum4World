@@ -1,6 +1,7 @@
-package it.unitn.disi.progetto;
+package it.unitn.disi.progetto.models;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
 public class UserBean implements Serializable {
@@ -8,7 +9,7 @@ public class UserBean implements Serializable {
     String name;
     String surname;
     String email;
-    Date birthdate;
+    LocalDate birthdate;
     String phoneNumber;
     UserRole userRole;
     String username;
@@ -16,8 +17,7 @@ public class UserBean implements Serializable {
 
     public UserBean() {}
 
-    public UserBean(int id, String name, String surname, String email, Date birthdate, String phoneNumber, UserRole userRole, String username, String password) {
-        this.id = id;
+    public UserBean(String name, String surname, String email, LocalDate birthdate, String phoneNumber, UserRole userRole, String username, String password) {
         this.name = name;
         this.surname = surname;
         this.email = email;
@@ -60,11 +60,11 @@ public class UserBean implements Serializable {
         this.email = email;
     }
 
-    public Date getBirthdate() {
+    public LocalDate getBirthdate() {
         return birthdate;
     }
 
-    public void setBirthdate(Date birthdate) {
+    public void setBirthdate(LocalDate birthdate) {
         this.birthdate = birthdate;
     }
 

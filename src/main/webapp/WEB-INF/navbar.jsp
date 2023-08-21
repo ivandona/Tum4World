@@ -13,6 +13,6 @@
   <li class="navbar"><a href="${pageContext.request.contextPath}/pageControllerServlet?page=home">Home</a></li>
   <li class="navbar"><a href="${pageContext.request.contextPath}/pageControllerServlet?page=simpatizzante">Simpatizzante</a></li>
   <li class="navbar"><a href="${pageContext.request.contextPath}/pageControllerServlet?page=aderente">Aderente</a></li>
-  <li class="navbar"><a href="${pageContext.request.contextPath}/pageControllerServlet?page=admin">Admin</a></li>
+  <li class="navbar"><a href="${pageContext.request.contextPath}/pageControllerServlet?page=amministratore">Amministratore</a></li>
   <li class="navbar"><a href="${pageContext.request.contextPath}/pageControllerServlet?page=info-cookie">Informativa cookie</a></li>
 </ul>
