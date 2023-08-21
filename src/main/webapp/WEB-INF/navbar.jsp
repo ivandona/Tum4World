@@ -15,4 +15,6 @@
   <li class="navbar"><a href="${pageContext.request.contextPath}/pageControllerServlet?page=aderente">Aderente</a></li>
   <li class="navbar"><a href="${pageContext.request.contextPath}/pageControllerServlet?page=amministratore">Amministratore</a></li>
   <li class="navbar"><a href="${pageContext.request.contextPath}/pageControllerServlet?page=info-cookie">Informativa cookie</a></li>
+  <li class="navbar"><a href="${pageContext.request.contextPath}/pageControllerServlet?page=login">Login</a></li>
+  <li class="navbar"><a href="${pageContext.request.contextPath}/pageControllerServlet?page=sign-in">Sign-in</a></li>
 </ul>

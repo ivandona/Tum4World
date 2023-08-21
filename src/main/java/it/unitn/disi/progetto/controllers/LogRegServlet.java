@@ -18,20 +18,21 @@ import java.time.format.DateTimeFormatter;
 || Servlet per gestire login e registrazione
  */
 
-@WebServlet(name = "DBServlet", value = "/DBServlet")
+@WebServlet(name = "LogRegServlet", value = "/logRegServlet")
 public class LogRegServlet extends HttpServlet {
     private static final String DB_URL = "jdbc:derby://localhost:1527/tumb-db";
     private static final String DB_USERNAME = "APP";
     private static final String DB_PASSWORD = "password";
-    UserDAO db;
+    UserDAO db = new UserDAO();
     Connection connection = null;
 
     //creo connessione al db quando la servlet viene inizializzata
     //e la distruggo quando viene chiamato il metodo destroy()
-    public void init () throws ServletException {
+    public void init () {
         try {
             Class.forName("org.apache.derby.jdbc.ClientDriver");
             connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
+            System.out.println("SERVLET INIZIALIZZATA\n");
         } catch (ClassNotFoundException | SQLException ex) {
             System.out.println(ex);
         }
@@ -101,7 +102,7 @@ public class LogRegServlet extends HttpServlet {
         if(db.isUsernameTaken(connection, username)) {
             //username già preso
             request.setAttribute("errorMessage", "37: username già preso");
-            request.getRequestDispatcher("/WEB-INF/registration.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/sign-in.jsp").forward(request, response);
         } else {
             //username non esiste nel db, quindi registrazione confermata
             db.saveUser(connection, user); //registro le informazioni dell'utente nel db

@@ -66,11 +66,6 @@ public class UserDAO {
 
     //inserisce dati dell'utente nel db
     public void saveUser(Connection connection, UserBean user) {
-            if (isUsernameTaken(connection, user.getEmail())) {
-            // Handle username already taken case
-            return; // Return or throw an exception as appropriate
-        }
-
        String query = "INSERT INTO users (name, surname, email, birthdate, phone_number, user_role, username, password) VALUES (?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, user.getName());
