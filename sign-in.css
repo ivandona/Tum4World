@@ -1,0 +1,47 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1 {
+    font-family: Helvetica, Arial;
+    font-weight: bold;
+    text-align: center;
+}
+a, label {
+    font-family: Verdana;
+    padding: 10px;
+}
+.container {
+    width:33%;
+}
+input[type=text], input[type=password], input[type=email], input[type=tel]{
+    width: 90%;
+    padding: 10px;
+    margin: 8px;
+    font-family: Helvetica, Arial;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+}
+.button {
+    margin: 8px;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    font-family: Verdana;
+}
+input[type=submit] {
+    float: right;
+    background-color:darkred;
+    color: white;
+}
+input[type=reset] {
+    float: left;
+    background-color:black;
+    color: white;
+}
+.col {
+    float: left;
+    width: 50%;
+}
