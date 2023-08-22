@@ -12,17 +12,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
 
-  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="styles/login.css">
 </head>
 <body>
 <div class="container">
   <h1>Accedi al tuo account</h1>
-  <form action="${pageContext.request.contextPath}/logRegServlet" method="get">
+  <form action="${pageContext.request.contextPath}/loginServlet" method="post">
     <label for="username">Username</label>
-    <input class="username" type="text" name="username" required>
+    <input id="username" class="username" type="text" name="username" required>
 
     <label for="password">Password</label>
-    <input class="password" type="password" name="password" required>
+    <input id="password" class="password" type="password" name="password" required>
     <a href="sign-in.html">Registrati</a>
 
     <input class="button" type="submit" value="Accedi">

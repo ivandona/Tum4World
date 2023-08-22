@@ -66,7 +66,7 @@ public class UserDAO {
 
     //inserisce dati dell'utente nel db
     public void saveUser(Connection connection, UserBean user) {
-       String query = "INSERT INTO users (name, surname, email, birthdate, phone_number, user_role, username, password) VALUES (?, ?, ?, ?, ?, ?, ?)";
+       String query = "INSERT INTO users (name, surname, email, birthdate, phone_number, user_role, username, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, user.getName());
             statement.setString(2, user.getSurname());
@@ -75,15 +75,15 @@ public class UserDAO {
             statement.setString(5, user.getPhoneNumber());
             statement.setString(6, user.getUserRole().toString());
             statement.setString(7, user.getUsername());
-            statement.setString(7, user.getPassword());
+            statement.setString(8, user.getPassword());
             statement.executeUpdate();
 
-            try (ResultSet generatedKeys = statement.getGeneratedKeys()) {
+            /*try (ResultSet generatedKeys = statement.getGeneratedKeys()) {
                 if (generatedKeys.next()) {
                     int generatedId = generatedKeys.getInt(1);
                     user.setId(generatedId);
                 }
-            }
+            }*/
         } catch (SQLException e) {
             e.printStackTrace();
         }

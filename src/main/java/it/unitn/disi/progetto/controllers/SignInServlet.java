@@ -18,8 +18,8 @@ import java.time.format.DateTimeFormatter;
 || Servlet per gestire login e registrazione
  */
 
-@WebServlet(name = "LogRegServlet", value = "/logRegServlet")
-public class LogRegServlet extends HttpServlet {
+@WebServlet(name = "SignInServlet", value = "/signInServlet")
+public class SignInServlet extends HttpServlet {
     private static final String DB_URL = "jdbc:derby://localhost:1527/tum-db";
     private static final String DB_USERNAME = "APP";
     private static final String DB_PASSWORD = "password";
@@ -38,37 +38,6 @@ public class LogRegServlet extends HttpServlet {
         }
     }
 
-    //metodo chiamato per login
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        UserBean verifiedUser = new UserBean();
-        verifiedUser = db.checkCredentials(connection, username, password);
-
-        if(verifiedUser != null) {
-            //login ha avuto successo
-
-            //TODO: mettere informazioni utente in cookie/session
-
-            //controllo il ruolo dell'utente e rimando alla pagina corrispondente
-            switch(verifiedUser.getUserRole()) {
-                case AMMINISTRATORE:
-                    request.getRequestDispatcher("/WEB-INF/amministratore.jsp").forward(request, response);
-                case ADERENTE:
-                    request.getRequestDispatcher("/WEB-INF/aderente.jsp").forward(request, response);
-                case SIMPATIZZANTE:
-                    request.getRequestDispatcher("/WEB-INF/simpatizzante.jsp").forward(request, response);
-            }
-        } else {
-            //login non ha avuto successo
-            //rimando alla pagina di login
-            request.setAttribute("errorMessage", "37: credenziali sbagliate o username inesistente");
-            request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
-        }
-
-    }
-
     //metodo chiamato per registrazione
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -83,16 +52,16 @@ public class LogRegServlet extends HttpServlet {
         String password = request.getParameter("password");
 
         //converto la data da String a LocalDate
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MMM-dd");
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate birthdate = LocalDate.parse(birthdateString);
 
         //converto userRoleString da String a UserRole
         UserRole userRole = null;
         switch(userRoleString) {
-            case "simpatizzante":
+            case "SIMPATIZZANTE":
                 userRole = UserRole.SIMPATIZZANTE;
                 break;
-            case "aderente":
+            case "ADERENTE":
                 userRole = UserRole.ADERENTE;
             //notare che non c'è admin perché non posso registrarmi come admin dal sito
         }
@@ -106,7 +75,7 @@ public class LogRegServlet extends HttpServlet {
         } else {
             //username non esiste nel db, quindi registrazione confermata
             db.saveUser(connection, user); //registro le informazioni dell'utente nel db
-            request.getRequestDispatcher("/WEB-INF/registrationConfirmed.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/sign-in-confirmed.jsp").forward(request, response);
         }
     }
 

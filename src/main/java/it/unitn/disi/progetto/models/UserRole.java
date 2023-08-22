@@ -13,7 +13,7 @@ public enum UserRole {
 
     @Override
     public String toString() {
-        return this.label;
+        return this.name();
     }
 }
 

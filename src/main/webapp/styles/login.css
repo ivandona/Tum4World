@@ -1,0 +1,38 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1 {
+    font-family: Helvetica, Arial;
+    font-weight: bold;
+    text-align: center;
+}
+a, label {
+    font-family: Verdana;
+    padding: 10px;
+}
+.container {
+    width: 33%;
+}
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px;
+    font-family: Helvetica, Arial;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+}
+.button {
+    margin: 8px 0px;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    font-family: Verdana;
+}
+input[type=submit] {
+    float: right;
+    background-color:darkred;
+    color: white;
+}

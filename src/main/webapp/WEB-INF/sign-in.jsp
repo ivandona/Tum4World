@@ -12,12 +12,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign-in</title>
 
-  <link rel="stylesheet" href="sign-in.css">
+  <link rel="stylesheet" href="styles/sign-in.css">
 </head>
 <body>
 <div class="container">
   <h1>Registrazione</h1>
-  <form action="${pageContext.request.contextPath}/logRegServlet" method="post">
+  <form action="${pageContext.request.contextPath}/signInServlet" method="post">
     <div class="row">
       <div class="col">
         <label for="nome">Nome:</label><br>
@@ -30,7 +30,7 @@
         <input type="text" id="data_nascita" name="birthdate" required><br>
 
         <label for="telefono">Numero di Telefono:</label><br>
-        <input type="tel" id="telefono" name="phoneNumber" required><br>
+        <input type="text" id="telefono" name="phoneNumber" required><br>
       </div>
       <div class="col">
         <label for="email">Indirizzo Email:</label><br>
@@ -42,14 +42,14 @@
         <label for="password">Password:</label><br>
         <input type="password" id="password" name="password" required><br>
 
-        <label for="conferma_password">Conferma Password:</label><br>
-        <input type="password" id="conferma_password" name="password" required><br>
+        <!--<label for="conferma_password">Conferma Password:</label><br>
+        <input type="password" id="conferma_password" name="password" required><br>-->
       </div>
     </div>
     <label>Registrarsi come:</label>
-    <input type="radio" id="simpatizzante" name="userRole" value="simpatizzante" checked="checked" required>
+    <input type="radio" id="simpatizzante" name="userRole" value="SIMPATIZZANTE" checked="checked" required>
     <label for="simpatizzante">Simpatizzante</label>
-    <input type="radio" id="aderente" name="userRole" value="aderente" required>
+    <input type="radio" id="aderente" name="userRole" value="ADERENTE" required>
     <label for="aderente">Aderente</label><br>
 
     <input class="button" type="submit" value="Invia">
