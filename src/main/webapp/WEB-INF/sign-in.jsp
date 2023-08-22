@@ -13,24 +13,27 @@
   <title>Sign-in</title>
 
   <link rel="stylesheet" href="styles/sign-in.css">
+
+  <script src="scripts/form-validation.js"></script>
 </head>
 <body>
 <div class="container">
+  <jsp:include page="navbar.jsp"></jsp:include>
   <h1>Registrazione</h1>
-  <form action="${pageContext.request.contextPath}/signInServlet" method="post">
+  <form onsubmit="return validateSignIn();" action="${pageContext.request.contextPath}/signInServlet" method="post">
     <div class="row">
       <div class="col">
-        <label for="nome">Nome:</label><br>
-        <input type="text" id="nome" name="name" required><br>
+        <label for="name">Nome:</label><br>
+        <input type="text" id="name" name="name" required><br>
 
-        <label for="cognome">Cognome:</label><br>
-        <input type="text" id="cognome" name="surname" required><br>
+        <label for="surname">Cognome:</label><br>
+        <input type="text" id="surname" name="surname" required><br>
 
-        <label for="data_nascita">Data di Nascita:</label><br>
-        <input type="text" id="data_nascita" name="birthdate" required><br>
+        <label for="birthdate">Data di Nascita:</label><br>
+        <input type="text" id="birthdate" name="birthdate" required><br>
 
-        <label for="telefono">Numero di Telefono:</label><br>
-        <input type="text" id="telefono" name="phoneNumber" required><br>
+        <label for="phoneNumber">Numero di Telefono:</label><br>
+        <input type="text" id="phoneNumber" name="phoneNumber" required><br>
       </div>
       <div class="col">
         <label for="email">Indirizzo Email:</label><br>
@@ -42,8 +45,8 @@
         <label for="password">Password:</label><br>
         <input type="password" id="password" name="password" required><br>
 
-        <!--<label for="conferma_password">Conferma Password:</label><br>
-        <input type="password" id="conferma_password" name="password" required><br>-->
+        <label for="confirm_password">Conferma Password:</label><br>
+        <input type="password" id="confirm_password" name="confirm_password" required><br>
       </div>
     </div>
     <label>Registrarsi come:</label>
@@ -55,6 +58,10 @@
     <input class="button" type="submit" value="Invia">
     <input class="button" type="reset" value="Reset">
   </form>
+
+  <br>
+
+  <%= request.getAttribute("errorMessage") != null ? request.getAttribute("errorMessage") : "" %>
 </div>
 </body>
 </html>

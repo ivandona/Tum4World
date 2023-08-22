@@ -13,19 +13,25 @@
   <title>Login</title>
 
   <link rel="stylesheet" href="styles/login.css">
+
+  <script src="scripts/form-validation.js"></script>
 </head>
 <body>
 <div class="container">
+  <jsp:include page="navbar.jsp"></jsp:include>
   <h1>Accedi al tuo account</h1>
-  <form action="${pageContext.request.contextPath}/loginServlet" method="post">
+  <form onsubmit="return validateSignIn()" action="${pageContext.request.contextPath}/loginServlet" method="post">
     <label for="username">Username</label>
     <input id="username" class="username" type="text" name="username" required>
 
     <label for="password">Password</label>
     <input id="password" class="password" type="password" name="password" required>
-    <a href="sign-in.html">Registrati</a>
 
     <input class="button" type="submit" value="Accedi">
+
+    <br>
+
+    <%= request.getAttribute("errorMessage") != null ? request.getAttribute("errorMessage") : "" %>
   </form>
 </div>
 </body>
