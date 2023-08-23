@@ -1,0 +1,13 @@
+body {
+    /*display: flex;*/
+    justify-content: center;
+    align-items: center;
+}
+h1 {
+    font-family: Helvetica, Arial;
+    font-weight: bold;
+    text-align: center;
+}
+p{
+    font-family: Verdana;
+}
