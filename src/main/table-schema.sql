@@ -12,4 +12,4 @@ CREATE TABLE USERS
     PASSWORD     VARCHAR(20)
 );
 
-INSERT INTO USERS VALUES ('Admin', 'Admin', 'admin@gmail.com', '2000-01-01', '33366699', 'AMMINISTRATORE', 'Admin', 'password');
+INSERT INTO USERS VALUES ('Admin', 'Admin', 'admin@gmail.com', '2000-01-01', '33366699', 'AMMINISTRATORE', 'admin', '37Adm1n!');

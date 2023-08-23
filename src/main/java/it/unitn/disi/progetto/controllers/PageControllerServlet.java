@@ -33,6 +33,9 @@ public class PageControllerServlet extends HttpServlet {
             case "sign-in":
                 request.getRequestDispatcher("/WEB-INF/sign-in.jsp").forward(request, response);
                 break;
+            case "contacts":
+                request.getRequestDispatcher("/WEB-INF/contacts.jsp").forward(request, response);
+                break;
             default:
                 response.sendRedirect(request.getContextPath() + "/page?page=index");
         }

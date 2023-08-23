@@ -11,6 +11,7 @@
 </head>
 <ul class="navbar">
   <li class="navbar"><a href="${pageContext.request.contextPath}/pageControllerServlet?page=home">Home</a></li>
+  <li class="navbar"><a href="${pageContext.request.contextPath}/pageControllerServlet?page=contacts">Contatti</a></li>
   <li class="navbar"><a href="${pageContext.request.contextPath}/pageControllerServlet?page=simpatizzante">Simpatizzante</a></li>
   <li class="navbar"><a href="${pageContext.request.contextPath}/pageControllerServlet?page=aderente">Aderente</a></li>
   <li class="navbar"><a href="${pageContext.request.contextPath}/pageControllerServlet?page=amministratore">Amministratore</a></li>
