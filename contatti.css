@@ -1,0 +1,50 @@
+body {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contact-info {
+    width: 33%;
+    text-align: center;
+}
+
+.contact-form {
+    width: 33%;
+  }
+
+h1 {
+    font-family: Helvetica, Arial;
+    font-weight: bold;
+}
+
+p, label {
+    font-family: Verdana;
+}
+
+input[type=text], input[type=email], select, textarea {
+    width: 100%;
+    padding: 12px;
+    font-family: Helvetica, Arial;
+    box-sizing: border-box;
+}
+
+.button {
+    margin: 8px;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    font-family: Verdana;
+}
+
+input[type=submit] {
+    float: right;
+    background-color:darkred;
+    color: white;
+}
+
+input[type=reset] {
+    float: left;
+    background-color:black;
+    color: white;
+}
