@@ -8,11 +8,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-  <link rel="stylesheet" href="styles/style.css">
-  <title>Tum4World</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Tum4World</title>
 </head>
 <body>
-  <jsp:include page="navbar.jsp"></jsp:include>
-  <h1>Tum4World</h1>
+<jsp:include page="navbar.jsp"></jsp:include>
+<jsp:include page="informativa-cookies.jsp"></jsp:include>
+<h1>Tum4World</h1>
 </body>
 </html>
