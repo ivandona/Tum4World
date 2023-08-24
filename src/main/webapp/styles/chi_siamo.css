@@ -1,0 +1,27 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+.storia {
+    width: 92%;
+    margin-left: 3%;
+}
+.storia h1 {
+    text-align: center;
+}
+
+.paragrafo {
+    margin-top: 8%;
+    margin-bottom: 8%;
+}
+
+.risposta p {
+    font-style: italic;
+}
+.risposta img {
+    width: 18%;
+    float: right;
+    margin-left: 5%;
+}

@@ -14,5 +14,6 @@
 <body>
   <jsp:include page="navbar.jsp"></jsp:include>
   <h1>Tum4World</h1>
+  <jsp:include page="informativa-cookies.jsp"></jsp:include>
 </body>
 </html>

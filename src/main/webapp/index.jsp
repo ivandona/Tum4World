@@ -6,9 +6,6 @@
     <title>Tum4World</title>
 </head>
 <body>
-    <script src="${pageContext.request.contextPath}/scripts/info-cookie.js">
-        document.addEventListener("DOMContentLoaded", openCookieWindow);
-    </script>
-    <jsp:include page="/WEB-INF/home.jsp"></jsp:include>
+    <jsp:include page="/WEB-INF/homepage_pubblica.jsp"></jsp:include>
 </body>
 </html>

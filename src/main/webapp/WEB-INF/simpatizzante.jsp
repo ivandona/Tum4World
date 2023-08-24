@@ -12,10 +12,11 @@
     <title>Tum4World</title>
 </head>
 <body>
-    <jsp:include page="navbar.jsp"></jsp:include>
+    <jsp:include page="Header.jsp"></jsp:include>
     <h1>Simpatizzante</h1>
     <div>
         Ivan Donà
     </div>
+    <jsp:include page="Footer.jsp"></jsp:include>
 </body>
 </html>
