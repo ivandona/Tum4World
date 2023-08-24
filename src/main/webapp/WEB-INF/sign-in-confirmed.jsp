@@ -18,7 +18,7 @@
 <div class="container">
   <jsp:include page="navbar.jsp"></jsp:include>
   <h1>Registrazione Confermata!</h1>
-  <p>Grazie per esserti registrato sul nostro sito. Il tuo account ora Ã¨ attivo.</p>
+  <p>Grazie per esserti registrato sul nostro sito. Il tuo account ora è attivo.</p>
 </div>
 </body>
 </html>

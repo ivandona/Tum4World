@@ -37,7 +37,7 @@ public class PageControllerServlet extends HttpServlet {
                 request.getRequestDispatcher("/WEB-INF/contacts.jsp").forward(request, response);
                 break;
             default:
-                response.sendRedirect(request.getContextPath() + "/page?page=index");
+                response.sendRedirect(request.getContextPath() + "/page?page=home");
         }
     }
 

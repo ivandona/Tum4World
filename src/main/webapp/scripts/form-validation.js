@@ -1,5 +1,5 @@
 function validateEmail(email) {
-    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let emailPattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
     if (!emailPattern.test(email)) {
         alert("Indirizzo email non valido");
         return false;
@@ -66,4 +66,10 @@ function validateSignIn() {
 
     return (validateEmail(email) && validateBirthdate(birthdate)
         && validatePhoneNumber(phoneNumber) && validatePassword(password, confirm_password));
+}
+
+function validateContactsForm() {
+    let email = document.getElementById("email").value;
+
+    return validateEmail(email);
 }
