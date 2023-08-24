@@ -30,7 +30,7 @@
         <label for="surname">Cognome:</label><br>
         <input type="text" id="surname" name="surname" required><br>
 
-        <label for="birthdate">Data di Nascita:</label><br>
+        <label for="birthdate">Data di Nascita (YYYY-MM-DD):</label><br>
         <input type="text" id="birthdate" name="birthdate" required><br>
 
         <label for="phoneNumber">Numero di Telefono:</label><br>

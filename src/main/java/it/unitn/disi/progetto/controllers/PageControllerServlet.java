@@ -24,9 +24,6 @@ public class PageControllerServlet extends HttpServlet {
             case "amministratore":
                 request.getRequestDispatcher("/WEB-INF/amministratore.jsp").forward(request, response);
                 break;
-            case "info-cookie":
-                request.getRequestDispatcher("/WEB-INF/info-cookie.jsp").forward(request, response);
-                break;
             case "login":
                 request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
                 break;

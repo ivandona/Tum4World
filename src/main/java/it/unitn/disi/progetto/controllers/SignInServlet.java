@@ -73,6 +73,9 @@ public class SignInServlet extends HttpServlet {
             request.setAttribute("errorMessage", "37: username già preso");
             request.getRequestDispatcher("/WEB-INF/sign-in.jsp").forward(request, response);
         } else {
+            //TODO: inserire cookies/sessione
+            CookieController.addCookies(request, response, username, user);
+
             //username non esiste nel db, quindi registrazione confermata
             db.saveUser(connection, user); //registro le informazioni dell'utente nel db
             request.getRequestDispatcher("/WEB-INF/sign-in-confirmed.jsp").forward(request, response);
