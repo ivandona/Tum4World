@@ -12,7 +12,7 @@
     <title>Tum4World</title>
 </head>
 <body>
-    <jsp:include page="navbar.jsp"></jsp:include>
+    <jsp:include page="Header.jsp"></jsp:include>
     <div class="container">
         <h1>Dashboard del Simpatizzante</h1>
         <div class="dashboard">
@@ -44,5 +44,6 @@
             alert('Hai cancellato la tua iscrizione.');
         }
     </script>
+    <jsp:include page="Footer.jsp"></jsp:include>
 </body>
 </html>

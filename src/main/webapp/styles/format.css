@@ -1,0 +1,16 @@
+h1, h2 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    color: black;
+}
+h1 {
+    font-size: x-large;
+}
+h2 {
+    font-size: large;
+}
+
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+}

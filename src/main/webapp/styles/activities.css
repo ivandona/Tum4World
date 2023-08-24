@@ -1,0 +1,30 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.page {
+    width: 93%;
+    margin-left: 2%;
+}
+.page h1 {
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    width: 92%;
+    margin: 0.5%;
+    background-color: lightgray;
+}
+.row p {
+    padding: 2%;
+}
+
+.text_img {
+    width: 25%;
+    padding: 2%;
+    background-color: gray;
+}
