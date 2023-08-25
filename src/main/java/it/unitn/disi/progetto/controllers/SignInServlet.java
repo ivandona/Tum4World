@@ -8,9 +8,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -74,7 +72,7 @@ public class SignInServlet extends HttpServlet {
             request.getRequestDispatcher("/WEB-INF/sign-in.jsp").forward(request, response);
         } else {
             //TODO: inserire cookies/sessione
-            CookieController.addCookies(request, response, username, user);
+            CookieController.addCookies(request, response, user);
 
             //username non esiste nel db, quindi registrazione confermata
             db.saveUser(connection, user); //registro le informazioni dell'utente nel db
