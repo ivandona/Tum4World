@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <head>
   <link rel="stylesheet" href="styles/style.css">
-</head>
+</head>x
 <ul class="navbar">
   <li class="navbar"><a href="${pageContext.request.contextPath}/pageControllerServlet?page=home">Home</a></li>
   <li class="navbar"><a href="${pageContext.request.contextPath}/pageControllerServlet?page=contacts">Contatti</a></li>
