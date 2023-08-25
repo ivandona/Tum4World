@@ -41,7 +41,7 @@ public class LoginServlet extends HttpServlet {
 
             //TODO: mettere informazioni utente in cookie/session
             //Controllo che l'utente abbia accettato i cookies
-            CookieController.addCookies(request, response, username, verifiedUser);
+            CookieController.addCookies(request, response, verifiedUser);
 
             //controllo il ruolo dell'utente e rimando alla pagina corrispondente
             switch(verifiedUser.getUserRole()) {
