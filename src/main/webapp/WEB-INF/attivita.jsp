@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>Tum4World</title>
+    <link rel="shortcut icon" type="image/png" href="materiale/logo.png">
     <link rel="stylesheet" type="text/css" href="styles/attivita.css">
     <link rel="stylesheet" type="text/css" href="styles/format.css">
 </head>

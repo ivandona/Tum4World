@@ -13,3 +13,11 @@ CREATE TABLE USERS
 );
 
 INSERT INTO USERS VALUES ('Admin', 'Admin', 'admin@gmail.com', '2000-01-01', '33366699', 'AMMINISTRATORE', 'admin', '37Adm1n!');
+
+CREATE TABLE DONATIONS
+(
+    USERNAME     VARCHAR(20) not null
+        primary key,
+    VALUE_DONATION INT,
+    DATE_DONATION DATE
+);

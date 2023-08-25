@@ -2,10 +2,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="styles/style.css">
     <title>Tum4World</title>
 </head>
 <body>
-    <jsp:include page="/WEB-INF/homepage_pubblica.jsp"></jsp:include>
+    <jsp:forward page="/WEB-INF/homepage_pubblica.jsp"></jsp:forward>
 </body>
 </html>
