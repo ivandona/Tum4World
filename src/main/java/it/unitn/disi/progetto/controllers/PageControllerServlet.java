@@ -11,8 +11,6 @@ public class PageControllerServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String page = request.getParameter("page"); // Get the requested page parameter
 
-
-
         switch (page) {
             case "home":
                 request.getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);

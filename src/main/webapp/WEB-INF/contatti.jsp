@@ -9,8 +9,7 @@
 <html>
 <head>
     <title>Tum4World</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/contacts.css">
+    <link rel="stylesheet" href="styles/contatti.css">
     <script src="scripts/form-validation.js"></script>
 </head>
 <jsp:include page="Header.jsp"></jsp:include>

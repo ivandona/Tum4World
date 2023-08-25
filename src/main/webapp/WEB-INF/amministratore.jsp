@@ -60,7 +60,7 @@
     <script src="scripts/admin-functions.js"></script>
 </head>
 <body>
-<jsp:include page="Header.jsp"></jsp:include>
+<jsp:include page="Header-privato.jsp"></jsp:include>
 
 <div class="dashboard">
     <button class="button" id="users">Mostra utenti</button>

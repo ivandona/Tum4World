@@ -7,6 +7,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
 import java.time.format.DateTimeFormatter;
 
 @WebServlet(name = "CookieController", value = "/cookieController")
@@ -108,5 +109,26 @@ public class CookieController {
             session.setAttribute(name, value);
         }
     }
+
+
+    // Metodo per rimuovere cookies e invalidare la sessione
+    public static void invalidateCookiesAndSession(HttpServletRequest request, HttpServletResponse response) {
+        Cookie[] cookies = request.getCookies();
+
+        if (cookies!=null) {
+            for (Cookie cookie:cookies) {
+                // To remove a cookie from a browser, we have to add a new one to the response with the same name,
+                // but with a maxAge value set to 0
+                Cookie cookieToRemove = new Cookie(cookie.getName(), "");
+                cookieToRemove.setMaxAge(0);
+                response.addCookie(cookieToRemove);
+            }
+        }
+
+        HttpSession session = request.getSession();
+        session.invalidate();
+    }
+
+
 
 }
