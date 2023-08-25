@@ -9,12 +9,11 @@
 <html>
 <head>
     <title>Tum4World</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/contacts.css">
+    <link rel="stylesheet" href="styles/contatti.css">
     <script src="scripts/form-validation.js"></script>
 </head>
+<jsp:include page="Header.jsp"></jsp:include>
 <body>
-    <jsp:include page="navbar.jsp"></jsp:include>
     <h1>Contatti</h1>
     <div class="contact-info">
         <p>Email: tum4world@nessunonoluogonoesiste.com</p>
@@ -38,4 +37,5 @@
         </form>
     </div>
 </body>
+<jsp:include page="Footer.jsp"></jsp:include>
 </html>

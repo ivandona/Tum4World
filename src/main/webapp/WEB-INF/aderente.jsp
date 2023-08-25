@@ -12,7 +12,7 @@
     <title>Tum4World</title>
 </head>
 <body>
-    <jsp:include page="Header.jsp"></jsp:include>
+    <jsp:include page="Header-privato.jsp"></jsp:include>
     <div class="container">
         <h1>Dashboard del Simpatizzante</h1>
         <div class="dashboard">

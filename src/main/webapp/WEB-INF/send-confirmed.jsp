@@ -15,10 +15,11 @@
   <link rel="stylesheet" href="styles/send-confirmed.css">
 </head>
 <body>
+<jsp:include page="Header.jsp"></jsp:include>
 <div class="container">
-  <jsp:include page="navbar.jsp"></jsp:include>
   <h1>Invio Confermato</h1>
   <p>Grazie per averci contattato. Abbiamo ricevuto il tuo messaggio e le daremo una risposta al più presto.</p>
 </div>
 </body>
+<jsp:include page="Footer.jsp"></jsp:include>
 </html>

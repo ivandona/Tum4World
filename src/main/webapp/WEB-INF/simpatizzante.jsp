@@ -12,7 +12,7 @@
     <title>Tum4World</title>
 </head>
 <body>
-    <jsp:include page="Header.jsp"></jsp:include>
+    <jsp:include page="Header-privato.jsp"></jsp:include>
     <h1>Simpatizzante</h1>
     <div>
         Ivan Donà
