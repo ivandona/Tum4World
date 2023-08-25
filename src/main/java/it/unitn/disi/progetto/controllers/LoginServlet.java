@@ -31,9 +31,20 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
+        String username;
+        String password;
         UserBean verifiedUser = new UserBean();
+        // Controllo se ho già le credenziali dell'utente nei cookies/session
+        if (CookieController.getSomething(request, "username") != null
+        && CookieController.getSomething(request, "password") != null) {
+            username = CookieController.getSomething(request, "username");
+            password = CookieController.getSomething(request, "password");
+        } else {
+            // Altrimenti prendo quelle dal form di login
+            username = request.getParameter("username");
+            password = request.getParameter("password");
+        }
+
         verifiedUser = db.checkCredentials(connection, username, password);
 
         if(verifiedUser != null) {
@@ -58,6 +69,10 @@ public class LoginServlet extends HttpServlet {
             request.setAttribute("errorMessage", "37: credenziali sbagliate o username inesistente");
             request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
         }
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doPost(request, response);
     }
 
     public void destroy() {

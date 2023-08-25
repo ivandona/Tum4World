@@ -16,9 +16,9 @@
 
   <script src="scripts/form-validation.js"></script>
 </head>
+<jsp:include page="Header.jsp"></jsp:include>
 <body>
 <div class="container">
-  <jsp:include page="navbar.jsp"></jsp:include>
   <h1>Accedi al tuo account</h1>
   <form onsubmit="return validateSignIn()" action="${pageContext.request.contextPath}/loginServlet" method="post">
     <label for="username">Username</label>
@@ -35,4 +35,5 @@
   </form>
 </div>
 </body>
+<jsp:include page="Footer.jsp"></jsp:include>
 </html>

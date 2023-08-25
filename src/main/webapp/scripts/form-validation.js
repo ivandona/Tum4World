@@ -17,8 +17,8 @@ function validatePhoneNumber(phoneNumber) {
 }
 
 function validateBirthdate(birthdate) {
-    // Controllo formato della data di nascita. Deve essere nella forma 2000-01-30
-    let datePattern = /^\d{4}-\d{2}-\d{2}$/;
+    // Controllo formato della data di nascita. Deve essere nella forma gg/mm/aaaa. Es: 2000/01/15
+    let datePattern = /^\d{4}-(0[1-9]|1[0-2])-([12][0-9]|3[01])$/;
     if (!datePattern.test(birthdate)) {
         alert("Data non valida");
         return false;

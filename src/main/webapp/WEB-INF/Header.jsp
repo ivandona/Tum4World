@@ -19,11 +19,12 @@
 
             <nav class="navbar">
                 <ul class="nav_lista">
+                    <li> <a href="${pageContext.request.contextPath}/publicPageController?page=homepage_pubblica"> Home Page </a> </li>
                     <li> <a href="${pageContext.request.contextPath}/publicPageController?page=chi_siamo"> Chi siamo </a> </li>
                     <li> <a href="${pageContext.request.contextPath}/publicPageController?page=attivita"> Attivita' </a> </li>
                     <li> <a href="${pageContext.request.contextPath}/publicPageController?page=contatti"> Contatti </a> </li>
-                    <li> <a href="${pageContext.request.contextPath}/publicPageController?page=sign_in"> Sign-in </a> </li>
-                    <li> <a href="${pageContext.request.contextPath}/publicPageController?page=login"> Login </a> </li>
+                    <li> <a href="${pageContext.request.contextPath}/publicPageController?page=sign-in"> Sign-in </a> </li>
+                    <li> <a href="${pageContext.request.contextPath}/loginServlet"> Login </a> </li>
                 </ul>
             </nav>
         </header>

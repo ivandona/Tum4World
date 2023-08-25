@@ -11,6 +11,8 @@ public class PageControllerServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String page = request.getParameter("page"); // Get the requested page parameter
 
+
+
         switch (page) {
             case "home":
                 request.getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);
@@ -31,7 +33,7 @@ public class PageControllerServlet extends HttpServlet {
                 request.getRequestDispatcher("/WEB-INF/sign-in.jsp").forward(request, response);
                 break;
             case "contacts":
-                request.getRequestDispatcher("/WEB-INF/contacts.jsp").forward(request, response);
+                request.getRequestDispatcher("/WEB-INF/contatti.jsp").forward(request, response);
                 break;
             default:
                 response.sendRedirect(request.getContextPath() + "/page?page=home");
