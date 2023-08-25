@@ -8,10 +8,10 @@
         <filter-name>AccessFilter</filter-name>
         <filter-class>it.unitn.disi.progetto.controllers.AccessFilter</filter-class>
     </filter>
-    <!--  -->
+
     <filter-mapping>
         <filter-name>AccessFilter</filter-name>
-        <url-pattern>/loginServlet</url-pattern>
+        <url-pattern>/publicPageController</url-pattern>
     </filter-mapping>
 
     <servlet>

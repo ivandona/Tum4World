@@ -54,6 +54,17 @@ public class UserDAO {
         }
     }
 
+    // Cancella l'utente dal db
+    public void deleteUser(Connection connection, UserBean user) {
+        String query = "DELETE FROM users WHERE username = ?";
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, user.getUsername());
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     //metodo per controllare se lo username esiste già
     public boolean isUsernameTaken(Connection connection, String username) {
         String query = "SELECT COUNT(*) FROM users WHERE username = ?";
