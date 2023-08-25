@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const popup = document.getElementById("popup"); //prendo il "div" cookiesinfo_popup da mostrare se necessario
     const tastoOk = document.getElementById("ok");
 
-    document.cookie = "cookies_accepted=false";
+    // document.cookie = "cookies_accepted=false";
 
     //Controlla se l'utente ha accettato i cookies precedentemente
     if (!(getCookie("cookies_accepted") === "true")) {

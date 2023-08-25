@@ -35,25 +35,81 @@ public class AdminStuff extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
-        String role = request.getParameter("role");
+        String button_pressed = request.getParameter("button_pressed");
 
-        // Collegamento al database (si suppone che tu abbia già configurato la connessione al tuo database)
-        Statement stmt = null;
         ResultSet rs = null;
+        Statement stmt = null;
 
         try {
-            // Esegui una query per recuperare i dati dal database
             stmt = connection.createStatement();
 
-            if (role.equals("simpatizzante")) {
-                rs = stmt.executeQuery("SELECT * FROM USERS WHERE USER_ROLE = 'SIMPATIZZANTE'");
-            } else if(role.equals("aderente")) {
-                rs = stmt.executeQuery("SELECT * FROM USERS WHERE USER_ROLE = 'ADERENTE'");
-            } else if(role.equals("all")) {
-                rs = stmt.executeQuery("SELECT * FROM USERS");
+            switch (button_pressed) {
+                case "first":
+                    showAllUsers(stmt, rs, out);
+                    break;
+                case "second":
+                    showAllSimpatizzanti(stmt, rs, out);
+                    break;
+                case "third":
+                    showAllAderenti(stmt, rs, out);
+                    break;
+                case "fourth":
+                    showAllVisits(stmt, rs, out);
+                    break;
+                case "fifth":
+                    showAllDonations(stmt, rs, out);
+                    break;
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            // Chiudi le risorse
+            try {
+                if (rs != null) rs.close();
+                if (stmt != null) stmt.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
-            // Costruisci la tabella HTML
+    public void showAllUsers(Statement stmt, ResultSet rs, PrintWriter out) {
+        try {
+            rs = stmt.executeQuery("SELECT * FROM USERS");
+            createTableForThreeButtons(out, rs);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public void showAllSimpatizzanti(Statement stmt, ResultSet rs, PrintWriter out) {
+        try {
+            rs = stmt.executeQuery("SELECT * FROM USERS WHERE USER_ROLE = 'SIMPATIZZANTE'");
+            createTableForThreeButtons(out, rs);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void showAllAderenti(Statement stmt, ResultSet rs, PrintWriter out) {
+        try {
+            rs = stmt.executeQuery("SELECT * FROM USERS WHERE USER_ROLE = 'ADERENTE'");
+            createTableForThreeButtons(out, rs);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void showAllVisits(Statement stmt, ResultSet rs, PrintWriter out) {
+
+    }
+
+    public void showAllDonations(Statement stmt, ResultSet rs, PrintWriter out) {
+
+    }
+    public void createTableForThreeButtons(PrintWriter out, ResultSet rs) {
+        try {
             out.println("<table>");
             out.println("<tr><th>Nome</th>" +
                     "<th>Cognome</th>" +
@@ -72,14 +128,6 @@ public class AdminStuff extends HttpServlet {
             out.println("</table>");
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            // Chiudi le risorse
-            try {
-                if (rs != null) rs.close();
-                if (stmt != null) stmt.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
         }
     }
 

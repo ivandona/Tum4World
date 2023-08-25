@@ -84,11 +84,25 @@
     const tableContainer = document.getElementById("tableContainer");
     const table = document.querySelector("table");
 
-    users.addEventListener("click", showAllUsers);
-    simpatizzanti.addEventListener("click", showAllSimpatizzanti);
-    aderenti.addEventListener("click", showAllAderenti);
-    visits.addEventListener("click", deleteTable);
-    donations.addEventListener("click", deleteTable);
+    // users.addEventListener("click", redirectToAdminStuff("first"));
+    // Scrivere così è sbagliato perchè chiama immediatamente la funzione redirectToAdminStuff("first").
+    // Per evitarlo si utilizzano funzioni anonime come quelle più sotto
+
+    users.addEventListener("click", function() {
+        redirectToAdminStuff("first");
+    });
+    simpatizzanti.addEventListener("click", function() {
+        redirectToAdminStuff("second");
+    });
+    aderenti.addEventListener("click", function() {
+        redirectToAdminStuff("third");
+    });
+    visits.addEventListener("click", function() {
+        redirectToAdminStuff("fourth");
+    });
+    donations.addEventListener("click", function() {
+        redirectToAdminStuff("fifth");
+    });
 </script>
 
 <jsp:include page="Footer.jsp"></jsp:include>

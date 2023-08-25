@@ -109,4 +109,41 @@ public class CookieController {
         }
     }
 
+    /**
+     * Funzione che permette di eliminare tutti i cookies in caso l'utente faccia il logout
+     * @param request
+     * @param response
+     */
+    public static void deleteAllCookiesAndAttributes(HttpServletRequest request, HttpServletResponse response) {
+        if (checkAcceptedCookies(request)) {
+            Cookie[] cookies = request.getCookies();
+
+            if (cookies != null) {
+                for (Cookie cookie : cookies) {
+                    if (cookie.getName().equals("name") ||
+                            cookie.getName().equals("surname") ||
+                            cookie.getName().equals("email") ||
+                            cookie.getName().equals("birthdate") ||
+                            cookie.getName().equals("phoneNumber") ||
+                            cookie.getName().equals("userRole") ||
+                            cookie.getName().equals("username") ||
+                            cookie.getName().equals("password")) {
+                        cookie.setMaxAge(0);
+                        response.addCookie(cookie);
+                    }
+                }
+            }
+        } else {
+            HttpSession session = request.getSession();
+            session.removeAttribute("name");
+            session.removeAttribute("surname");
+            session.removeAttribute("email");
+            session.removeAttribute("birthdate");
+            session.removeAttribute("phoneNumber");
+            session.removeAttribute("userRole");
+            session.removeAttribute("username");
+            session.removeAttribute("password");
+        }
+    }
+
 }

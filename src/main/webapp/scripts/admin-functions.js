@@ -1,29 +1,6 @@
-function showAllUsers() {
-    // Effettua una richiesta AJAX alla servlet per ottenere i dati della tabella
-    // role=all fa capire alla servlet di stampare tutti gli utenti registrati
-    fetch("http://localhost:8085/progetto_war_exploded/adminStuff?role=all")
-        .then(response => response.text())
-        .then(data => {
-            updateTableContent(data)
-        })
-        .catch(error => console.error("Errore:", error));
-}
-
-function showAllSimpatizzanti() {
-    // Effettua una richiesta AJAX alla servlet per ottenere i dati della tabella
-    // role=all fa capire alla servlet di stampare tutti i simpatizzanti registrati
-    fetch("http://localhost:8085/progetto_war_exploded/adminStuff?role=simpatizzante")
-        .then(response => response.text())
-        .then(data => {
-            updateTableContent(data)
-        })
-        .catch(error => console.error("Errore:", error));
-}
-
-function showAllAderenti() {
-    // Effettua una richiesta AJAX alla servlet per ottenere i dati della tabella
-    // role=all fa capire alla servlet di stampare tutti gli aderenti registrati
-    fetch("http://localhost:8085/progetto_war_exploded/adminStuff?role=aderente")
+function redirectToAdminStuff(button_pressed) {
+    var url = "http://localhost:8085/progetto_war_exploded/adminStuff?button_pressed="+encodeURIComponent(button_pressed);
+    fetch(url)
         .then(response => response.text())
         .then(data => {
             updateTableContent(data)
