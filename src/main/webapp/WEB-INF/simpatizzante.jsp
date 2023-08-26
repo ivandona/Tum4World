@@ -31,21 +31,24 @@
                 </label><br>
                 <p>attività 2</p>
                 <label>
-                    <input type="checkbox" id="activity_2" name="activity_2" value="subscribed">
+                    <input type="checkbox" id="activity_2" name="activity_2" value="true">
                     <img src="materiale/mani.jpg" alt="Attività 2" width="210" height="140">
                 </label><br>
                 <p>attività 3</p>
                 <label>
-                    <input type="checkbox" id="activity_3" name="activity_2" value="subscribed">
+                    <input type="checkbox" id="activity_3" name="activity_3" value="true">
                     <img src="materiale/mani.jpg" alt="Attività 3" width="210" height="140">
                 </label><br>
                 <input type="submit" value="Conferma">
             </form>
         </div>
-        <script src="scripts/simpatizzante.js"></script>
     </div>
-    <script>var context = "${pageContext.request.contextPath}"</script>
+    <script>
+        var context = "${pageContext.request.contextPath}";
+    </script>
     <script src="scripts/show-personal-info.js"></script>
+    <script src="scripts/simpatizzante.js"></script>
+    <script>setActivities(context);</script>
     <jsp:include page="Footer.jsp"></jsp:include>
 </body>
 </html>

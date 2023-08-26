@@ -21,16 +21,22 @@ function setActivities(context) {
         event.preventDefault(); // Blocco l'invio del form
 
         const formData = new FormData(form); // Prendo dati dal form
+        for(let [name, value] of formData) {
+            alert(`${name} = ${value}`); // key1 = value1, then key2 = value2
+        }
         let url = context + "/activitiesServlet";
         // Costruisco e mando fetch
         fetch(url, {
             method: "POST",
             body: formData
         })
-            .then(response => response.text())
-            .then(data => {
-                // Handle the response data
-                console.log(data);
+            .then(response => {
+                // Check response status and handle accordingly
+                if (response.ok) {
+                    console.log("Data received and processed successfully.");
+                } else {
+                    console.error("Request failed with status:", response.status);
+                }
             })
             .catch(error => {
                 console.error("Error:", error);
