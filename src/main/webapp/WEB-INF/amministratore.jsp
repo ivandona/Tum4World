@@ -75,6 +75,8 @@
 </div>
 
 <script>
+    let resetButtonAdded = false;
+    const servletButton = document.createElement("button");
     //robe che non riesco a spostare nel js (wtf??)
     const users = document.getElementById("users");
     const simpatizzanti = document.getElementById("simpatizzanti");
@@ -89,30 +91,44 @@
     // Per evitarlo si utilizzano funzioni anonime come quelle più sotto
 
     users.addEventListener("click", function() {
+        removeResetButton();
         redirectToAdminStuff("first");
     });
     simpatizzanti.addEventListener("click", function() {
+        removeResetButton();
         redirectToAdminStuff("second");
     });
     aderenti.addEventListener("click", function() {
+        removeResetButton();
         redirectToAdminStuff("third");
     });
     visits.addEventListener("click", function() {
         redirectToAdminStuff("fourth");
 
-        const servletButton = document.createElement("button");
-        servletButton.className = "button";
-        servletButton.textContent = "Reset delle visite";
-        servletButton.addEventListener("click", function() {
-            resetVisits();
-        });
+        if (!resetButtonAdded) {
+            servletButton.className = "button";
+            // servletButton.id = "resetButton"
+            servletButton.textContent = "Reset delle visite";
+            servletButton.addEventListener("click", function() {
+                resetVisits();
+            });
 
-        // Aggiungi il bottone alla pagina
-        tableContainer.appendChild(servletButton);
+            // Aggiungi il bottone alla pagina
+            tableContainer.appendChild(servletButton);
+            resetButtonAdded = true;
+        }
     });
     donations.addEventListener("click", function() {
+        removeResetButton();
         redirectToAdminStuff("fifth");
     });
+
+    function removeResetButton() {
+        if (resetButtonAdded) {
+            servletButton.remove();
+            resetButtonAdded = false;
+        }
+    }
 </script>
 
 <jsp:include page="Footer.jsp"></jsp:include>

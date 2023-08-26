@@ -30,14 +30,15 @@
 
         <div class="row">
             <div class="column">
-                <h1>Prima attività</h1>
+                <h1>Crea una foresta</h1>
 
                 <a href="${pageContext.request.contextPath}/publicPageController?page=attivita1">
                     <img src="materiale/mani.jpg" class="activity_img" alt="Immagine">
                 </a>
 
-                <p>testotestotestotestotestotestotestotesto testotestotestotestotestotestotestotesto
-                    testotestotestotestotestotestotestotesto testotestotestotestotestotestotestotesto </p>
+                <p>"Progetto Verde Catanzaro" è un'iniziativa ambiziosa volta a trasformare un'area della provincia
+                    di Catanzaro in una lussureggiante foresta. Attraverso una collaborazione tra comunità locali, organizzazioni
+                    ambientaliste e autorità locali, l'obiettivo è rigenerare un terreno precedentemente degradato in un'eco-oasi rigogliosa.</p>
             </div>
 
             <div class="column">

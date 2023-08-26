@@ -19,7 +19,7 @@
 <script>
     // chiama updatePageCounte appena la pagina si è caricata completamente
     document.addEventListener("DOMContentLoaded", function() {
-        updatePageCounter("ATTIVITA2");
+        updatePageCounter("ATTIVITA3");
     });
 </script>
 

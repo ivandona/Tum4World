@@ -21,7 +21,7 @@
 <script>
   // chiama updatePageCounte appena la pagina si è caricata completamente
   document.addEventListener("DOMContentLoaded", function() {
-    updatePageCounter("SING_IN");
+    updatePageCounter("SIGN_IN");
   });
 </script>
 <jsp:include page="Header.jsp"></jsp:include>
