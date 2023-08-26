@@ -57,7 +57,11 @@
         }
     </style>
 
+    <script src="Libraries/highcharts.src.js"></script>
+    <script src="Libraries/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="scripts/admin-functions.js"></script>
+
 </head>
 <body>
 <jsp:include page="Header-privato.jsp"></jsp:include>
@@ -73,6 +77,10 @@
 <div class="table-container" id="tableContainer" style="display: none;">
     <div id="tableContent"></div>
 </div>
+<div class="graph_container" id="graphContainer" style="display: none;">
+    <div id="graphContent"></div>
+</div>
+
 
 <script>
     //robe che non riesco a spostare nel js (wtf??)
@@ -98,10 +106,10 @@
         redirectToAdminStuff("third");
     });
     visits.addEventListener("click", function() {
-        redirectToAdminStuff("fourth");
+        redirectToAdminStuffGraph("Visite");
     });
     donations.addEventListener("click", function() {
-        redirectToAdminStuff("fifth");
+        redirectToAdminStuffGraph("Donazioni");
     });
 </script>
 
