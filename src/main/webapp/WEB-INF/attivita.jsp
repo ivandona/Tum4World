@@ -12,9 +12,18 @@
     <link rel="shortcut icon" type="image/png" href="materiale/logo.png">
     <link rel="stylesheet" type="text/css" href="styles/attivita.css">
     <link rel="stylesheet" type="text/css" href="styles/format.css">
+
+    <script src="scripts/admin-functions.js"></script>
 </head>
 <body>
     <jsp:include page="Header.jsp"></jsp:include>
+
+    <script>
+        // chiama updatePageCounte appena la pagina si è caricata completamente
+        document.addEventListener("DOMContentLoaded", function() {
+            updatePageCounter("ATTIVITA");
+        });
+    </script>
 
     <div class="page">
         <h1>Riepilogo attività</h1>

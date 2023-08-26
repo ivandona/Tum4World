@@ -17,6 +17,22 @@ CREATE TABLE USERS
 
 INSERT INTO USERS VALUES ('Admin', 'Admin', 'admin@gmail.com', '2000-01-01', '33366699', 'AMMINISTRATORE', 'admin', '37Adm1n!', 'false', 'false', 'false');
 
+CREATE TABLE VISITS
+(
+    TOTALE INT,
+    HOME INT,
+    CHI_SIAMO INT,
+    ATTIVITA INT,
+    ATTIVITA1 INT,
+    ATTIVITA2 INT,
+    ATTIVITA3 INT,
+    CONTATTI INT,
+    SIGN_IN INT,
+    LOGIN INT
+);
+
+INSERT INTO VISITS VALUES (0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+
 CREATE TABLE DONATIONS
 (
     USERNAME     VARCHAR(20) not null

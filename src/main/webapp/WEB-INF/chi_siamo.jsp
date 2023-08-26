@@ -12,8 +12,17 @@
     <link rel="shortcut icon" type="image/png" href="materiale/logo.png">
     <link rel="stylesheet" type="text/css" href="styles/chi_siamo.css">
     <link rel="stylesheet" type="text/css" href="styles/format.css">
+
+    <script src="scripts/admin-functions.js"></script>
 </head>
 <body>
+<script>
+    // chiama updatePageCounte appena la pagina si è caricata completamente
+    document.addEventListener("DOMContentLoaded", function() {
+        updatePageCounter("CHI_SIAMO");
+    });
+</script>
+
     <jsp:include page="Header.jsp"></jsp:include>
 
     <div class="storia">
