@@ -2,6 +2,7 @@ package it.unitn.disi.progetto.controllers;
 
 import it.unitn.disi.progetto.models.UserDAO;
 
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,6 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
+import java.time.LocalDate;
+import java.util.Arrays;
+import org.json.JSONArray;
 
 @WebServlet(name = "AdminStuff", value = "/adminStuff")
 public class AdminStuff extends HttpServlet {
@@ -53,11 +57,14 @@ public class AdminStuff extends HttpServlet {
                 case "third":
                     showAllAderenti(stmt, rs, out);
                     break;
-                case "fourth":
+                case "Visite":
                     showAllVisits(stmt, rs, out);
                     break;
-                case "fifth":
-                    showAllDonations(stmt, rs, out);
+                case "Donazioni":
+                    int[] donazioni_mensili = showAllDonations(connection, rs, out);
+                    response.setContentType("application/json");
+                    JSONArray array_donazioni = new JSONArray(donazioni_mensili);
+                    out.write(array_donazioni.toString());
                     break;
             }
         } catch (SQLException e) {
@@ -133,9 +140,34 @@ public class AdminStuff extends HttpServlet {
 
     }
 
-    public void showAllDonations(Statement stmt, ResultSet rs, PrintWriter out) {
+    public int[] showAllDonations(Connection connection, ResultSet rs, PrintWriter out) {
+        int[] tot_mesi = new int[12];
+        for (int i = 0; i < 12; i++) {
+            tot_mesi[i] = 0;
+        }
+        LocalDate dataOdierna = LocalDate.now();
+        int mese = dataOdierna.getMonthValue();
+        int anno = dataOdierna.getYear();
 
+        try {
+            String query = "SELECT VALUE_DONATION, DONATION_MONTH FROM DONATIONS WHERE DONATION_YEAR = ? AND DONATION_MONTH <= ?";
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setInt(1, anno);
+            statement.setInt(2, mese);
+
+            rs = statement.executeQuery();
+            while (rs.next()){
+                int current_donation = rs.getInt("VALUE_DONATION");
+                int current_month = rs.getInt("DONATION_MONTH");
+                tot_mesi[current_month-1] += current_donation;
+            }
+            statement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return tot_mesi;
     }
+
     public void createTableForThreeButtons(PrintWriter out, ResultSet rs) {
         try {
             out.println("<table>");

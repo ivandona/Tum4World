@@ -57,6 +57,9 @@
         }
     </style>
 
+    <script src="Libraries/highcharts.src.js"></script>
+    <script src="Libraries/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="scripts/admin-functions.js"></script>
 </head>
 <body>
@@ -73,6 +76,10 @@
 <div class="table-container" id="tableContainer" style="display: none;">
     <div id="tableContent"></div>
 </div>
+<div class="graph_container" id="graphContainer" style="display: none;">
+    <div id="graphContent"></div>
+</div>
+
 
 <script>
     let resetButtonAdded = false;
@@ -103,7 +110,7 @@
         redirectToAdminStuff("third");
     });
     visits.addEventListener("click", function() {
-        redirectToAdminStuff("fourth");
+        redirectToAdminStuffGraph("Visite");
 
         if (!resetButtonAdded) {
             servletButton.className = "button";
@@ -120,7 +127,7 @@
     });
     donations.addEventListener("click", function() {
         removeResetButton();
-        redirectToAdminStuff("fifth");
+        redirectToAdminStuffGraph("Donazioni");
     });
 
     function removeResetButton() {

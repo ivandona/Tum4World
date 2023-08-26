@@ -7,7 +7,6 @@ engToIta.set("birthdate", "Data di nascita");
 engToIta.set("phoneNumber", "Numero di telefono");
 engToIta.set("userRole", "Ruolo");
 engToIta.set("username", "Username");
-engToIta.set("password", "Password");
 
 function getCookie(name) {
     let value = "; " + document.cookie;

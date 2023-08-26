@@ -7,6 +7,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 @WebServlet(name = "GetSessionAttributesServlet", value = "/getSessionAttributesServlet")
 public class GetSessionAttributesServlet extends HttpServlet {
@@ -33,7 +34,9 @@ public class GetSessionAttributesServlet extends HttpServlet {
             );
 
             response.setContentType("application/json");
-            response.getWriter().write(attributes.toString());
+            PrintWriter out = response.getWriter();
+            out.print(attributes);
+            out.flush();
         } else {
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);
         }
