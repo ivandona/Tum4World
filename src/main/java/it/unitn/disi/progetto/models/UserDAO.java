@@ -91,7 +91,7 @@ public class UserDAO {
 
 
     // Aggiorno la tabella mettendo le attività a cui l'utente si è iscritto/disiscritto
-    public void subscribeToActivity(Connection connection, String username,
+    public void setActivities(Connection connection, String username,
                                     Boolean activity_1, Boolean activity_2, Boolean activity_3) {
         String query = "UPDATE USERS SET ACTIVITY_1 = ?, ACTIVITY_2 = ?, ACTIVITY_3 = ? " +
                 "WHERE USERNAME = ?";

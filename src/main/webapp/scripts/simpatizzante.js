@@ -15,6 +15,25 @@ attivitaBtn.addEventListener("click", () => {
     dati.classList.add("hidden");
 });
 
-function getActivities(context) {
+function setActivities(context) {
+    const form = document.getElementById("activities");
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Blocco l'invio del form
 
+        const formData = new FormData(form); // Prendo dati dal form
+        let url = context + "/activitiesServlet";
+        // Costruisco e mando fetch
+        fetch(url, {
+            method: "POST",
+            body: formData
+        })
+            .then(response => response.text())
+            .then(data => {
+                // Handle the response data
+                console.log(data);
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+    });
 }

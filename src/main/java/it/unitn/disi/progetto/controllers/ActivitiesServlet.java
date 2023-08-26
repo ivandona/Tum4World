@@ -13,7 +13,7 @@ import java.sql.SQLException;
 
 import static argo.jdom.JsonNodeFactories.*;
 
-@WebServlet(name = "ActvitiesServlet", value = "/ActvitiesServlet")
+@WebServlet(name = "ActivitiesServlet", value = "/activitiesServlet")
 public class ActivitiesServlet extends HttpServlet {
     private static final String DB_URL = "jdbc:derby://localhost:1527/tum-db";
     private static final String DB_USERNAME = "APP";
@@ -55,11 +55,20 @@ public class ActivitiesServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Boolean activity_1 = false;
-        Boolean activity_2 = false;
-        Boolean activity_3 = false;
+        String username = CookieController.getSomething(request,"username");
+        Boolean activity_1 = Boolean.valueOf(request.getParameter("activity_1"));
+        Boolean activity_2 = Boolean.valueOf(request.getParameter("activity_2"));
+        Boolean activity_3 = Boolean.valueOf(request.getParameter("activity_2"));
 
+        try {
+            db.setActivities(connection, username, activity_1, activity_2, activity_3);
 
+            System.out.println("Iscrizione/disiscrizione attività gestita");
+            response.setStatus(HttpServletResponse.SC_OK);
+        } catch (Exception e) {
+            e.printStackTrace();
+            response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+        }
     }
 
     public void destroy() {
