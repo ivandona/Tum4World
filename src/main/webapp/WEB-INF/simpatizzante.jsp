@@ -10,12 +10,15 @@
 <head>
     <link rel="stylesheet" href="styles/style.css">
     <title>Tum4World</title>
+    <script>var context = "${pageContext.request.contextPath}"</script>
+    <script src="scripts/show-personal-info.js"></script>
 </head>
 <body>
     <jsp:include page="Header-privato.jsp"></jsp:include>
     <h1>Simpatizzante</h1>
     <div>
-        Ivan Donà
+        <button onclick="showPersonalInfo(context, 'personal-info')">Informazioni personali</button>
+        <ul id="personal-info"></ul>
     </div>
     <jsp:include page="Footer.jsp"></jsp:include>
 </body>
