@@ -26,15 +26,22 @@
     <jsp:include page="Header.jsp"></jsp:include>
 
     <div class="page">
-        <h1>Seconda attività</h1>
+        <h1>Il Benessere a Portata di Mano</h1>
 
         <div class="row">
-            <img src="materiale/mani.jpg" class="text_img" alt="Immagine">
+            <img src="materiale/attività2-seduta.jpg" class="text_img" alt="Immagine">
             <p>
-                testotestotestotestotestotestotestotesto testotestotestotestotestotestotestotesto
-                testotestotestotestotestotestotestotestotestotestotestotestotestotestotestotesto
+                Attraverso la collaborazione con professionisti dedicati, vengono fornite sessioni di consulenza
+                individuali e di gruppo, consentendo ai partecipanti di affrontare sfide emotive e mentali
+                in un ambiente accogliente.<br>
+
+                Le sessioni includono strategie di gestione dello stress, consulenza emotiva e sviluppo personale.
+                L'iniziativa promuove attivamente la consapevolezza sulla salute mentale, abbattendo lo stigma
+                associato alle difficoltà psicologiche. Con una combinazione di incontri in persona e risorse
+                online accessibili, "Il Benessere a Portata di Mano" offre un prezioso supporto alla
+                comunità, contribuendo a migliorare il benessere mentale e a costruire una rete di sostegno solida.
             </p>
-            <img src="materiale/mani.jpg" class="text_img" alt="Immagine">
+            <img src="materiale/attività2-cartoon.jpg" class="text_img" alt="Immagine">
         </div>
     </div>
 

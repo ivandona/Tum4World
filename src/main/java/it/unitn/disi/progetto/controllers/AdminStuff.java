@@ -48,19 +48,22 @@ public class AdminStuff extends HttpServlet {
             stmt = connection.createStatement();
 
             switch (button_pressed) {
-                case "first":
+                case "users":
                     showAllUsers(stmt, rs, out);
                     break;
-                case "second":
+                case "simpatizzanti":
                     showAllSimpatizzanti(stmt, rs, out);
                     break;
-                case "third":
+                case "aderenti":
                     showAllAderenti(stmt, rs, out);
                     break;
-                case "Visite":
-                    showAllVisits(stmt, rs, out);
+                case "visits":
+                    int[] siteVisits = showAllVisits(stmt, rs, out);
+                    response.setContentType("application/json");
+                    JSONArray siteVisitsArray = new JSONArray(siteVisits);
+                    out.write(siteVisitsArray.toString());
                     break;
-                case "Donazioni":
+                case "donations":
                     int[] donazioni_mensili = showAllDonations(connection, rs, out);
                     response.setContentType("application/json");
                     JSONArray array_donazioni = new JSONArray(donazioni_mensili);
@@ -136,8 +139,33 @@ public class AdminStuff extends HttpServlet {
         }
     }
 
-    public void showAllVisits(Statement stmt, ResultSet rs, PrintWriter out) {
+    public int[] showAllVisits(Statement stmt, ResultSet rs, PrintWriter out) {
+        int[] visits = new int[12];
+        Arrays.fill(visits, 0);
 
+        try {
+            String query = "SELECT * FROM VISITS"; // Seleziona tutte le colonne
+            rs = stmt.executeQuery(query);
+
+            if (rs.next()) {
+                for (int i = 0; i < visits.length; i++) {
+                    visits[i] = rs.getInt(i + 1); // Assegna il valore della colonna corrente all'array
+                }
+            }
+        } catch (SQLException e) {
+            // Gestione delle eccezioni
+            e.printStackTrace();
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return visits;
     }
 
     public int[] showAllDonations(Connection connection, ResultSet rs, PrintWriter out) {
@@ -241,7 +269,7 @@ public class AdminStuff extends HttpServlet {
 
     public void setAllVisitsTo0(Statement stmt, ResultSet rs) {
         try {
-            String set_to_0 = "UPDATE VISITS SET TOTALE=0," +
+            String setTo0 = "UPDATE VISITS SET TOTALE=0," +
                     "HOME=0," +
                     "CHI_SIAMO=0," +
                     "ATTIVITA=0," +
@@ -250,8 +278,10 @@ public class AdminStuff extends HttpServlet {
                     "ATTIVITA3=0," +
                     "CONTATTI=0," +
                     "SIGN_IN=0," +
-                    "LOGIN=0";
-            stmt.executeUpdate(set_to_0);
+                    "LOGIN=0," +
+                    "SIMPATIZZANTE=0," +
+                    "ADERENTE=0";
+            stmt.executeUpdate(setTo0);
         } catch (SQLException e) {
             e.printStackTrace();
         }

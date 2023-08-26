@@ -25,15 +25,23 @@
     <jsp:include page="Header.jsp"></jsp:include>
 
     <div class="page">
-        <h1>Prima attività</h1>
+        <h1>Progetto Verde Catanzaro</h1>
 
         <div class="row">
-            <img src="materiale/mani.jpg" class="text_img" alt="Immagine">
+            <img src="materiale/attività1-catanzaro.jpg" class="text_img" alt="Immagine">
             <p>
-                testotestotestotestotestotestotestotesto testotestotestotestotestotestotestotesto
-                testotestotestotestotestotestotestotest
+                L'attività coinvolge la piantumazione di una vasta varietà di alberi autoctoni, adattati
+                alle condizioni del suolo e del clima locale. Questa iniziativa non solo mira a migliorare l'ecosistema
+                locale, ma anche a mitigare i cambiamenti climatici attraverso la cattura di carbonio e la creazione
+                di microclimi più freschi.<br>
+
+                Il progetto coinvolge attivamente la comunità locale, organizzando giornate di piantumazione
+                partecipativa, laboratori educativi sul valore delle foreste e sulla biodiversità, nonché la
+                promozione di una maggiore consapevolezza ambientale. Con il tempo, ci si aspetta che l'area
+                trasformata diventi un rifugio per la fauna locale, un luogo di ricreazione per
+                i cittadini e un modello di successo per la rigenerazione ambientale.<br>
             </p>
-            <img src="materiale/mani.jpg" class="text_img" alt="Immagine">
+            <img src="materiale/attività1-foresta.jpeg" class="text_img" alt="Immagine">
         </div>
     </div>
 

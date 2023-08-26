@@ -61,7 +61,6 @@
     <script src="Libraries/highcharts.js"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="scripts/admin-functions.js"></script>
-
 </head>
 <body>
 <jsp:include page="Header-privato.jsp"></jsp:include>
@@ -84,6 +83,8 @@
 
 <script>
     //robe che non riesco a spostare nel js (wtf??)
+    let resetButtonAdded = false;
+    const servletButton = document.createElement("button");
     const users = document.getElementById("users");
     const simpatizzanti = document.getElementById("simpatizzanti");
     const aderenti = document.getElementById("aderenti");
@@ -94,33 +95,47 @@
 
     // users.addEventListener("click", redirectToAdminStuff("first"));
     // Scrivere così è sbagliato perchè chiama immediatamente la funzione redirectToAdminStuff("first").
-    // Per evitarlo si utilizzano funzioni anonime come quelle più sotto
+    // Per evitarlo si utilizzano funzioni anonime come quelle sotto
 
     users.addEventListener("click", function() {
-        redirectToAdminStuff("first");
+        removeResetButton();
+        redirectToAdminStuff("users");
     });
     simpatizzanti.addEventListener("click", function() {
-        redirectToAdminStuff("second");
+        removeResetButton();
+        redirectToAdminStuff("simpatizzanti");
     });
     aderenti.addEventListener("click", function() {
-        redirectToAdminStuff("third");
+        removeResetButton();
+        redirectToAdminStuff("aderenti");
     });
     visits.addEventListener("click", function() {
-        redirectToAdminStuffGraph("Visite");
+        redirectToAdminStuffGraph("visits");
 
-        const servletButton = document.createElement("button");
-        servletButton.className = "button";
-        servletButton.textContent = "Reset delle visite";
-        servletButton.addEventListener("click", function() {
-            resetVisits();
-        });
+        if (!resetButtonAdded) {
+            servletButton.className = "button";
+            // servletButton.id = "resetButton"
+            servletButton.textContent = "Reset delle visite";
+            servletButton.addEventListener("click", function() {
+                resetVisits();
+            });
 
-        // Aggiungi il bottone alla pagina
-        tableContainer.appendChild(servletButton);
+            // Aggiungi il bottone alla pagina
+            tableContainer.appendChild(servletButton);
+            resetButtonAdded = true;
+        }
     });
     donations.addEventListener("click", function() {
-        redirectToAdminStuffGraph("Donazioni");
+        removeResetButton();
+        redirectToAdminStuffGraph("donations");
     });
+
+    function removeResetButton() {
+        if (resetButtonAdded) {
+            servletButton.remove();
+            resetButtonAdded = false;
+        }
+    }
 </script>
 
 <jsp:include page="Footer.jsp"></jsp:include>

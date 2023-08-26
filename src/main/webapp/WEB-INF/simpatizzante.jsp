@@ -11,8 +11,17 @@
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/simpatizzante.css">
     <title>Tum4World</title>
+
+    <script src="scripts/admin-functions.js"></script>
 </head>
 <body>
+<script>
+    // chiama updatePageCounte appena la pagina si è caricata completamente
+    document.addEventListener("DOMContentLoaded", function() {
+        updatePageCounter("SIMPATIZZANTE");
+    });
+</script>
+
     <jsp:include page="Header-privato.jsp"></jsp:include>
     <h1>Simpatizzante</h1>
     <div>
