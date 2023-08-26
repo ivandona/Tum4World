@@ -5,7 +5,41 @@ function redirectToAdminStuff(button_pressed) {
         .then(data => {
             updateTableContent(data)
         })
-        .catch(error => console.error("Errore:", error));
+        .catch(error => console.error("Errore 'redirectToAdminStuff':", error));
+}
+
+function updatePageCounter(page_name) {
+    const data = new URLSearchParams();
+    data.append("page_name", page_name);
+    data.append("timestamp", new Date().getTime()); // Aggiungo un timestamp casuale per evitare la memorizzazione nella cache
+    fetch("http://localhost:8085/progetto_war_exploded/adminStuff", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: data
+    })
+        .then(response => {
+            // Gestisci la risposta qui, se necessario
+        })
+        .catch(error => console.error("Errore 'updatePageCounter':", error));
+}
+
+function resetVisits() {
+    const data = new URLSearchParams();
+    data.append("page_name", "set_to_0");
+    data.append("timestamp", new Date().getTime()); // Aggiungo un timestamp casuale per evitare la memorizzazione nella cache
+    fetch("http://localhost:8085/progetto_war_exploded/adminStuff", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: data
+    })
+        .then(response => {
+            // Gestisci la risposta qui, se necessario
+        })
+        .catch(error => console.error("Errore 'updatePageCounter':", error));
 }
 
 function redirectToAdminStuffGraph(button_pressed) {
@@ -67,6 +101,7 @@ function updateTableContent(content) {
 
     deleteTable();
 
+    // Aggiorna il contenuto della tabella
     tableContent.innerHTML = content;
     tableContainer.style.display = "block";
 }

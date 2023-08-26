@@ -25,6 +25,9 @@ public class UserDAO {
                     user.setUserRole(UserRole.valueOf(resultSet.getString("user_role")));
                     user.setUsername(resultSet.getString("username"));
                     user.setPassword(resultSet.getString("password"));
+                    user.setActivity_1(resultSet.getBoolean("activity_1"));
+                    user.setActivity_2(resultSet.getBoolean("activity_2"));
+                    user.setActivity_3(resultSet.getBoolean("activity_3"));
                     return user;
                 }
             } catch (SQLException e) {
@@ -38,7 +41,8 @@ public class UserDAO {
 
     //inserisce dati dell'utente nel db
     public void saveUser(Connection connection, UserBean user) {
-       String query = "INSERT INTO users (name, surname, email, birthdate, phone_number, user_role, username, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+       String query = "INSERT INTO users (name, surname, email, birthdate, phone_number, user_role, username, password, ACTIVITY_1, ACTIVITY_2, ACTIVITY_3) " +
+               "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, user.getName());
             statement.setString(2, user.getSurname());
@@ -48,6 +52,9 @@ public class UserDAO {
             statement.setString(6, user.getUserRole().toString());
             statement.setString(7, user.getUsername());
             statement.setString(8, user.getPassword());
+            statement.setBoolean(9, user.getActivity_1());
+            statement.setBoolean(10, user.getActivity_2());
+            statement.setBoolean(11, user.getActivity_3());
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -80,5 +87,43 @@ public class UserDAO {
             e.printStackTrace();
         }
         return false;
+    }
+
+
+    // Aggiorno la tabella mettendo le attività a cui l'utente si è iscritto/disiscritto
+    public void setActivities(Connection connection, String username,
+                                    Boolean activity_1, Boolean activity_2, Boolean activity_3) {
+        String query = "UPDATE USERS SET ACTIVITY_1 = ?, ACTIVITY_2 = ?, ACTIVITY_3 = ? " +
+                "WHERE USERNAME = ?";
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setBoolean(1, activity_1);
+            statement.setBoolean(2, activity_2);
+            statement.setBoolean(3, activity_3);
+            statement.setString(4, username);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Ritorna un array di boolean che indica le attività a cui è iscritto l'utente
+    public Boolean[] getActivities(Connection connection, String username) {
+        String query = "SELECT ACTIVITY_1, ACTIVITY_2, ACTIVITY_3 FROM USERS WHERE USERNAME = ?";
+        Boolean[] activities = new Boolean[3];
+
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, username);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    activities[0] = resultSet.getBoolean("activity_1");
+                    activities[1] = resultSet.getBoolean("activity_2");
+                    activities[2] = resultSet.getBoolean("activity_3");
+                    return activities;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

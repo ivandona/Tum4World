@@ -11,7 +11,17 @@
     <title>Tum4World</title>
     <link rel="stylesheet" href="styles/contatti.css">
     <script src="scripts/form-validation.js"></script>
+
+    <script src="scripts/admin-functions.js"></script>
 </head>
+<body>
+<script>
+    // chiama updatePageCounte appena la pagina si è caricata completamente
+    document.addEventListener("DOMContentLoaded", function () {
+        updatePageCounter("CONTATTI");
+    });
+</script>
+
 <jsp:include page="Header.jsp"></jsp:include>
 <body>
     <h1>Contatti</h1>

@@ -48,6 +48,11 @@ public class SignInServlet extends HttpServlet {
         String userRoleString = request.getParameter("userRole");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        // Di default, un nuovo utente non è iscritto ad attività
+        Boolean activity_1 = false;
+        Boolean activity_2 = false;
+        Boolean activity_3 = false;
+
 
         //converto la data da String a LocalDate
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -64,7 +69,8 @@ public class SignInServlet extends HttpServlet {
             //notare che non c'è admin perché non posso registrarmi come admin dal sito
         }
 
-        UserBean user = new UserBean(name, surname, email, birthdate, phoneNumber, userRole, username, password);
+        UserBean user = new UserBean(name, surname, email, birthdate, phoneNumber, userRole,
+                username, password, activity_1, activity_2, activity_3);
 
         if(db.isUsernameTaken(connection, username)) {
             //username già preso
