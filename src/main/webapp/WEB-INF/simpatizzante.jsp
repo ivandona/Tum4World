@@ -9,6 +9,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/simpatizzante.css">
     <title>Tum4World</title>
     <script>var context = "${pageContext.request.contextPath}"</script>
     <script src="scripts/show-personal-info.js"></script>
@@ -17,9 +18,32 @@
     <jsp:include page="Header-privato.jsp"></jsp:include>
     <h1>Simpatizzante</h1>
     <div>
-        <button onclick="showPersonalInfo(context, 'personal-info')">Informazioni personali</button>
-        <ul id="personal-info"></ul>
+        <button id="datiBtn" onclick="showPersonalInfo(context, 'personal-info')">Informazioni personali</button>
+        <button id="attivitaBtn">Mostra Attività</button>
+
+        <ul  id="personal-info"></ul>
+
+        <div id="attivita" class="hidden">
+            <h2>Attività Disponibili</h2>
+            <p>attività 1</p>
+            <label>
+                <input type="checkbox">
+                <img src="materiale/mani.jpg" alt="Attività 1" width="210" height="140">
+            </label><br>
+            <p>attività 2</p>
+            <label>
+                <input type="checkbox">
+                <img src="materiale/mani.jpg" alt="Attività 2" width="210" height="140">
+            </label><br>
+            <p>attività 3</p>
+            <label>
+                <input type="checkbox">
+                <img src="materiale/mani.jpg" alt="Attività 3" width="210" height="140">
+            </label><br>
+        </div>
+        <script src="scripts/simpatizzante.js"></script>
     </div>
+
     <jsp:include page="Footer.jsp"></jsp:include>
 </body>
 </html>
