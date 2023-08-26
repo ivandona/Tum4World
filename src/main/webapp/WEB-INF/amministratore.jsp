@@ -82,9 +82,9 @@
 
 
 <script>
+    //robe che non riesco a spostare nel js (wtf??)
     let resetButtonAdded = false;
     const servletButton = document.createElement("button");
-    //robe che non riesco a spostare nel js (wtf??)
     const users = document.getElementById("users");
     const simpatizzanti = document.getElementById("simpatizzanti");
     const aderenti = document.getElementById("aderenti");
@@ -95,22 +95,22 @@
 
     // users.addEventListener("click", redirectToAdminStuff("first"));
     // Scrivere così è sbagliato perchè chiama immediatamente la funzione redirectToAdminStuff("first").
-    // Per evitarlo si utilizzano funzioni anonime come quelle più sotto
+    // Per evitarlo si utilizzano funzioni anonime come quelle sotto
 
     users.addEventListener("click", function() {
         removeResetButton();
-        redirectToAdminStuff("first");
+        redirectToAdminStuff("users");
     });
     simpatizzanti.addEventListener("click", function() {
         removeResetButton();
-        redirectToAdminStuff("second");
+        redirectToAdminStuff("simpatizzanti");
     });
     aderenti.addEventListener("click", function() {
         removeResetButton();
-        redirectToAdminStuff("third");
+        redirectToAdminStuff("aderenti");
     });
     visits.addEventListener("click", function() {
-        redirectToAdminStuffGraph("Visite");
+        redirectToAdminStuffGraph("visits");
 
         if (!resetButtonAdded) {
             servletButton.className = "button";
@@ -127,7 +127,7 @@
     });
     donations.addEventListener("click", function() {
         removeResetButton();
-        redirectToAdminStuffGraph("Donazioni");
+        redirectToAdminStuffGraph("donations");
     });
 
     function removeResetButton() {

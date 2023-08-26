@@ -30,40 +30,46 @@
 
         <div class="row">
             <div class="column">
-                <h1>Crea una foresta</h1>
+                <h1>Progetto Verde Catanzaro</h1>
 
                 <a href="${pageContext.request.contextPath}/publicPageController?page=attivita1">
-                    <img src="materiale/mani.jpg" class="activity_img" alt="Immagine">
+                    <img src="materiale/attività-foresta.jpg" class="activity_img" alt="Immagine">
                 </a>
 
                 <p>"Progetto Verde Catanzaro" è un'iniziativa ambiziosa volta a trasformare un'area della provincia
-                    di Catanzaro in una lussureggiante foresta. Attraverso una collaborazione tra comunità locali, organizzazioni
-                    ambientaliste e autorità locali, l'obiettivo è rigenerare un terreno precedentemente degradato in un'eco-oasi rigogliosa.</p>
+                    di Catanzaro in una lussureggiante foresta. Attraverso una collaborazione tra comunità locali,
+                    organizzazioni  ambientaliste e autorità locali, l'obiettivo è rigenerare un terreno
+                    precedentemente degradato in un'eco-oasi rigogliosa.
+                </p>
             </div>
 
             <div class="column">
-                <h1>Seconda attività</h1>
+                <h1>Il Benessere a Portata di Mano</h1>
 
                 <a href="${pageContext.request.contextPath}/publicPageController?page=attivita2">
-                    <img src="materiale/mani.jpg" class="activity_img" alt="Immagine">
+                    <img src="materiale/attività-psicologo.jpg" class="activity_img" alt="Immagine">
                 </a>
 
-                <p>testotestotestotestotestotestotestotestotesto testotestotestotestotestotestotestotesto
-                    testotestotestotestotestotestotestotesto testotestotestotestotestotestotestotesto </p>
+                <p>"Il Benessere a Portata di Mano" è un'iniziativa preziosa che offre l'accesso a servizi
+                    psicologici gratuiti per coloro che ne hanno bisogno. L'attività mira a rimuovere le
+                    barriere finanziarie e sociali che spesso impediscono alle persone di accedere a supporto psicologico
+                    di qualità.
+                </p>
             </div>
 
             <div class="column">
-                <h1>Terza attività</h1>
+                <h1>Cuore Nutriente</h1>
 
                 <a href="${pageContext.request.contextPath}/publicPageController?page=attivita3">
-                    <img src="materiale/mani.jpg" class="activity_img" alt="Immagine">
+                    <img src="materiale/attività-cucina.jpg" class="activity_img" alt="Immagine">
                 </a>
 
-                <p>testotestotestotestotest otestotestotestotestotestotesto testotestotestotestotestotestotestotesto
-                    testotestotestotestotestotestotestotesto testotestotestotestotestotestotestotesto
-                    testotestotestotestotestotestotestote stotestotestotestotestotest otestotestotestotestotestotesto testotestotestotestotestotestotestotesto
-                    testotestotestotestotestotestotestotesto testotestotestotestotestotestotestotesto
-                    testotestotestotestotestotestotestotesto</p>
+                <p>
+                    "Cuore Nutriente" è un'iniziativa altruista che mira a portare sollievo alle persone in situazioni
+                    di difficoltà economica, offrendo servizi di consegna di cibo ai bisognosi. Attraverso una rete
+                    di volontari dedicati e donazioni generose dalla comunità, l'attività si impegna a fornire pasti
+                    nutrienti e sostentamento a coloro che lottano per avere abbastanza cibo sulla loro tavola.
+                </p>
             </div>
         </div>
     </div>
