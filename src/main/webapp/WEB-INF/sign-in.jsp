@@ -15,11 +15,16 @@
   <link rel="stylesheet" href="styles/sign-in.css">
 
   <script src="scripts/form-validation.js"></script>
+  <script src="scripts/admin-functions.js"></script>
 </head>
-
-<jsp:include page="Header.jsp"></jsp:include>
-
 <body>
+<script>
+  // chiama updatePageCounte appena la pagina si è caricata completamente
+  document.addEventListener("DOMContentLoaded", function() {
+    updatePageCounter("SING_IN");
+  });
+</script>
+<jsp:include page="Header.jsp"></jsp:include>
 <div class="container">
   <h1>Registrazione</h1>
   <form onsubmit="return validateSignIn();" action="${pageContext.request.contextPath}/signInServlet" method="post">

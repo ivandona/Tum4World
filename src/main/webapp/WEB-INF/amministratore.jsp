@@ -99,6 +99,16 @@
     });
     visits.addEventListener("click", function() {
         redirectToAdminStuff("fourth");
+
+        const servletButton = document.createElement("button");
+        servletButton.className = "button";
+        servletButton.textContent = "Reset delle visite";
+        servletButton.addEventListener("click", function() {
+            resetVisits();
+        });
+
+        // Aggiungi il bottone alla pagina
+        tableContainer.appendChild(servletButton);
     });
     donations.addEventListener("click", function() {
         redirectToAdminStuff("fifth");
