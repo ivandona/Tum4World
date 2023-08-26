@@ -17,6 +17,28 @@ attivitaBtn.addEventListener("click", () => {
 
 function setActivities(context) {
     const form = document.getElementById("activities");
+    let url = context + "/activitiesServlet";
+    form.onsubmit = async (e) => {
+        const formData = new FormData(form);
+        for(let [name, value] of formData) {
+            alert(`${name} = ${value}`); // key1 = value1, then key2 = value2
+        }
+        e.preventDefault();
+        let response = await fetch(url, {
+            method: "POST",
+            body: formData
+        });
+
+        let result = response.status;
+
+
+    }
+}
+
+
+/*
+function setActivities(context) {
+    const form = document.getElementById("activities");
     form.addEventListener('submit', function(event) {
         event.preventDefault(); // Blocco l'invio del form
 
@@ -43,3 +65,4 @@ function setActivities(context) {
             });
     });
 }
+*/

@@ -63,7 +63,7 @@ public class ActivitiesServlet extends HttpServlet {
         System.out.println(activity_1);
         System.out.println(activity_2);
         System.out.println(activity_3);
-        System.out.println(request.getParameter("activity_1"));
+        System.out.println(request.getPart("activity_1"));
 
         try {
             db.setActivities(connection, username, activity_1, activity_2, activity_3);
@@ -74,6 +74,7 @@ public class ActivitiesServlet extends HttpServlet {
             e.printStackTrace();
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);
         }
+        request.getRequestDispatcher("/loginServlet").forward(request, response);
     }
 
     public void destroy() {

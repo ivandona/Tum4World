@@ -23,7 +23,7 @@
 
         <div id="attivita" class="hidden">
             <h2>Attività Disponibili</h2>
-            <form id="activities">
+            <form id="activities" action="${pageContext.request.contextPath}/activitiesServlet" method="post">
                 <p>attività 1</p>
                 <label>
                     <input type="checkbox" id="activity_1" name="activity_1" value="true">
@@ -44,11 +44,11 @@
         </div>
     </div>
     <script>
-        var context = "${pageContext.request.contextPath}";
+        const context = "${pageContext.request.contextPath}";
     </script>
     <script src="scripts/show-personal-info.js"></script>
     <script src="scripts/simpatizzante.js"></script>
-    <script>setActivities(context);</script>
+
     <jsp:include page="Footer.jsp"></jsp:include>
 </body>
 </html>
