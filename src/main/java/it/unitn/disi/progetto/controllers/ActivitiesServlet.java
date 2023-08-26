@@ -56,9 +56,14 @@ public class ActivitiesServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = CookieController.getSomething(request,"username");
-        Boolean activity_1 = Boolean.valueOf(request.getParameter("activity_1"));
-        Boolean activity_2 = Boolean.valueOf(request.getParameter("activity_2"));
-        Boolean activity_3 = Boolean.valueOf(request.getParameter("activity_2"));
+        String[] parameters = new String[3];
+        Boolean activity_1 = Boolean.parseBoolean(request.getParameter("activity_1"));
+        Boolean activity_2 = Boolean.parseBoolean(request.getParameter("activity_2"));
+        Boolean activity_3 = Boolean.parseBoolean(request.getParameter("activity_3"));
+        System.out.println(activity_1);
+        System.out.println(activity_2);
+        System.out.println(activity_3);
+        System.out.println(request.getParameter("activity_1"));
 
         try {
             db.setActivities(connection, username, activity_1, activity_2, activity_3);
