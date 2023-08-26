@@ -25,21 +25,24 @@
 
         <div id="attivita" class="hidden">
             <h2>Attività Disponibili</h2>
-            <p>attività 1</p>
-            <label>
-                <input type="checkbox">
-                <img src="materiale/mani.jpg" alt="Attività 1" width="210" height="140">
-            </label><br>
-            <p>attività 2</p>
-            <label>
-                <input type="checkbox">
-                <img src="materiale/mani.jpg" alt="Attività 2" width="210" height="140">
-            </label><br>
-            <p>attività 3</p>
-            <label>
-                <input type="checkbox">
-                <img src="materiale/mani.jpg" alt="Attività 3" width="210" height="140">
-            </label><br>
+            <form>
+                <p>attività 1</p>
+                <label>
+                    <input type="checkbox">
+                    <img src="materiale/mani.jpg" alt="Attività 1" width="210" height="140">
+                </label><br>
+                <p>attività 2</p>
+                <label>
+                    <input type="checkbox">
+                    <img src="materiale/mani.jpg" alt="Attività 2" width="210" height="140">
+                </label><br>
+                <p>attività 3</p>
+                <label>
+                    <input type="checkbox">
+                    <img src="materiale/mani.jpg" alt="Attività 3" width="210" height="140">
+                </label><br>
+                <input type="submit" value="Conferma">
+            </form>
         </div>
         <script src="scripts/simpatizzante.js"></script>
     </div>

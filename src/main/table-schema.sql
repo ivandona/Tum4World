@@ -9,10 +9,13 @@ CREATE TABLE USERS
     USERNAME     VARCHAR(20) not null
         constraint "USERS_pk"
             primary key,
-    PASSWORD     VARCHAR(20)
+    PASSWORD     VARCHAR(20),
+    ACTIVITY_1 BOOLEAN,
+    ACTIVITY_2 BOOLEAN,
+    ACTIVITY_3 BOOLEAN
 );
 
-INSERT INTO USERS VALUES ('Admin', 'Admin', 'admin@gmail.com', '2000-01-01', '33366699', 'AMMINISTRATORE', 'admin', '37Adm1n!');
+INSERT INTO USERS VALUES ('Admin', 'Admin', 'admin@gmail.com', '2000-01-01', '33366699', 'AMMINISTRATORE', 'admin', '37Adm1n!', 'false', 'false', 'false');
 
 CREATE TABLE DONATIONS
 (

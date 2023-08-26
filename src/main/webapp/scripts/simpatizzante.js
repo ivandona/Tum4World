@@ -14,3 +14,7 @@ attivitaBtn.addEventListener("click", () => {
     attivita.classList.toggle("hidden");
     dati.classList.add("hidden");
 });
+
+function getActivities(context) {
+
+}
