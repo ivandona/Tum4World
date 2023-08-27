@@ -33,7 +33,8 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username;
         String password;
-        UserBean verifiedUser = new UserBean();
+        UserBean verifiedUser = null;
+        String errorMessage;
         System.out.println("PRIMA DELL'IF");
         // Controllo se ho già le credenziali dell'utente nei cookies/session
         if (CookieController.getSomething(request, "username") != null
@@ -49,28 +50,35 @@ public class LoginServlet extends HttpServlet {
             System.out.println("FORM");
         }
 
-        verifiedUser = db.checkCredentials(connection, username, password);
+        if(username != "" && username != null && password != "" && password != null) {
+            verifiedUser = db.checkCredentials(connection, username, password);
+            errorMessage = "37: Username non esiste o credenziali sbagliate";
+        } else {
+            errorMessage = "";
+        }
+
 
         if(verifiedUser != null) {
             //login ha avuto successo
 
-            //TODO: mettere informazioni utente in cookie/session
-            //Controllo che l'utente abbia accettato i cookies
             CookieController.addCookies(request, response, verifiedUser);
-
+            System.out.println(verifiedUser.getUserRole());
             //controllo il ruolo dell'utente e rimando alla pagina corrispondente
             switch(verifiedUser.getUserRole()) {
                 case AMMINISTRATORE:
                     request.getRequestDispatcher("/WEB-INF/amministratore.jsp").forward(request, response);
+                    break;
                 case ADERENTE:
                     request.getRequestDispatcher("/WEB-INF/aderente.jsp").forward(request, response);
+                    break;
                 case SIMPATIZZANTE:
                     request.getRequestDispatcher("/WEB-INF/simpatizzante.jsp").forward(request, response);
+                    break;
             }
         } else {
             //login non ha avuto successo
             //rimando alla pagina di login
-            request.setAttribute("errorMessage", "37: credenziali sbagliate o username inesistente");
+            request.getSession().setAttribute("errorMessage", errorMessage);
             request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
         }
     }

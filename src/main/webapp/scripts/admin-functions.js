@@ -1,7 +1,5 @@
-//L'url è "http://localhost:"+numero di porta del progetto (lo trovato su edit confguration)+
-// "/"+nome del progetto+"/adminStuff"
 function redirectToAdminStuff(button_pressed) {
-    var url = "http://localhost:8085/progetto_war_exploded/adminStuff?button_pressed="+encodeURIComponent(button_pressed);
+    var url = "adminStuff?button_pressed="+encodeURIComponent(button_pressed);
     fetch(url)
         .then(response => response.text())
         .then(data => {
@@ -17,7 +15,7 @@ function resetVisits() {
     const data = new URLSearchParams();
     data.append("page_name", "set_to_0");
     data.append("timestamp", new Date().getTime()); // Aggiungo un timestamp casuale per evitare la memorizzazione nella cache
-    fetch("http://localhost:8085/progetto_war_exploded/adminStuff", {
+    fetch("adminStuff", {
         method: "POST",
         headers: {
             "Content-Type": "application/x-www-form-urlencoded"
@@ -32,7 +30,7 @@ function resetVisits() {
 }
 
 function redirectToAdminStuffGraph(button_pressed) {
-    var url = "http://localhost:8085/progetto_war_exploded/adminStuff?button_pressed="+encodeURIComponent(button_pressed);
+    var url = "adminStuff?button_pressed="+encodeURIComponent(button_pressed);
     fetch(url)
         .then(response => response.json())
         .then(graphData => {
@@ -41,7 +39,8 @@ function redirectToAdminStuffGraph(button_pressed) {
                 graphTitle = "Donazioni"
                 graphColumns = "Mesi";
                 graphtext = "Totale donazioni in euro";
-                graphCategories = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
+                graphCategories = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto',
+                    'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
             } else {
                 graphTitle = "Visite"
                 graphColumns = "Visite";
@@ -89,7 +88,7 @@ function updatePageCounter(page_name) {
     const data = new URLSearchParams();
     data.append("page_name", page_name);
     data.append("timestamp", new Date().getTime()); // Aggiungo un timestamp casuale per evitare la memorizzazione nella cache
-    fetch("http://localhost:8085/progetto_war_exploded/adminStuff", {
+    fetch("adminStuff", {
         method: "POST",
         headers: {
             "Content-Type": "application/x-www-form-urlencoded"

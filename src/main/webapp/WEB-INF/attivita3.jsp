@@ -1,11 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: lucin
-  Date: 24/08/2023
-  Time: 17:11
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <html>
 <head>
     <title>Tum4World</title>
@@ -17,7 +10,7 @@
 </head>
 <body>
 <script>
-    // chiama updatePageCounte appena la pagina si è caricata completamente
+    // chiama updatePageCounter appena la pagina si è caricata completamente
     document.addEventListener("DOMContentLoaded", function() {
         updatePageCounter("ATTIVITA3");
     });
@@ -29,7 +22,7 @@
         <h1>Cuore Nutriente</h1>
 
         <div class="row">
-            <img src="materiale/attività3-mani.jpg" class="text_img" alt="Immagine">
+            <img src="materiale/attività3-mani.jpg" class="text_img" alt="Mani">
             <p>
                 I volontari di "Cuore Nutriente" preparano con cura pasti equilibrati e variegati, tenendo conto
                 delle esigenze dietetiche individuali. La consegna avviene in modo rispettoso e discreto, garantendo la
@@ -40,7 +33,7 @@
                 soddisfare le necessità fondamentali, "Cuore Nutriente" agisce come una luce di speranza nella comunità,
                 dimostrando che un atto di gentilezza può avere un effetto duraturo.
             </p>
-            <img src="materiale/attività3-mensa.jpg" class="text_img" alt="Immagine">
+            <img src="materiale/attività3-mensa.jpg" class="text_img" alt="Mensa">
         </div>
     </div>
 

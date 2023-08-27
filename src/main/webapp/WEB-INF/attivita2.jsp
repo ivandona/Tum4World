@@ -1,11 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: lucin
-  Date: 24/08/2023
-  Time: 17:11
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <html>
 <head>
     <title>Tum4World</title>
@@ -17,7 +10,7 @@
 </head>
 <body>
 <script>
-    // chiama updatePageCounte appena la pagina si è caricata completamente
+    // chiama updatePageCounter appena la pagina si è caricata completamente
     document.addEventListener("DOMContentLoaded", function() {
         updatePageCounter("ATTIVITA2");
     });
@@ -29,7 +22,7 @@
         <h1>Il Benessere a Portata di Mano</h1>
 
         <div class="row">
-            <img src="materiale/attività2-seduta.jpg" class="text_img" alt="Immagine">
+            <img src="materiale/attività2-seduta.jpg" class="text_img" alt="Seduta dallo psicologo">
             <p>
                 Attraverso la collaborazione con professionisti dedicati, vengono fornite sessioni di consulenza
                 individuali e di gruppo, consentendo ai partecipanti di affrontare sfide emotive e mentali
@@ -41,7 +34,7 @@
                 online accessibili, "Il Benessere a Portata di Mano" offre un prezioso supporto alla
                 comunità, contribuendo a migliorare il benessere mentale e a costruire una rete di sostegno solida.
             </p>
-            <img src="materiale/attività2-cartoon.jpg" class="text_img" alt="Immagine">
+            <img src="materiale/attività2-cartoon.jpg" class="text_img" alt="Psicologo - cartoon">
         </div>
     </div>
 

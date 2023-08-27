@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
     const testo = document.getElementById("quote"); //prendo l'elemento "quote" che contiene la mia frase da cambiare
-    const frasi = [" La vita è per il 10% cosa ti accade e per il 90% come reagisci. (Charles R. Swindoll)",
-        "Ci sono due regole nella vita: 1. Non mollare mai; 2. Non dimenticare mai la regola n° 1. (Duke Ellington)",
-        "Se qualcosa non ti piace, cambiala. Se non puoi cambiarla, cambia il tuo atteggiamento. Non lamentarti. (Maya Angelou)",
-        "Se vuoi qualcosa che non hai mai avuto, devi fare qualcosa che non hai mai fatto. (Thomas Jefferson)",
-        "Niente è davvero difficile se lo si divide in tanti piccoli pezzettini. (Henry Ford)",
-        "Il mio scopo nella vita? Fare solo cose positive. (Zendaya)",
-        "Prima ti ignorano, poi ti deridono, poi ti combattono. Poi vinci. (Mahatma Gandhi)",
-        "Non è mai troppo tardi per essere ciò che avresti voluto essere (George Eliot)"];
+    const frasi = [" La vita è per il 10% cosa ti accade e per il 90% come reagisci.",
+        "Lasciate che vi sveli il segreto che ha portato al mio obiettivo. La mia forza sta solo nella mia tenacia.",
+        "Se qualcosa non ti piace, cambiala. Se non puoi cambiarla, cambia il tuo atteggiamento.",
+        "Sapevo che se avessi fallito non me ne sarei pentito. L’unica cosa della quale potrei pentirmi è non provare.",
+        "Niente è davvero difficile se lo si divide in tanti piccoli pezzettini.",
+        "Il mio scopo nella vita? Fare solo cose positive.",
+        "Un uomo di successo è colui che può gettare solide fondamenta con i mattoni che gli altri gli hanno gettato addosso.",
+        "Non è mai troppo tardi per essere ciò che avresti voluto essere."];
 
     var min = 1;
     var max = frasi.length;

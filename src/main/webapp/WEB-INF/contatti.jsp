@@ -1,18 +1,10 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: eeve1
-  Date: 23/08/2023
-  Time: 17:26
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <html>
 <head>
     <title>Tum4World</title>
-    <link rel="shortcut icon" type="image/png" href="materiale/logo.png">
     <link rel="stylesheet" href="styles/contatti.css">
-    <link rel="stylesheet" href="styles/format.css">
     <script src="scripts/form-validation.js"></script>
+
     <script src="scripts/admin-functions.js"></script>
 </head>
 <body>
@@ -52,4 +44,5 @@
     </div>
     <jsp:include page="Footer.jsp"></jsp:include>
 </body>
+<jsp:include page="Footer.jsp"></jsp:include>
 </html>

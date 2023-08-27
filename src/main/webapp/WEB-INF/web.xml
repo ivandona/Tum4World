@@ -19,10 +19,6 @@
         <servlet-class>it.unitn.disi.progetto.controllers.LoginServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>PageControllerServlet</servlet-name>
-        <servlet-class>it.unitn.disi.progetto.controllers.PageControllerServlet</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>PublicPageController</servlet-name>
         <servlet-class>it.unitn.disi.progetto.controllers.PublicPageController</servlet-class>
     </servlet>
@@ -32,12 +28,12 @@
         <url-pattern>/loginServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>PageControllerServlet</servlet-name>
-        <url-pattern>/pageControllerServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>PublicPageController</servlet-name>
         <url-pattern>/publicPageController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminStuff</servlet-name>
+        <url-pattern>/adminStuff</url-pattern>
     </servlet-mapping>
 
     <session-config>

@@ -23,7 +23,7 @@ public class AccessFilter implements Filter {
         if ("amministratore".equals(page) || "aderente".equals(page) || "simpatizzante".equals(page)) {
             // Se l'utente sta provando ad accedere una pagina privata,
             // giro la richiesta a servlet di login
-            req.getRequestDispatcher("/loginServlet");
+            req.getRequestDispatcher("/loginServlet").forward(request, response);
         }
         // Altrimenti faccio passare la richiesta
         chain.doFilter(request, response);
