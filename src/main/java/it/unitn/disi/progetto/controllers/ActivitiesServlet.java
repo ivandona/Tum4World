@@ -1,7 +1,10 @@
 package it.unitn.disi.progetto.controllers;
 
+import argo.jdom.JdomParser;
 import argo.jdom.JsonNode;
 import it.unitn.disi.progetto.models.UserDAO;
+import org.json.JSONObject;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -33,17 +36,21 @@ public class ActivitiesServlet extends HttpServlet {
         }
     }
 
+    // Metodo per controllare a quali attività è iscritto l'utente
+    // Rimanda indietro un json
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Boolean[] activities = new Boolean[3];
         String username = CookieController.getSomething(request, "username");
         activities = db.getActivities(connection, username);
         if (activities != null) {
-            JsonNode subscribedActivities = object(
-                field("activity_1", booleanNode(activities[0])),
-                field("activity_2", booleanNode(activities[1])),
-                field("activity_3", booleanNode(activities[2]))
-            );
+            JSONObject subscribedActivities = new JSONObject();
+            subscribedActivities.put("activity_1", activities[0]);
+            subscribedActivities.put("activity_2", activities[1]);
+            subscribedActivities.put("activity_3", activities[2]);
+
+            System.out.println(subscribedActivities);
+
             response.setContentType("application/json");
             PrintWriter out = response.getWriter();
             out.print(subscribedActivities);
@@ -53,17 +60,18 @@ public class ActivitiesServlet extends HttpServlet {
         }
     }
 
+    // Metodo per inserire/togliere iscrizione attività dal db
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = CookieController.getSomething(request,"username");
-        String[] parameters = new String[3];
+
         Boolean activity_1 = Boolean.parseBoolean(request.getParameter("activity_1"));
         Boolean activity_2 = Boolean.parseBoolean(request.getParameter("activity_2"));
         Boolean activity_3 = Boolean.parseBoolean(request.getParameter("activity_3"));
+
         System.out.println(activity_1);
         System.out.println(activity_2);
         System.out.println(activity_3);
-        System.out.println(request.getParameter("activity_1"));
 
         try {
             db.setActivities(connection, username, activity_1, activity_2, activity_3);
@@ -74,6 +82,7 @@ public class ActivitiesServlet extends HttpServlet {
             e.printStackTrace();
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);
         }
+        request.getRequestDispatcher("/loginServlet").forward(request, response);
     }
 
     public void destroy() {

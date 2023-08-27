@@ -55,7 +55,7 @@ public class LoginServlet extends HttpServlet {
             //login ha avuto successo
 
             CookieController.addCookies(request, response, verifiedUser);
-
+            System.out.println(verifiedUser.getUserRole());
             //controllo il ruolo dell'utente e rimando alla pagina corrispondente
             switch(verifiedUser.getUserRole()) {
                 case AMMINISTRATORE:
