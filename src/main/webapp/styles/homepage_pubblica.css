@@ -6,9 +6,9 @@ body, html {
 }
 
 .img_principale {
+    margin-left: 3%;
     margin-top: 10px;
     max-width: 93%;
-    margin-left: 3%;
 }
 
 .lower_container {

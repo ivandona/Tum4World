@@ -6,33 +6,37 @@ body, html {
 }
 
 .container {
-    width: 93%;
-    margin-left: 2%;
+    width: 92%;
+    margin: 3%;
 }
 .container h1 {
     text-align: center;
 }
 
 .row {
+    position: relative;
     display: flex;
-    margin-top: 2%;
-    width: 100%;
+    margin: auto;
+    margin-bottom: 1%;
+    width: 50%;
+}
+.row label, input {
+    margin: 1%;
 }
 
 .col {
-    margin: 1%;
     width: 50%;
+    margin: 0;
 }
 
 .etichetta {
     font-family: Verdana;
-    padding: 2%;
 }
 
 .input {
-    width: 100%;
-    padding: 1%;
-    margin: 1%;
+    width: 90%;
+    padding: 2%;
+    margin: 3%;
     font-family: Helvetica, Arial;
     box-sizing: border-box;
     border-radius: 5px;
@@ -40,20 +44,24 @@ body, html {
 }
 
 .button {
+    margin: auto;
     padding: 10px 30px;
     border: none;
     border-radius: 5px;
     font-family: Verdana;
+    cursor: pointer;
 }
 
 input[type=submit] {
-    float: right;
+    position: absolute;
+    right: 4%;
     background-color: #3498db;
     color: white;
 }
 
 input[type=reset] {
-    float: left;
+    position: absolute;
+    left: 0;
     background-color:black;
     color: white;
 }

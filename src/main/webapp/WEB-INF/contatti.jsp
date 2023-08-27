@@ -2,9 +2,10 @@
 <html>
 <head>
     <title>Tum4World</title>
+    <link rel="shortcut icon" type="image/png" href="materiale/logo.png">
     <link rel="stylesheet" href="styles/contatti.css">
+    <link rel="stylesheet" href="styles/format.css">
     <script src="scripts/form-validation.js"></script>
-
     <script src="scripts/admin-functions.js"></script>
 </head>
 <body>
@@ -13,8 +14,8 @@
             updatePageCounter("CONTATTI");
         });
     </script>
-
     <jsp:include page="Header.jsp"></jsp:include>
+
     <div class="pagina">
         <h1>Contatti</h1>
         <div class="contact-info">
@@ -44,5 +45,4 @@
     </div>
     <jsp:include page="Footer.jsp"></jsp:include>
 </body>
-<jsp:include page="Footer.jsp"></jsp:include>
 </html>

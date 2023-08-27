@@ -9,13 +9,11 @@
     <script src="scripts/admin-functions.js"></script>
 </head>
 <body>
-<script>
-    // chiama updatePageCounter appena la pagina si è caricata completamente
-    document.addEventListener("DOMContentLoaded", function() {
-        updatePageCounter("CHI_SIAMO"   );
-    });
-</script>
-
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            updatePageCounter("CHI_SIAMO"   );
+        });
+    </script>
     <jsp:include page="Header.jsp"></jsp:include>
 
     <div class="storia">

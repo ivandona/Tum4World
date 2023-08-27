@@ -11,6 +11,7 @@ body, html {
 }
 .pagina h1 {
     text-align: center;
+    margin-bottom: 2%   ;
 }
 
 .contact-info {
@@ -37,6 +38,7 @@ input[type=text], input[type=email], select, textarea {
 }
 
 .menu {
+    font-size: medium;
     margin-bottom: 0.5%;
     line-height: 20px;
 }
@@ -52,11 +54,12 @@ input[type=text], input[type=email], select, textarea {
     border: none;
     border-radius: 5px;
     font-family: Verdana;
+    cursor: pointer;
 }
 
 input[type=submit] {
     position: absolute;
-    right: 1%;
+    right: 0;
     background-color: #3498db;
     color: white;
 }
