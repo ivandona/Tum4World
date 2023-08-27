@@ -83,7 +83,7 @@
 
 <script>
     //robe che non riesco a spostare nel js (wtf??)
-    let resetButtonAdded = false;
+    var resetButtonAdded = false;
     const servletButton = document.createElement("button");
     const users = document.getElementById("users");
     const simpatizzanti = document.getElementById("simpatizzanti");
@@ -113,6 +113,7 @@
         redirectToAdminStuffGraph("visits");
 
         if (!resetButtonAdded) {
+            debugger;
             servletButton.className = "button";
             // servletButton.id = "resetButton"
             servletButton.textContent = "Reset delle visite";
@@ -120,8 +121,9 @@
                 resetVisits();
             });
 
-            // Aggiungi il bottone alla pagina
+            // Aggiungo il bottone alla pagina
             tableContainer.appendChild(servletButton);
+            tableContainer.style.display = "block";
             resetButtonAdded = true;
         }
     });
@@ -130,6 +132,11 @@
         redirectToAdminStuffGraph("donations");
     });
 
+
+    /**
+     * Funzione utilizzata per rimuover il pulsante "Reset delle viiste" ogni volta che si clicca su un altro pulsante
+     * (eccetto "mostra visite")
+     */
     function removeResetButton() {
         if (resetButtonAdded) {
             servletButton.remove();

@@ -1,3 +1,5 @@
+//L'url è "http://localhost:"+numero di porta del progetto (lo trovato su edit confguration)+
+// "/"+nome del progetto+"/adminStuff"
 function redirectToAdminStuff(button_pressed) {
     var url = "http://localhost:8085/progetto_war_exploded/adminStuff?button_pressed="+encodeURIComponent(button_pressed);
     fetch(url)
@@ -5,11 +7,11 @@ function redirectToAdminStuff(button_pressed) {
         .then(data => {
             updateTableContent(data)
         })
-        .catch(error => console.error("Errore 'redirectToAdminStuff':", error));
+        .catch(error => console.error("Errore nella funzione 'redirectToAdminStuff':", error));
 }
 
 /**
- * Funzione utilizzata per impostare a 0 tutte le visite al sito
+ * Funzione utilizzata per impostare a 0 tutte le visite al sito e aggiornare il grafico con i nuovi dati
  */
 function resetVisits() {
     const data = new URLSearchParams();
@@ -23,11 +25,11 @@ function resetVisits() {
         body: data
     })
         .then(response => {
-            // Gestisci la risposta qui, se necessario
+            // Aggiorno il grafico
+            redirectToAdminStuffGraph("visits");
         })
-        .catch(error => console.error("Errore 'updatePageCounter':", error));
+        .catch(error => console.error("Errore nella funzione 'resetVisits':", error));
 }
-
 
 function redirectToAdminStuffGraph(button_pressed) {
     var url = "http://localhost:8085/progetto_war_exploded/adminStuff?button_pressed="+encodeURIComponent(button_pressed);
@@ -47,7 +49,9 @@ function redirectToAdminStuffGraph(button_pressed) {
                 graphCategories = ['Totale', 'Home', 'Chi siamo', 'Attività', 'Attività 1', 'Attività 2', 'Attività 3',
                     'Contatti', 'Sign in', 'Login', 'Simpatizzante', 'Aderente'];
             }
+
             deleteTable();
+
             var graphContainer = document.getElementById("graphContainer");
             var graphContent = document.getElementById("graphContent");
 
@@ -72,10 +76,9 @@ function redirectToAdminStuffGraph(button_pressed) {
                     data: graphData
                 }]
             });
-
             graphContainer.style.display = "block";
         })
-        .catch(error => console.error('Errore nella richiesta fetch:', error));
+        .catch(error => console.error("Errore nella funzione 'redirectToAdminStuffGraph':", error));
 }
 
 /**
@@ -92,17 +95,12 @@ function updatePageCounter(page_name) {
             "Content-Type": "application/x-www-form-urlencoded"
         },
         body: data
-    })
-        .then(response => {
-            // Gestisci la risposta qui, se necessario
-        })
-        .catch(error => console.error("Errore 'updatePageCounter':", error));
+    });
 }
 
-
 /**
- * Funzione utilizzata nei primi tre pulsanti: consente di eliminare la tabelle già esistente (se presente) e di mostrare
- * a schermo i dati raccolti
+ * Funzione utilizzata nei primi tre pulsanti: consente di eliminare la tabella o il grafico già esistenti (se presenti)
+ * e di mostrare a schermo i dati raccolti
  * @param content sono i dati della tabella che verranno mostrati a schermo
  */
 function updateTableContent(content) {
@@ -117,12 +115,12 @@ function updateTableContent(content) {
 }
 
 /**
- * Funzione utilizzata per eliminare la tabella (se già presente)
+ * Funzione utilizzata per eliminare la tabella o il grafico (se già presenti) una volta che viene premuto un pulsante
  */
 function deleteTable() {
     var tableContent = document.getElementById("tableContent");
     var graphContainer = document.getElementById("graphContainer");
+
     graphContainer.style.display = "none";
-    // Nascondi la tabella esistente (se presente)
     tableContent.innerHTML = "";
 }

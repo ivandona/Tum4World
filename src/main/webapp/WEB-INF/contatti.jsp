@@ -23,29 +23,29 @@
 </script>
 
 <jsp:include page="Header.jsp"></jsp:include>
-<body>
-    <h1>Contatti</h1>
-    <div class="contact-info">
-        <p>Email: tum4world@nessunonoluogonoesiste.com</p>
-        <p>Telefono: +39 1234567890</p>
-    </div>
-    <div class="contact-form">
-        <form onsubmit="return validateContactsForm();" action="${pageContext.request.contextPath}/sendEmailServlet" method="post">
-            <label for="name_surname">Nome e Cognome: </label>
-            <input type="text" id="name_surname" name="name_surname" required><br>
-            <label for="email">Indirizzo email: </label>
-            <input type="text" id="email" name="email" required><br>
-            <label for="reason">Motivo di contatto:</label>
-            <select id="reason" name="reason" required>
-                <option value="Suggerimento attività">Vorrei suggerire una nuova attività</option>
-                <option value="Report bug">Segnalare un bug</option>
-                <option value="Altro">Altro</option>
-            </select><br>
-            <textarea name="message" rows="10" cols="60" required></textarea> <br>
-            <input class="button" type="submit" value="Invia">
-            <input class="button" type="reset" value="Reset">
-        </form>
-    </div>
+<h1>Contatti</h1>
+<div class="contact-info">
+    <p>Email: tum4world@nessunonoluogonoesiste.com</p>
+    <p>Telefono: +39 1234567890</p>
+</div>
+<div class="contact-form">
+    <form onsubmit="return validateContactsForm();" action="${pageContext.request.contextPath}/sendEmailServlet"
+          method="post">
+        <label for="name_surname">Nome e Cognome: </label>
+        <input type="text" id="name_surname" name="name_surname" required><br>
+        <label for="email">Indirizzo email: </label>
+        <input type="text" id="email" name="email" required><br>
+        <label for="reason">Motivo di contatto:</label>
+        <select id="reason" name="reason" required>
+            <option value="Suggerimento attività">Vorrei suggerire una nuova attività</option>
+            <option value="Report bug">Segnalare un bug</option>
+            <option value="Altro">Altro</option>
+        </select><br>
+        <textarea name="message" rows="10" cols="60" required></textarea> <br>
+        <input class="button" type="submit" value="Invia">
+        <input class="button" type="reset" value="Reset">
+    </form>
+</div>
 </body>
 <jsp:include page="Footer.jsp"></jsp:include>
 </html>
