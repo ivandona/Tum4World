@@ -39,7 +39,8 @@ function redirectToAdminStuffGraph(button_pressed) {
                 graphTitle = "Donazioni"
                 graphColumns = "Mesi";
                 graphtext = "Totale donazioni in euro";
-                graphCategories = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
+                graphCategories = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto',
+                    'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
             } else {
                 graphTitle = "Visite"
                 graphColumns = "Visite";
