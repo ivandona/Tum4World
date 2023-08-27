@@ -30,7 +30,6 @@ public class SignInServlet extends HttpServlet {
         try {
             Class.forName("org.apache.derby.jdbc.ClientDriver");
             connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
-            System.out.println("SERVLET INIZIALIZZATA\n");
         } catch (ClassNotFoundException | SQLException ex) {
             System.out.println(ex);
         }
@@ -77,7 +76,7 @@ public class SignInServlet extends HttpServlet {
             request.setAttribute("errorMessage", "37: username già preso");
             request.getRequestDispatcher("/WEB-INF/sign-in.jsp").forward(request, response);
         } else {
-            //TODO: inserire cookies/sessione
+            //inserisco i cookies
             CookieController.addCookies(request, response, user);
 
             //username non esiste nel db, quindi registrazione confermata

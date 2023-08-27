@@ -32,7 +32,7 @@ public class CookieController {
      *
      * @param request
      * @return true in caso il valore "cookie_accepted" sia true,
-     *         false in caso il cookie non sia stato trovato (aka, i cookies sono disabilitati dall'utente)
+     *         false in caso il cookie non sia stato trovato (ovvero i cookies sono stati disabilitati dall'utente)
      */
     public static boolean checkAcceptedCookies(HttpServletRequest request) {
         Cookie[] cookies = request.getCookies();
@@ -90,13 +90,8 @@ public class CookieController {
 
         //In caso l'utente non volesse i cookies, li cerco sulla session
         HttpSession session = request.getSession();
-        String somethingFromSession = (String) session.getAttribute(something);
 
-        if (somethingFromSession == null) {
-            System.out.println(something+" della session null");
-        }
-
-        return somethingFromSession;
+        return (String) session.getAttribute(something);
     }
 
     public static void addCookieOrAttribute(HttpServletRequest request, HttpServletResponse response, String name, String value) {
@@ -146,5 +141,4 @@ public class CookieController {
             session.removeAttribute("password");
         }
     }
-
 }

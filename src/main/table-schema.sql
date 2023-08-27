@@ -16,6 +16,8 @@ CREATE TABLE USERS
 );
 
 INSERT INTO USERS VALUES ('Admin', 'Admin', 'admin@gmail.com', '2000-01-01', '33366699', 'AMMINISTRATORE', 'admin', '37Adm1n!', 'false', 'false', 'false');
+INSERT INTO USERS VALUES ('Simp', 'Atizzante', 'simpatizzante@gmail.com', '2000-01-01', '33366699', 'SIMPATIZZANTE', 'simp', '37Adm1n!', 'false', 'false', 'false');
+INSERT INTO USERS VALUES ('Ad', 'Erente', 'aderente@gmail.com', '2000-01-01', '33366699', 'ADERENTE', 'ader', '37Adm1n', 'false', 'false', 'false');
 
 CREATE TABLE VISITS
 (

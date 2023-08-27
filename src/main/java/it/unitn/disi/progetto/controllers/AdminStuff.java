@@ -29,7 +29,6 @@ public class AdminStuff extends HttpServlet {
         try {
             Class.forName("org.apache.derby.jdbc.ClientDriver");
             connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
-            System.out.println("SERVLET INIZIALIZZATA\n");
         } catch (ClassNotFoundException | SQLException ex) {
             System.out.println(ex);
         }
@@ -72,14 +71,6 @@ public class AdminStuff extends HttpServlet {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            // Chiudi le risorse
-            try {
-                if (rs != null) rs.close();
-                if (stmt != null) stmt.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
         }
     }
 
@@ -100,14 +91,6 @@ public class AdminStuff extends HttpServlet {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            // Chiudi le risorse
-            try {
-                if (rs != null) rs.close();
-                if (stmt != null) stmt.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
         }
     }
 
@@ -153,16 +136,7 @@ public class AdminStuff extends HttpServlet {
                 }
             }
         } catch (SQLException e) {
-            // Gestione delle eccezioni
             e.printStackTrace();
-        } finally {
-            try {
-                if (rs != null) {
-                    rs.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
         }
 
         return visits;
@@ -221,47 +195,11 @@ public class AdminStuff extends HttpServlet {
 
     public void updateDatabaseWithVisits(Statement stmt, ResultSet rs, String page_name) {
         try {
-            //Prendo in input la pagina e aggiorno il valore sul contatore della pagina indicata
             stmt.executeUpdate("UPDATE VISITS SET TOTALE = VISITS.TOTALE + 1");
 
+            //Prendo in input la pagina e aggiorno il valore sul contatore della pagina indicata
             String updateColumn = "UPDATE VISITS SET "+page_name+" = VISITS."+page_name+" + 1";
             stmt.executeUpdate(updateColumn);
-
-//            switch (page_name) {
-//                case "home":
-//                    rs = stmt.executeQuery("UPDATE VISITS SET HOME = VISITS.HOME + 1");
-//                    break;
-//                case "chi_siamo":
-//                    rs = stmt.executeQuery("UPDATE VISITS SET CHI_SIAMO = VISITS.CHI_SIAMO + 1");
-//                    break;
-//                case "attivita":
-//                    rs = stmt.executeQuery("UPDATE VISITS SET ATTIVITA = VISITS.ATTIVITA + 1");
-//                    break;
-//                case "attivita1":
-//                    rs = stmt.executeQuery("UPDATE VISITS SET ATTIVITA1 = VISITS.ATTIVITA1 + 1");
-//                    break;
-//                case "attivita2":
-//                    rs = stmt.executeQuery("UPDATE VISITS SET ATTIVITA2 = VISITS.ATTIVITA2 + 1");
-//                    break;
-//                case "attivita3":
-//                    rs = stmt.executeQuery("UPDATE VISITS SET ATTIVITA3 = VISITS.ATTIVITA3 + 1");
-//                    break;
-//                case "contatti":
-//                    rs = stmt.executeQuery("UPDATE VISITS SET CONTATTI = VISITS.CONTATTI + 1");
-//                    break;
-//                case "invio_confermato":
-//                    rs = stmt.executeQuery("UPDATE VISITS SET INVIO_CONFERMATO = VISITS.INVIO_CONFERMATO + 1");
-//                    break;
-//                case "sign_in":
-//                    rs = stmt.executeQuery("UPDATE VISITS SET SIGN_IN = VISITS.SIGN_IN + 1");
-//                    break;
-//                case "registrazione_confermata":
-//                    rs = stmt.executeQuery("UPDATE VISITS SET REGISTRAZIONE_CONFERMATA = VISITS.REGISTRAZIONE_CONFERMATA + 1");
-//                    break;
-//                case "login":
-//                    rs = stmt.executeQuery("UPDATE VISITS SET LOGIN = VISITS.LOGIN + 1");
-//                    break;
-//            }
         } catch (SQLException e) {
             e.printStackTrace();
         }

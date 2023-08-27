@@ -17,14 +17,14 @@
 </head>
 <body>
 <script>
-    // chiama updatePageCounte appena la pagina si è caricata completamente
+    // chiama updatePageCounter appena la pagina si è caricata completamente
     document.addEventListener("DOMContentLoaded", function() {
         updatePageCounter("HOME");
     });
 </script>
     <jsp:include page="Header.jsp"></jsp:include>
 
-    <img src="materiale/mani.jpg" class="img_principale" alt="Immagine">
+    <img src="materiale/home-pace.jpg" class="img_principale" alt="Immagine">
     <div class="lower_container">
         <img src="materiale/logo.png" class="logo" alt="Logo">
         <p>

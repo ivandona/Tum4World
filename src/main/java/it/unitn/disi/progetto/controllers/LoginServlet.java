@@ -54,8 +54,6 @@ public class LoginServlet extends HttpServlet {
         if(verifiedUser != null) {
             //login ha avuto successo
 
-            //TODO: mettere informazioni utente in cookie/session
-            //Controllo che l'utente abbia accettato i cookies
             CookieController.addCookies(request, response, verifiedUser);
             System.out.println(verifiedUser.getUserRole());
             //controllo il ruolo dell'utente e rimando alla pagina corrispondente
