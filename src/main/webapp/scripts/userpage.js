@@ -1,20 +1,27 @@
 const datiBtn = document.getElementById("datiBtn");
 const attivitaBtn = document.getElementById("attivitaBtn");
+const donazioneBtn = document.getElementById("donazioneBtn");
 const deleteUserBtn = document.getElementById("deleteUserBtn");
 
 const dati = document.getElementById("dati");
 const attivita = document.getElementById("attivita");
+const donazione = document.getElementById("donazione");
 
 datiBtn.addEventListener("click", () => {
     dati.classList.toggle("hidden");
     attivita.classList.add("hidden");
+    donazione.classList.add("hidden");
 });
-
 attivitaBtn.addEventListener("click", () => {
+    getActivities(context);
     attivita.classList.toggle("hidden");
     dati.classList.add("hidden");
-
-    getActivities(context);
+    donazione.classList.add("hidden");
+});
+donazioneBtn.addEventListener("click", () => {
+    donazione.classList.toggle("hidden");
+    dati.classList.add("hidden");
+    attivita.classList.add("hidden");
 });
 
 deleteUserBtn.addEventListener("click", () => {
@@ -34,19 +41,6 @@ deleteUserBtn.addEventListener("click", () => {
         .catch(error => {
             console.error("Error:", error);
         });
-
-    /*url = context + "/logoutServlet";
-    fetch(url)
-        .then(response => {
-            if (response.ok) {
-                console.log("User logged out");
-            } else {
-                console.error("Request failed with status:", response.status);
-            }
-        })
-        .catch(error => {
-            console.error("Error:", error);
-        });*/
 });
 
 async function getActivities(context) {
@@ -70,23 +64,3 @@ async function getActivities(context) {
         })
         .catch(error => console.error("Errore fetch di getActivities: ", error))
 }
-
-/*  function setActivities(context) {
-    const form = document.getElementById("activities");
-    let url = context + "/activitiesServlet";
-    form.onsubmit = async (e) => {
-        const formData = new FormData(form);
-        for(let [name, value] of formData) {
-            alert(`${name} = ${value}`); // key1 = value1, then key2 = value2
-        }
-        e.preventDefault();
-        let response = await fetch(url, {
-            method: "POST",
-            body: formData
-        });
-
-        let result = response.status;
-
-
-    }
-}*/
