@@ -60,7 +60,20 @@ public class UserDAO {
             e.printStackTrace();
         }
     }
-
+    public void saveDonation(Connection connection, String username, int importo, int giorno, int mese, int anno) {
+        String query = "INSERT INTO DONATIONS (USERNAME, VALUE_DONATION, DONATION_DAY, DONATION_MONTH, DONATION_YEAR) " +
+                "VALUES (?, ?, ?, ?, ?)";
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, username);
+            statement.setInt(2, importo);
+            statement.setInt(3, giorno);
+            statement.setInt(4, mese);
+            statement.setInt(5, anno);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
     // Cancella l'utente dal db
     public void deleteUser(Connection connection, String username) {
         String query = "DELETE FROM users WHERE username = ?";

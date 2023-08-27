@@ -17,7 +17,7 @@
 
     <jsp:include page="Header.jsp"></jsp:include>
 
-    <img src="materiale/home-labirinto.jpg" class="img_principale" alt="Labirinto parole">
+    <img src="materiale/home-associazione.jpg" class="img_principale" alt="Associazione">
     <div class="lower_container">
         <img src="materiale/logo.png" class="logo" alt="Logo">
         <p>

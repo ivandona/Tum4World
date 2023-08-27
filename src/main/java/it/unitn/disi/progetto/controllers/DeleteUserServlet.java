@@ -12,8 +12,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-@WebServlet(name = "deleteUserServlet", value = "/deleteUserServlet")
-public class deleteUserServlet extends HttpServlet {
+@WebServlet(name = "DeleteUserServlet", value = "/deleteUserServlet")
+public class DeleteUserServlet extends HttpServlet {
     private static final String DB_URL = "jdbc:derby://localhost:1527/tum-db";
     private static final String DB_USERNAME = "APP";
     private static final String DB_PASSWORD = "password";
