@@ -2,7 +2,6 @@
 <html>
     <head>
         <title>Tum4World</title>
-        <link rel="stylesheet" href="styles/style.css">
         <link rel="stylesheet" type="text/css" href="styles/simpatizzante.css">
         <script>const context = "${pageContext.request.contextPath}";</script>
         <script src="scripts/admin-functions.js"></script>
