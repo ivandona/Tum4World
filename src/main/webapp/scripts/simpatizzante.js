@@ -18,7 +18,7 @@ attivitaBtn.addEventListener("click", () => {
 });
 
 deleteUserBtn.addEventListener("click", () => {
-    let url = "http://localhost:8080/progetto_war_exploded/deleteUserServlet";
+    let url = context + "/deleteUserServlet";
     fetch(url, {
         method: "POST"
     })
@@ -26,6 +26,7 @@ deleteUserBtn.addEventListener("click", () => {
             // Check response status and handle accordingly
             if (response.ok) {
                 console.log("User deleted.");
+                location.reload();
             } else {
                 console.error("Request failed with status:", response.status);
             }
@@ -33,6 +34,19 @@ deleteUserBtn.addEventListener("click", () => {
         .catch(error => {
             console.error("Error:", error);
         });
+
+    /*url = context + "/logoutServlet";
+    fetch(url)
+        .then(response => {
+            if (response.ok) {
+                console.log("User logged out");
+            } else {
+                console.error("Request failed with status:", response.status);
+            }
+        })
+        .catch(error => {
+            console.error("Error:", error);
+        });*/
 });
 
 async function getActivities(context) {

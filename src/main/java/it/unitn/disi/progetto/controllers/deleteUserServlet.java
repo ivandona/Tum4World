@@ -36,12 +36,16 @@ public class deleteUserServlet extends HttpServlet {
         String username = CookieController.getSomething(request, "username");
         try {
             db.deleteUser(connection, username);
+            //request.getRequestDispatcher("/logoutServlet").forward(request, response);
+            /*CookieController.deleteAllCookiesAndAttributes(request, response);
+            response.sendRedirect("index.jsp");*/
+
             request.getRequestDispatcher("/logoutServlet").forward(request, response);
-            response.setStatus(HttpServletResponse.SC_OK);
         }
         catch (Exception e){
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);
         }
+        System.out.println("Fine servlet delete user");
     }
 
     public void destroy() {

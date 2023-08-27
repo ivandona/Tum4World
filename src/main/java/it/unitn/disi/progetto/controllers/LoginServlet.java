@@ -33,7 +33,8 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username;
         String password;
-        UserBean verifiedUser = new UserBean();
+        UserBean verifiedUser = null;
+        String errorMessage;
         System.out.println("PRIMA DELL'IF");
         // Controllo se ho già le credenziali dell'utente nei cookies/session
         if (CookieController.getSomething(request, "username") != null
@@ -49,7 +50,13 @@ public class LoginServlet extends HttpServlet {
             System.out.println("FORM");
         }
 
-        verifiedUser = db.checkCredentials(connection, username, password);
+        if(username != "" && username != null && password != "" && password != null) {
+            verifiedUser = db.checkCredentials(connection, username, password);
+            errorMessage = "37: Username non esiste o credenziali sbagliate";
+        } else {
+            errorMessage = "";
+        }
+
 
         if(verifiedUser != null) {
             //login ha avuto successo
@@ -71,7 +78,7 @@ public class LoginServlet extends HttpServlet {
         } else {
             //login non ha avuto successo
             //rimando alla pagina di login
-            request.setAttribute("errorMessage", "37: credenziali sbagliate o username inesistente");
+            request.getSession().setAttribute("errorMessage", errorMessage);
             request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
         }
     }

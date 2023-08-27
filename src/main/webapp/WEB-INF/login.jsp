@@ -38,7 +38,7 @@
 
     <br>
 
-    <%= request.getAttribute("errorMessage") != null ? request.getAttribute("errorMessage") : "" %>
+    <%= request.getSession().getAttribute("errorMessage") != null ? request.getSession().getAttribute("errorMessage") : "" %>
   </form>
 </div>
 </body>
