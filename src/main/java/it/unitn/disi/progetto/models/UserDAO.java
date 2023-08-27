@@ -62,10 +62,10 @@ public class UserDAO {
     }
 
     // Cancella l'utente dal db
-    public void deleteUser(Connection connection, UserBean user) {
+    public void deleteUser(Connection connection, String username) {
         String query = "DELETE FROM users WHERE username = ?";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
-            statement.setString(1, user.getUsername());
+            statement.setString(1, username);
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
