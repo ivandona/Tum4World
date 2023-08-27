@@ -39,6 +39,10 @@
         <servlet-name>PublicPageController</servlet-name>
         <url-pattern>/publicPageController</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminStuff</servlet-name>
+        <url-pattern>/adminStuff</url-pattern>
+    </servlet-mapping>
 
     <session-config>
         <session-timeout>10</session-timeout>
