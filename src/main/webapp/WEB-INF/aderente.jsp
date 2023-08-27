@@ -76,7 +76,6 @@
                 </form>
         </div>
     </div>
-
         <script src="scripts/show-personal-info.js"></script>
         <script src="scripts/userpage.js"></script>
         <jsp:include page="Footer.jsp"></jsp:include>
