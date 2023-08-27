@@ -54,18 +54,19 @@ public class LoginServlet extends HttpServlet {
         if(verifiedUser != null) {
             //login ha avuto successo
 
-            //TODO: mettere informazioni utente in cookie/session
-            //Controllo che l'utente abbia accettato i cookies
             CookieController.addCookies(request, response, verifiedUser);
 
             //controllo il ruolo dell'utente e rimando alla pagina corrispondente
             switch(verifiedUser.getUserRole()) {
                 case AMMINISTRATORE:
                     request.getRequestDispatcher("/WEB-INF/amministratore.jsp").forward(request, response);
+                    break;
                 case ADERENTE:
                     request.getRequestDispatcher("/WEB-INF/aderente.jsp").forward(request, response);
+                    break;
                 case SIMPATIZZANTE:
                     request.getRequestDispatcher("/WEB-INF/simpatizzante.jsp").forward(request, response);
+                    break;
             }
         } else {
             //login non ha avuto successo

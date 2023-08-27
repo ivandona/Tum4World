@@ -17,7 +17,7 @@
 </head>
 <body>
 <script>
-    // chiama updatePageCounte appena la pagina si è caricata completamente
+    // chiama updatePageCounter appena la pagina si è caricata completamente
     document.addEventListener("DOMContentLoaded", function() {
         updatePageCounter("CHI_SIAMO");
     });
@@ -62,7 +62,7 @@
                     filantropi guidati dalla visione di un'Italia in cui nessuno debba soffrire a causa della povertà,
                     delle disuguaglianze o delle catastrofi naturali. <br>
                 </p>
-                <img src="" class="side_img" alt="Immagine">
+                <img src="materiale/chi_siamo-persone.jpg" class="side_img" alt="Immagine">
             </div>
         </div>
         <div class="paragrafo">
@@ -76,7 +76,7 @@
                     lungo termine per affrontare le radici strutturali della povertà. Abbiamo lavorato fianco a fianco
                     con le comunità locali per migliorare l'istruzione, la sanità e lo sviluppo economico sostenibile.<br>
                 </p>
-                <img src="" class="side_img" alt="Immagine">
+                <img src="materiale/chi_siamo-scritte.png" class="side_img" alt="Immagine">
             </div>
         </div>
         <div class="paragrafo">
@@ -96,7 +96,7 @@
                     sensibilizzazione e cooperazione con partner locali e internazionali per sostenere
                     le iniziative umanitarie.<br>
                 </p>
-                <img src="" class="side_img" alt="Immagine">
+                <img src="materiale/chi_siamo-grattacielo.jpg" class="side_img" alt="Immagine">
             </div>
         </div>
         <div class="paragrafo">
@@ -113,7 +113,7 @@
                     ottenuti nell'ideazione e nella creazione di un villagio in mezzo ai boschi del Trentino completamente
                     autosostenibile e ad impatto zero.<br>
                 </p>
-                <img src="" class="side_img" alt="Immagine">
+                <img src="materiale/chi_siamo-trofeo.jpg" class="side_img" alt="Immagine">
             </div>
         </div>
     </div>

@@ -19,7 +19,7 @@
     <jsp:include page="Header.jsp"></jsp:include>
 
     <script>
-        // chiama updatePageCounte appena la pagina si è caricata completamente
+        // chiama updatePageCounter appena la pagina si è caricata completamente
         document.addEventListener("DOMContentLoaded", function() {
             updatePageCounter("ATTIVITA");
         });
