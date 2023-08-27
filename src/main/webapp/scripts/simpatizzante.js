@@ -13,9 +13,34 @@ datiBtn.addEventListener("click", () => {
 attivitaBtn.addEventListener("click", () => {
     attivita.classList.toggle("hidden");
     dati.classList.add("hidden");
+
+    getActivities(context);
 });
 
-function setActivities(context) {
+async function getActivities(context) {
+    let url = context + "/activitiesServlet"
+    fetch(url)
+        .then(response => response.json())
+        .then(activities => {
+            console.log(activities);
+            for (let activity in activities) {
+                console.log(activity);
+                console.log(activities[activity]);
+                let checkbox = document.getElementById(activity);
+                if (activities[activity]) {
+                    console.log("Iscritto a: " + activity)
+                    checkbox.checked = true;
+                } else {
+                    console.log("Non iscritto a: " + activity)
+                    checkbox.checked = false;
+                }
+            }
+        })
+        .catch(error => console.error("Errore fetch di getActivities: ", error))
+}
+
+
+/*  function setActivities(context) {
     const form = document.getElementById("activities");
     let url = context + "/activitiesServlet";
     form.onsubmit = async (e) => {
@@ -33,36 +58,4 @@ function setActivities(context) {
 
 
     }
-}
-
-
-/*
-function setActivities(context) {
-    const form = document.getElementById("activities");
-    form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Blocco l'invio del form
-
-        const formData = new FormData(form); // Prendo dati dal form
-        for(let [name, value] of formData) {
-            alert(`${name} = ${value}`); // key1 = value1, then key2 = value2
-        }
-        let url = context + "/activitiesServlet";
-        // Costruisco e mando fetch
-        fetch(url, {
-            method: "POST",
-            body: formData
-        })
-            .then(response => {
-                // Check response status and handle accordingly
-                if (response.ok) {
-                    console.log("Data received and processed successfully.");
-                } else {
-                    console.error("Request failed with status:", response.status);
-                }
-            })
-            .catch(error => {
-                console.error("Error:", error);
-            });
-    });
-}
-*/
+}*/

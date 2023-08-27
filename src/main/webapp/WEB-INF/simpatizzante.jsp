@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/simpatizzante.css">
     <title>Tum4World</title>
-
+    <script>const context = "${pageContext.request.contextPath}";</script>
     <script src="scripts/admin-functions.js"></script>
 </head>
 <body>
@@ -52,9 +52,6 @@
             </form>
         </div>
     </div>
-    <script>
-        const context = "${pageContext.request.contextPath}";
-    </script>
     <script src="scripts/show-personal-info.js"></script>
     <script src="scripts/simpatizzante.js"></script>
 
