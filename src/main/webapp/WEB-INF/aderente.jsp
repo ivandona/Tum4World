@@ -9,7 +9,6 @@
 </head>
 <body>
 <script>
-    // chiama updatePageCounte appena la pagina si è caricata completamente
     document.addEventListener("DOMContentLoaded", function() {
         updatePageCounter("ADERENTE");
     });
