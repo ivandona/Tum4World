@@ -25,8 +25,6 @@
                     <li> <a href="${pageContext.request.contextPath}/publicPageController?page=contatti"> Contatti </a> </li>
                     <li> <a href="${pageContext.request.contextPath}/publicPageController?page=sign-in"> Sign-in </a> </li>
                     <li> <a href="${pageContext.request.contextPath}/loginServlet"> Login </a> </li>
-
-                    <li> <a href="${pageContext.request.contextPath}/publicPageController?page=amministratore"> Sign-in </a> </li>
                 </ul>
             </nav>
         </header>
