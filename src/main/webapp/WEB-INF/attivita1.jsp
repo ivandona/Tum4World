@@ -25,23 +25,24 @@
     <jsp:include page="Header.jsp"></jsp:include>
 
     <div class="page">
-        <h1>Progetto Verde Catanzaro</h1>
+        <h1>Sangue Solidale</h1>
 
         <div class="row">
-            <img src="materiale/attività1-catanzaro.jpg" class="text_img" alt="Immagine">
+            <img src="materiale/attività1-sangue.jpg" class="text_img" alt="Sangue">
             <p>
-                L'attività coinvolge la piantumazione di una vasta varietà di alberi autoctoni, adattati
-                alle condizioni del suolo e del clima locale. Questa iniziativa non solo mira a migliorare l'ecosistema
-                locale, ma anche a mitigare i cambiamenti climatici attraverso la cattura di carbonio e la creazione
-                di microclimi più freschi.<br>
-
-                Il progetto coinvolge attivamente la comunità locale, organizzando giornate di piantumazione
-                partecipativa, laboratori educativi sul valore delle foreste e sulla biodiversità, nonché la
-                promozione di una maggiore consapevolezza ambientale. Con il tempo, ci si aspetta che l'area
-                trasformata diventi un rifugio per la fauna locale, un luogo di ricreazione per
-                i cittadini e un modello di successo per la rigenerazione ambientale.<br>
+                "Sangue Solidale" è un ambizioso progetto che mira a creare un impatto reale attraverso la donazione
+                del sangue. Con passione e determinazione, vogliamo diffondere la consapevolezza sull'importanza
+                cruciale di questa azione.<br>
+                Organizziamo eventi informativi, sessioni di donazione e attività di coinvolgimento per educare
+                e mobilitare la comunità. Vogliamo sfatare miti e paure, trasformando la donazione del sangue
+                in un gesto naturale di solidarietà. Ogni donatore è un eroe anonimo che dona speranza a
+                chi affronta malattie gravi o interventi chirurgici cruciali.<br>
+                Con "Sangue Solidale" vogliamo superare sfide e raggiungere obiettivi ambiziosi, costruendo una catena
+                di solidarietà che salva vite umane. Ogni goccia di sangue donata è un passo avanti
+                verso un futuro più luminoso. Unisciti a noi in questa missione,
+                poiché ogni gesto conta e insieme possiamo fare la differenza, una goccia alla volta.
             </p>
-            <img src="materiale/attività1-foresta.jpeg" class="text_img" alt="Immagine">
+            <img src="materiale/attività1-donazione.png" class="text_img" alt="Donazione sangue">
         </div>
     </div>
 

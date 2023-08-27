@@ -24,7 +24,7 @@
 </script>
     <jsp:include page="Header.jsp"></jsp:include>
 
-    <img src="materiale/home-pace.jpg" class="img_principale" alt="Immagine">
+    <img src="materiale/home-labirinto.jpg" class="img_principale" alt="Labirinto parole">
     <div class="lower_container">
         <img src="materiale/logo.png" class="logo" alt="Logo">
         <p>

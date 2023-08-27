@@ -19,14 +19,14 @@
 <script>
     // chiama updatePageCounter appena la pagina si è caricata completamente
     document.addEventListener("DOMContentLoaded", function() {
-        updatePageCounter("CHI_SIAMO");
+        updatePageCounter("CHI_SIAMO"   );
     });
 </script>
 
     <jsp:include page="Header.jsp"></jsp:include>
 
     <div class="storia">
-        <h1>CHI SIAMO</h1>
+        <h1>Chi siamo</h1>
         <p>
             Fondata con passione e impegno, Tum4World è un'organizzazione benefica dedicata a portare positivi
             cambiamenti in Italia. Dal 2001, abbiamo lavorato instancabilmente per affrontare le sfide interne del
@@ -45,24 +45,20 @@
             strada verso un'Italia più giusta e inclusiva. <br>
         </p>
         <div class="paragrafo">
-            <h2>Quando è stata fondata Tum4World?</h2>
-            <div class="risposta">
-                <img src="materiale/mani.jpg" class="side_img" alt="Immagine">
-                <p>
-                    L'organizzazione è stata fondata il 24 Gennaio 2001 a Trento, in occasione di un ritrovo in un
-                    circolo locale.<br>
-                </p>
-            </div>
-        </div>
-        <div class="paragrafo">
             <h2>Da chi è stata fondata?</h2>
             <div class="risposta">
                 <p>
-                    L'organizzazione è stata fondata da un gruppo di appassionati attivisti sociali e
-                    filantropi guidati dalla visione di un'Italia in cui nessuno debba soffrire a causa della povertà,
-                    delle disuguaglianze o delle catastrofi naturali. <br>
+                    L'organizzazione è stata fondata da Giuliano Mario Bonomi Todeschini: filantropo e luminare.
+                    Guidato dalla visione di creare un luogo in cui nessuno debba soffrire a causa della povertà, delle
+                    disuguaglianze o delle catastrofi naturali, Giuliano decise di fondare questa associazione per
+                    conseguire questi obiettivi.<br>
+
+                    La sua passione e la sua  dedizione sono seconde solo all'energia che impiega per inseguire il
+                    suo sogno: creare un mondo privo di qualsiasi ingiustizia. "L'Italia è solo il primo passo"
+                    dice Giuliano in un'intervista "presto la nostra associazione sarà conosciuta come un faro
+                    di speranza non solo per i nostri compatrioti, ma per l'intera umanità!".
                 </p>
-                <img src="materiale/chi_siamo-persone.jpg" class="side_img" alt="Immagine">
+                <img src="materiale/chi_siamo-fondatore.jpg" class="side_img" alt="Fondatore">
             </div>
         </div>
         <div class="paragrafo">
@@ -76,44 +72,48 @@
                     lungo termine per affrontare le radici strutturali della povertà. Abbiamo lavorato fianco a fianco
                     con le comunità locali per migliorare l'istruzione, la sanità e lo sviluppo economico sostenibile.<br>
                 </p>
-                <img src="materiale/chi_siamo-scritte.png" class="side_img" alt="Immagine">
+                <img src="materiale/chi_siamo-scritte.png" class="side_img" alt="Parole">
             </div>
         </div>
         <div class="paragrafo">
             <h2>Sedi</h2>
             <div class="risposta">
                 <p>
-                    Le principali sedi di Tum4World si trovano nelle seguenti città:<br>
+                    Le principali sedi di Tum4World si trovano nelle seguenti città:<br><br>
 
-                    Trento, Trentino Alto Adige - Qui è situata la sede centrale dell'organizzazione, dove si
-                    pianificano strategie e si coordinano i progetti in tutta Italia.<br>
+                    -Trento, Trentino Alto Adige: Qui è situata la sede centrale dell'organizzazione, dove si
+                    pianificano strategie e si coordinano i progetti in tutta Italia.<br><br>
 
-                    Catanzaro, Calabria - Questi uffici regionali sono responsabili della gestione e dell'attuazione
-                    dei progetti nelle aree colpite dalla povertà.<br>
+                    -Roma, Lazio: Questi uffici regionali sono responsabili della gestione e dell'attuazione
+                    dei progetti in collaborazione con i vari Ministeri della Repubblica Italiana.<br><br>
 
-                    Milano, Lombardia - Questi uffici sono situati nel cuore commerciale del nostro Paese. I nostri
+                    -Milano, Lombardia: Questi uffici sono situati nel cuore commerciale del nostro Paese. I nostri
                     dipendenti e affiliati qui si concentrano sul raccogliere fondi per indire progetti di
                     sensibilizzazione e cooperazione con partner locali e internazionali per sostenere
-                    le iniziative umanitarie.<br>
+                    le iniziative umanitarie.<br><br>
+
+                    -Bologna, Emilia-Romagna: In questa città, rinomata per il suo ateneo e la sua vitalità,
+                    i nostri dipendenti si occupano di creare progetti con l'università il cui fulcro
+                    principale è rappresentato proprio dai giovani, futuro della nostra nazione.<br>
                 </p>
-                <img src="materiale/chi_siamo-grattacielo.jpg" class="side_img" alt="Immagine">
+                <img src="materiale/chi_siamo-grattacielo.jpg" class="side_img" alt="Grattacielo">
             </div>
         </div>
         <div class="paragrafo">
             <h2>Riconoscimenti ottenuti</h2>
             <div class="risposta">
                 <p>
-                    Negli anni, Tum4World ha ricevuto numerosi riconoscimenti per il suo impegno e il suo impatto:<br>
+                    Negli anni, Tum4World ha ricevuto numerosi riconoscimenti per il suo impegno e il suo impatto:<br><br>
 
-                    Premio Umanitario Nazionale - Conferitoci direttamente dal nostro presidente della Repubblica
+                    -Premio Umanitario Nazionale: Conferitoci direttamente dal nostro presidente della Repubblica
                     per il nostro contributo eccezionale nel fornire assistenza umanitaria dopo il terremoto che
-                    colpì l'Aquila nel 2009.<br>
+                    colpì l'Aquila nel 2009.<br><br>
 
-                    Premio Sviluppo Sostenibile - Concesso da un'agenzia governativa per i risultati significativi
+                    -Premio Sviluppo Sostenibile: Concesso da un'agenzia governativa per i risultati significativi
                     ottenuti nell'ideazione e nella creazione di un villagio in mezzo ai boschi del Trentino completamente
                     autosostenibile e ad impatto zero.<br>
                 </p>
-                <img src="materiale/chi_siamo-trofeo.jpg" class="side_img" alt="Immagine">
+                <img src="materiale/chi_siamo-trofeo.jpg" class="side_img" alt="Trofeo">
             </div>
         </div>
     </div>

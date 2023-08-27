@@ -29,7 +29,7 @@
         <h1>Il Benessere a Portata di Mano</h1>
 
         <div class="row">
-            <img src="materiale/attività2-seduta.jpg" class="text_img" alt="Immagine">
+            <img src="materiale/attività2-seduta.jpg" class="text_img" alt="Seduta dallo psicologo">
             <p>
                 Attraverso la collaborazione con professionisti dedicati, vengono fornite sessioni di consulenza
                 individuali e di gruppo, consentendo ai partecipanti di affrontare sfide emotive e mentali
@@ -41,7 +41,7 @@
                 online accessibili, "Il Benessere a Portata di Mano" offre un prezioso supporto alla
                 comunità, contribuendo a migliorare il benessere mentale e a costruire una rete di sostegno solida.
             </p>
-            <img src="materiale/attività2-cartoon.jpg" class="text_img" alt="Immagine">
+            <img src="materiale/attività2-cartoon.jpg" class="text_img" alt="Psicologo - cartoon">
         </div>
     </div>
 

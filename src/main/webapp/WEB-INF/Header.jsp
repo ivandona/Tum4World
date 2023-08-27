@@ -21,7 +21,7 @@
                 <ul class="nav_lista">
                     <li> <a href="${pageContext.request.contextPath}/publicPageController?page=homepage_pubblica"> Home </a> </li>
                     <li> <a href="${pageContext.request.contextPath}/publicPageController?page=chi_siamo"> Chi siamo </a> </li>
-                    <li> <a href="${pageContext.request.contextPath}/publicPageController?page=attivita"> Attivita' </a> </li>
+                    <li> <a href="${pageContext.request.contextPath}/publicPageController?page=attivita"> Attività </a> </li>
                     <li> <a href="${pageContext.request.contextPath}/publicPageController?page=contatti"> Contatti </a> </li>
                     <li> <a href="${pageContext.request.contextPath}/publicPageController?page=sign-in"> Sign-in </a> </li>
                     <li> <a href="${pageContext.request.contextPath}/loginServlet"> Login </a> </li>

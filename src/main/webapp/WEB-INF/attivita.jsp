@@ -30,16 +30,17 @@
 
         <div class="row">
             <div class="column">
-                <h1>Progetto Verde Catanzaro</h1>
+                <h1>Sangue Solidale</h1>
 
                 <a href="${pageContext.request.contextPath}/publicPageController?page=attivita1">
-                    <img src="materiale/attività-foresta.jpg" class="activity_img" alt="Immagine">
+                    <img src="materiale/attività-sangue.png" class="activity_img" alt="Sangue">
                 </a>
 
-                <p>"Progetto Verde Catanzaro" è un'iniziativa ambiziosa volta a trasformare un'area della provincia
-                    di Catanzaro in una lussureggiante foresta. Attraverso una collaborazione tra comunità locali,
-                    organizzazioni  ambientaliste e autorità locali, l'obiettivo è rigenerare un terreno
-                    precedentemente degradato in un'eco-oasi rigogliosa.
+                <p>
+                    "Sangue Solidale" è un progetto di donazione del sangue che mira a creare un impatto tangibile
+                    nelle vite delle persone. Attraverso eventi di consapevolezza, campagne di informazione e
+                    sessioni di donazione, puntiamo a coinvolgere la comunità nella preziosa causa della donazione del
+                    sangue.
                 </p>
             </div>
 
@@ -47,7 +48,7 @@
                 <h1>Il Benessere a Portata di Mano</h1>
 
                 <a href="${pageContext.request.contextPath}/publicPageController?page=attivita2">
-                    <img src="materiale/attività-psicologo.jpg" class="activity_img" alt="Immagine">
+                    <img src="materiale/attività-psicologo.jpg" class="activity_img" alt="Psicologo">
                 </a>
 
                 <p>"Il Benessere a Portata di Mano" è un'iniziativa preziosa che offre l'accesso a servizi
@@ -61,7 +62,7 @@
                 <h1>Cuore Nutriente</h1>
 
                 <a href="${pageContext.request.contextPath}/publicPageController?page=attivita3">
-                    <img src="materiale/attività-cucina.jpg" class="activity_img" alt="Immagine">
+                    <img src="materiale/attività-cucina.jpg" class="activity_img" alt="Cucina">
                 </a>
 
                 <p>
