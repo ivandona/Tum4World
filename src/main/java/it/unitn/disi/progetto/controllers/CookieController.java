@@ -139,6 +139,7 @@ public class CookieController {
             session.removeAttribute("userRole");
             session.removeAttribute("username");
             session.removeAttribute("password");
+            session.removeAttribute("errorMessage");
         }
     }
 }
