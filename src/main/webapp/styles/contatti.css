@@ -8,12 +8,18 @@ body, html {
 .pagina {
     width: 93%;
     margin-left: 3%;
+}
+.pagina h1{
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+.contenitore {
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
-h1 {
+.contenitore h2 {
     text-align: center;
     margin-bottom: 2%;
 }

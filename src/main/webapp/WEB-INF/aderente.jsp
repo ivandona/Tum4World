@@ -24,7 +24,7 @@
             <button class="button" id="donazioneBtn">Donazione</button>
         </div>
         <div id="dati" class="hidden">
-            <h3>I tuoi dati personali</h3>
+            <h2>I tuoi dati personali</h2>
             <div class="container">
                 <ul id="personal-info"></ul>
             </div>
