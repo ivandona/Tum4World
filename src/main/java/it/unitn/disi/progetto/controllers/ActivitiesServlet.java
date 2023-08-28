@@ -30,7 +30,6 @@ public class ActivitiesServlet extends HttpServlet {
         try {
             Class.forName("org.apache.derby.jdbc.ClientDriver");
             connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
-            System.out.println("SERVLET INIZIALIZZATA\n");
         } catch (ClassNotFoundException | SQLException ex) {
             System.out.println(ex);
         }
@@ -70,14 +69,9 @@ public class ActivitiesServlet extends HttpServlet {
         Boolean activity_2 = Boolean.parseBoolean(request.getParameter("activity_2"));
         Boolean activity_3 = Boolean.parseBoolean(request.getParameter("activity_3"));
 
-        System.out.println(activity_1);
-        System.out.println(activity_2);
-        System.out.println(activity_3);
-
         try {
             db.setActivities(connection, username, activity_1, activity_2, activity_3);
 
-            System.out.println("Iscrizione/disiscrizione attività gestita");
             response.setStatus(HttpServletResponse.SC_OK);
         } catch (Exception e) {
             e.printStackTrace();

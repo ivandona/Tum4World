@@ -27,8 +27,6 @@ public class GetSessionAttributesServlet extends HttpServlet {
             attributes.put("userRole", session.getAttribute("userRole"));
             attributes.put("username", session.getAttribute("username"));
             attributes.put("password", session.getAttribute("password"));
-            System.out.println(attributes);
-            System.out.println("Costruendo json per getSessionAttributesServlet");
             response.setContentType("application/json");
             PrintWriter out = response.getWriter();
             out.print(attributes);

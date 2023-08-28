@@ -23,7 +23,6 @@ public class LoginServlet extends HttpServlet {
         try {
             Class.forName("org.apache.derby.jdbc.ClientDriver");
             connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
-            System.out.println("SERVLET INIZIALIZZATA\n");
         } catch (ClassNotFoundException | SQLException ex) {
             System.out.println(ex);
         }
@@ -35,19 +34,15 @@ public class LoginServlet extends HttpServlet {
         String password;
         UserBean verifiedUser = null;
         String errorMessage;
-        System.out.println("PRIMA DELL'IF");
         // Controllo se ho già le credenziali dell'utente nei cookies/session
         if (CookieController.getSomething(request, "username") != null
         && CookieController.getSomething(request, "password") != null) {
             username = CookieController.getSomething(request, "username");
             password = CookieController.getSomething(request, "password");
-            System.out.println("COOKIE/SESSIONE");
         } else {
             // Altrimenti prendo quelle dal form di login
             username = request.getParameter("username");
             password = request.getParameter("password");
-
-            System.out.println("FORM");
         }
 
         if(username != "" && username != null && password != "" && password != null) {
