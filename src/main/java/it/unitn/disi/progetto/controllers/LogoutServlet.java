@@ -12,6 +12,7 @@ public class LogoutServlet extends HttpServlet {
             throws ServletException, IOException {
         CookieController.deleteAllCookiesAndAttributes(request, response);
         response.sendRedirect("index.jsp");
+        response.setStatus(HttpServletResponse.SC_OK);
     }
 
     @Override

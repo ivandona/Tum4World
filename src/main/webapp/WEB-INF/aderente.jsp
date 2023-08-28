@@ -70,8 +70,9 @@
                 <form action="${pageContext.request.contextPath}/donationServlet" method="post">
                     <div class="container">
                         <label for="importo">Importo:</label>
+                        <span class="etichetta">€</span>
                         <input type="number" id="importo" name="importo" step="1" min="1" required>
-                        <input class="button" type="submit" value="Dona">
+                        <input class="button" type="submit" value="Dona ♥">
                     </div>
                 </form>
         </div>

@@ -17,8 +17,6 @@ function getAllCookies() {
         const [name, value] = cookie.split('=');
         cookieMap.set(name, value);
     });
-    console.log(cookieMap);
-    console.log("getAllCookies()");
     return cookieMap;
 }
 
@@ -41,15 +39,12 @@ function showCookiesAsList(cookies, idList) {
 function getSessionAttributes(context, idList) {
     let url = context + "/getSessionAttributesServlet";
     let list = document.getElementById(idList);
-    console.log(url);
     // Svuoto la lista per evitare che mi stampi una nuova lista
     // ogni volta che chiamo questo metodo
     list.innerHTML = "";
     fetch(url)
         .then(response => response.json())
         .then(attributes => {
-            console.log("fetch getSessionAttributes");
-            console.log(attributes);
             for (let attribute in attributes) {
                 if (engToIta.has(attribute)) {
                     let value = attributes[attribute];
@@ -65,8 +60,6 @@ function getSessionAttributes(context, idList) {
 
 function showPersonalInfo(context, idList) {
     const cookies = getAllCookies();
-    console.log("showPersonalInfo() called");
-    console.log(cookies.size);
     // Se trovo le informazioni nel cookie, uso quelle
     // Altrimenti le prendo dalla sessione
     if (cookies.get("username") === undefined) {
