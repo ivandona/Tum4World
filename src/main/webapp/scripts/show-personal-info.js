@@ -8,14 +8,6 @@ engToIta.set("phoneNumber", "Numero di telefono");
 engToIta.set("userRole", "Ruolo");
 engToIta.set("username", "Username");
 
-function getCookie(name) {
-    let value = "; " + document.cookie;
-    let parts = value.split("; " + name + "=");
-    if (parts.length === 2) {
-        return parts.pop().split(";").shift();
-    }
-}
-
 // Prendo i cookies e li metto in una map(chiave, valore)
 function getAllCookies() {
     const cookies = document.cookie.split('; ');
@@ -27,28 +19,6 @@ function getAllCookies() {
     });
 
     return cookieMap;
-}
-
-
-// Funzione a cui passo un json e l'id di una lista
-// e genera con i dati nel json i list item per quella lista
-function showJsonAsList(jsonData, idList) {
-    let list = document.getElementById(idList);
-    // Svuoto la lista per evitare che mi stampi una nuova lista
-    // ogni volta che chiamo questo metodo
-    list.innerHTML = "";
-
-    for (let key in jsonData) {
-        // Notare che aggiungo un elemento alla lista solo
-        // se è presente anche in engToIta
-        if (jsonData.hasOwnProperty(key) && engToIta.has(key)) {
-            let value = jsonData[key];
-            let listItem = document.createElement("li");
-            let field = engToIta.get(key);
-            listItem.textContent = `${field}: ${value}`;
-            list.appendChild(listItem);
-        }
-    }
 }
 
 // Trasformo i cookies in una lista HTML
@@ -71,29 +41,39 @@ function showCookiesAsList(cookies, idList) {
 }
 
 function getSessionAttributes(context, idList) {
-    let my_JSON_object;
     let url = context + "/getSessionAttributesServlet";
-    let xhttp = new XMLHttpRequest();
-    xhttp.open("POST", url, true);
-    xhttp.responseType = "json";
-    xhttp.onreadystatechange = function () {
-        let done = 4, ok = 200;
-        if (this.readyState === done && this.status === ok){
-            my_JSON_object = this.response;
-            showJsonAsList(my_JSON_object, idList);
-        }
-    };
-    xhttp.send();
-    return my_JSON_object;
+    let list = document.getElementById(idList);
+    console.log(url);
+    // Svuoto la lista per evitare che mi stampi una nuova lista
+    // ogni volta che chiamo questo metodo
+    list.innerHTML = "";
+    fetch(url)
+        .then(response => response.json())
+        .then(attributes => {
+            console.log("fetch getSessionAttributes");
+            console.log(attributes);
+            for (let attribute in attributes) {
+                if (engToIta.has(attribute)) {
+                    let value = attributes[attribute];
+                    let listItem = document.createElement("li");
+                    let field = engToIta.get(attribute);
+                    listItem.textContent = `${field}: ${value}`;
+                    list.appendChild(listItem);
+                }
+            }
+        })
+        .catch(error => console.error("Errore fetch di getSessionAttributes: ", error))
 }
 
 function showPersonalInfo(context, idList) {
     const cookies = getAllCookies();
+    console.log("showPersonalInfo() called");
+    console.log(cookies.size);
     // Se trovo le informazioni nel cookie, uso quelle
     // Altrimenti le prendo dalla sessione
-    if (cookies.size != 0) {
-        showCookiesAsList(cookies, idList);
-    } else {
+    if (cookies.size === undefined || cookies === null) {
         getSessionAttributes(context, idList);
+    } else {
+        showCookiesAsList(cookies, idList);
     }
 }

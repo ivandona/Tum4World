@@ -6,8 +6,10 @@ const dati = document.getElementById("dati");
 const attivita = document.getElementById("attivita");
 
 datiBtn.addEventListener("click", () => {
+    showPersonalInfo(context, "personal-info");
     dati.classList.toggle("hidden");
     attivita.classList.add("hidden");
+
 });
 
 attivitaBtn.addEventListener("click", () => {
@@ -50,7 +52,7 @@ deleteUserBtn.addEventListener("click", () => {
 });
 
 async function getActivities(context) {
-    let url = context + "/activitiesServlet"
+    let url = context + "/activitiesServlet";
     fetch(url)
         .then(response => response.json())
         .then(activities => {
