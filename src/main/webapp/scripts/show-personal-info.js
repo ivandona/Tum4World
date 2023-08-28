@@ -10,14 +10,15 @@ engToIta.set("username", "Username");
 
 // Prendo i cookies e li metto in una map(chiave, valore)
 function getAllCookies() {
-    const cookies = document.cookie.split('; ');
-    const cookieMap = {};
+    let cookies = document.cookie.split('; ');
+    let cookieMap = new Map();
 
     cookies.forEach(cookie => {
         const [name, value] = cookie.split('=');
-        cookieMap[name] = decodeURIComponent(value);
+        cookieMap.set(name, value);
     });
-
+    console.log(cookieMap);
+    console.log("getAllCookies()");
     return cookieMap;
 }
 
@@ -27,17 +28,14 @@ function showCookiesAsList(cookies, idList) {
     // Svuoto la lista per evitare che mi stampi una nuova lista
     // ogni volta che chiamo questo metodo
     list.innerHTML = "";
-    for (const key in cookies) {
-        // Notare che aggiungo un elemento alla lista solo
-        // se è presente anche in engToIta
-        if (cookies.hasOwnProperty(key) && engToIta.has(key)) {
-            const value = cookies[key];
+    cookies.forEach(function (value, key) {
+        if (engToIta.has(key)) {
             const listItem = document.createElement("li");
             let field = engToIta.get(key);
             listItem.textContent = `${field}: ${value}`;
             list.appendChild(listItem);
         }
-    }
+    });
 }
 
 function getSessionAttributes(context, idList) {
@@ -71,7 +69,7 @@ function showPersonalInfo(context, idList) {
     console.log(cookies.size);
     // Se trovo le informazioni nel cookie, uso quelle
     // Altrimenti le prendo dalla sessione
-    if (cookies.size === undefined || cookies === null) {
+    if (cookies.size === 0 || cookies === null) {
         getSessionAttributes(context, idList);
     } else {
         showCookiesAsList(cookies, idList);
