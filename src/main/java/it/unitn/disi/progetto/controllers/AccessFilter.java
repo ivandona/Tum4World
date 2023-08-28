@@ -19,8 +19,13 @@ public class AccessFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
         HttpServletRequest req = (HttpServletRequest) request;
+
         String page = req.getParameter("page");
         if ("amministratore".equals(page) || "aderente".equals(page) || "simpatizzante".equals(page)) {
+            if (!CookieController.checkAcceptedCookies(req)) {
+                request.getRequestDispatcher("index.jsp");
+                return;
+            }
             // Se l'utente sta provando ad accedere una pagina privata,
             // giro la richiesta a servlet di login
             req.getRequestDispatcher("/loginServlet").forward(request, response);

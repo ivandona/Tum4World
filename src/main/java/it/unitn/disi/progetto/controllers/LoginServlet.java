@@ -54,6 +54,11 @@ public class LoginServlet extends HttpServlet {
 
 
         if(verifiedUser != null) {
+            if (!CookieController.checkAcceptedCookies(request)) {
+                request.getRequestDispatcher("index.jsp");
+                return;
+            }
+
             //login ha avuto successo
 
             CookieController.addCookies(request, response, verifiedUser);
