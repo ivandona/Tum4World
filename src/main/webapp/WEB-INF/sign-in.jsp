@@ -22,10 +22,10 @@
             <div class="row">
                 <div class="col">
                     <label class="etichetta" for="name">Nome:</label><br>
-                    <input class="input" type="text" id="name" name="name" required><br>
+                    <input class="input" type="text" id="name" name="name" maxlength="40" required><br>
 
                     <label class="etichetta" for="surname">Cognome:</label><br>
-                    <input class="input" type="text" id="surname" name="surname" required><br>
+                    <input class="input" type="text" id="surname" name="surname" maxlength="40" required><br>
 
                     <label class="etichetta" for="birthdate">Data di Nascita:</label><br>
                     <input class="input" type="date" id="birthdate" name="birthdate" required><br>
@@ -35,16 +35,16 @@
                 </div>
                 <div class="col">
                     <label class="etichetta" for="email">Indirizzo Email:</label><br>
-                    <input class="input" type="email" id="email" name="email" required><br>
+                    <input class="input" type="email" id="email" name="email" maxlength="40" required><br>
 
                     <label class="etichetta" for="username">Username:</label><br>
-                    <input class="input" type="text" id="username" name="username" required><br>
+                    <input class="input" type="text" id="username" name="username" maxlength="20" required><br>
 
                     <label class="etichetta" for="password">Password:</label><br>
-                    <input class="input" type="password" id="password" name="password" required><br>
+                    <input class="input" type="password" id="password" name="password" maxlength="20" required><br>
 
                     <label class="etichetta" for="confirm_password">Conferma Password:</label><br>
-                    <input class="input" type="password" id="confirm_password" name="confirm_password" required><br>
+                    <input class="input" type="password" id="confirm_password" name="confirm_password" maxlength="20" required><br>
                 </div>
             </div>
             <div class="row">
