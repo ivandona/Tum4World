@@ -26,7 +26,6 @@ public class DeleteUserServlet extends HttpServlet {
         try {
             Class.forName("org.apache.derby.jdbc.ClientDriver");
             connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
-            System.out.println("SERVLET INIZIALIZZATA\n");
         } catch (ClassNotFoundException | SQLException ex) {
             System.out.println(ex);
         }
@@ -41,7 +40,6 @@ public class DeleteUserServlet extends HttpServlet {
         catch (Exception e){
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);
         }
-        System.out.println("Fine servlet delete user");
     }
 
     public void destroy() {
