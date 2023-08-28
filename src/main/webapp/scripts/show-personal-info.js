@@ -17,8 +17,6 @@ function getAllCookies() {
         const [name, value] = cookie.split('=');
         cookieMap.set(name, value);
     });
-    console.log(cookieMap);
-    console.log("getAllCookies()");
     return cookieMap;
 }
 
@@ -65,8 +63,6 @@ function getSessionAttributes(context, idList) {
 
 function showPersonalInfo(context, idList) {
     const cookies = getAllCookies();
-    console.log("showPersonalInfo() called");
-    console.log(cookies.size);
     // Se trovo le informazioni nel cookie, uso quelle
     // Altrimenti le prendo dalla sessione
     if (cookies.get("username") === undefined) {
