@@ -69,7 +69,7 @@ function showPersonalInfo(context, idList) {
     console.log(cookies.size);
     // Se trovo le informazioni nel cookie, uso quelle
     // Altrimenti le prendo dalla sessione
-    if (cookies.size === 0 || cookies === null) {
+    if (cookies.get("username") === undefined) {
         getSessionAttributes(context, idList);
     } else {
         showCookiesAsList(cookies, idList);

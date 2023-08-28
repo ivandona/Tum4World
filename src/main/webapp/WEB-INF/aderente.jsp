@@ -16,7 +16,7 @@
         <jsp:include page="Header-privato.jsp"></jsp:include>
     <div>
         <div class="container">
-            <button class="button" id="datiBtn" onclick="showPersonalInfo(context, 'personal-info')">Informazioni personali</button>
+            <button class="button" id="datiBtn">Informazioni personali</button>
             <button class="button" id="attivitaBtn">Mostra Attività</button>
             <button class="button" id="donazioneBtn">Donazione</button>
         </div>
