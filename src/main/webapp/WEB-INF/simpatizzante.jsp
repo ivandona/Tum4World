@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Tum4World</title>
+        <link rel="shortcut icon" type="image/png" href="materiale/logo.png">
         <link rel="stylesheet" type="text/css" href="styles/simpatizzante.css">
         <script>const context = "${pageContext.request.contextPath}";</script>
         <script src="scripts/admin-functions.js"></script>
