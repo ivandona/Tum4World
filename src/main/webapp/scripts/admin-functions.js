@@ -1,5 +1,5 @@
-function redirectToAdminStuff(button_pressed) {
-    var url = "adminStuff?button_pressed="+encodeURIComponent(button_pressed);
+function redirectToAdminFunctions(button_pressed) {
+    var url = "adminFunctions?button_pressed="+encodeURIComponent(button_pressed);
     fetch(url)
         .then(response => response.text())
         .then(data => {
@@ -15,7 +15,7 @@ function resetVisits() {
     const data = new URLSearchParams();
     data.append("page_name", "set_to_0");
     data.append("timestamp", new Date().getTime()); // Aggiungo un timestamp casuale per evitare la memorizzazione nella cache
-    fetch("adminStuff", {
+    fetch("adminFunctions", {
         method: "POST",
         headers: {
             "Content-Type": "application/x-www-form-urlencoded"
@@ -24,13 +24,18 @@ function resetVisits() {
     })
         .then(response => {
             // Aggiorno il grafico
-            redirectToAdminStuffGraph("visits");
+            redirectToAdminFunctionsGraph("visits");
         })
         .catch(error => console.error("Errore nella funzione 'resetVisits':", error));
 }
 
-function redirectToAdminStuffGraph(button_pressed) {
-    var url = "adminStuff?button_pressed="+encodeURIComponent(button_pressed);
+/**
+ * Funzione utilizzata per creare i due grafici nella pagina amministratore
+ * @param button_pressed fa in modo che, a seconda del pulsante premuto, venga visualizzato o il grafico delle donazioni
+ *          o il grafico delle visite
+ */
+function redirectToAdminFunctionsGraph(button_pressed) {
+    var url = "adminFunctions?button_pressed="+encodeURIComponent(button_pressed);
     fetch(url)
         .then(response => response.json())
         .then(graphData => {
@@ -69,7 +74,7 @@ function redirectToAdminStuffGraph(button_pressed) {
                         text: graphtext
                     }
                 },
-                colors: ['#8B0000'], // Colori personalizzati
+                colors: ['#8B0000'],
                 series: [{
                     name: graphColumns,
                     data: graphData
@@ -88,7 +93,7 @@ function updatePageCounter(page_name) {
     const data = new URLSearchParams();
     data.append("page_name", page_name);
     data.append("timestamp", new Date().getTime()); // Aggiungo un timestamp casuale per evitare la memorizzazione nella cache
-    fetch("adminStuff", {
+    fetch("adminFunctions", {
         method: "POST",
         headers: {
             "Content-Type": "application/x-www-form-urlencoded"
@@ -122,4 +127,33 @@ function deleteTable() {
 
     graphContainer.style.display = "none";
     tableContent.innerHTML = "";
+}
+
+/**
+ * Funzione utilizzata per creare un pulsante che resetta le visite alla pagina
+ */
+function resetButtonCreation() {
+    if (!resetButtonAdded) {
+        servletButton.className = "button";
+        servletButton.textContent = "Reset delle visite";
+        servletButton.addEventListener("click", function() {
+            resetVisits();
+        });
+
+        // Aggiungo il bottone alla pagina
+        tableContainer.appendChild(servletButton);
+        tableContainer.style.display = "block";
+        resetButtonAdded = true;
+    }
+}
+
+/**
+ * Funzione utilizzata per rimuover il pulsante "Reset delle viiste" ogni volta che si clicca su un altro pulsante
+ * (eccetto "mostra visite")
+ */
+function removeResetButton() {
+    if (resetButtonAdded) {
+        servletButton.remove();
+        resetButtonAdded = false;
+    }
 }

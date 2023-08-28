@@ -42,6 +42,7 @@ public class ActivitiesServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Boolean[] activities = new Boolean[3];
         String username = CookieController.getSomething(request, "username");
+        System.out.println(username);
         activities = db.getActivities(connection, username);
         if (activities != null) {
             JSONObject subscribedActivities = new JSONObject();

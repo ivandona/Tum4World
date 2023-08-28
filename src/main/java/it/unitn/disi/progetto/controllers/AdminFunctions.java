@@ -15,8 +15,8 @@ import java.time.LocalDate;
 import java.util.Arrays;
 import org.json.JSONArray;
 
-@WebServlet(name = "AdminStuff", value = "/adminStuff")
-public class AdminStuff extends HttpServlet {
+@WebServlet(name = "AdminFunctions", value = "/adminFunctions")
+public class AdminFunctions extends HttpServlet {
     private static final String DB_URL = "jdbc:derby://localhost:1527/tum-db";
     private static final String DB_USERNAME = "APP";
     private static final String DB_PASSWORD = "password";

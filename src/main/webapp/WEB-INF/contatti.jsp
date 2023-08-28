@@ -17,12 +17,13 @@
     <jsp:include page="Header.jsp"></jsp:include>
 
     <div class="pagina">
-        <h1>Contatti</h1>
         <div class="contact-info">
+            <h1>Contattaci</h1>
             <p>Email: tum4world@nessunonoluogonoesiste.com</p>
             <p>Telefono: +39 1234567890</p>
         </div>
         <div class="contact-form">
+            <h1>Scrivici un messaggio</h1>
             <form onsubmit="return validateContactsForm();" action="${pageContext.request.contextPath}/sendEmailServlet"
                   method="post">
                 <label class="etichetta" for="name_surname">Nome e Cognome: </label>

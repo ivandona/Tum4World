@@ -11,7 +11,7 @@
 <body>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            updatePageCounter("CHI_SIAMO"   );
+            updatePageCounter("CHI_SIAMO");
         });
     </script>
     <jsp:include page="Header.jsp"></jsp:include>
@@ -87,7 +87,7 @@
                     i nostri dipendenti si occupano di creare progetti con l'università il cui fulcro
                     principale è rappresentato proprio dai giovani, futuro della nostra nazione.<br>
                 </p>
-                <img src="materiale/chi_siamo-grattacielo.jpg" class="side_img" alt="Grattacielo">
+                <img src="materiale/chi_siamo-milano.jpg" class="side_img" alt="Grattacielo">
             </div>
         </div>
         <div class="paragrafo">
@@ -104,7 +104,7 @@
                     ottenuti nell'ideazione e nella creazione di un villagio in mezzo ai boschi del Trentino completamente
                     autosostenibile e ad impatto zero.<br>
                 </p>
-                <img src="materiale/chi_siamo-trofeo.jpg" class="side_img" alt="Trofeo">
+                <img src="materiale/chi_siamo-premio.jpg" class="side_img" alt="Trofeo">
             </div>
         </div>
     </div>

@@ -24,7 +24,7 @@
                 <h1>Sangue Solidale</h1>
 
                 <a href="${pageContext.request.contextPath}/publicPageController?page=attivita1">
-                    <img src="materiale/attività-sangue.png" class="activity_img" alt="Sangue">
+                    <img src="materiale/attività-donazione.jpg" class="activity_img" alt="Sangue">
                 </a>
 
                 <p>
@@ -53,7 +53,7 @@
                 <h1>Cuore Nutriente</h1>
 
                 <a href="${pageContext.request.contextPath}/publicPageController?page=attivita3">
-                    <img src="materiale/attività-cucina.jpg" class="activity_img" alt="Cucina">
+                    <img src="materiale/attività-mensa.jpg" class="activity_img" alt="Cucina">
                 </a>
 
                 <p>

@@ -11,7 +11,7 @@
 
   <div class="pagina">
       <h1>Invio Confermato</h1>
-      <p>Grazie per averci contattato. Abbiamo ricevuto il tuo messaggio e le daremo una risposta al più presto.</p>
+      <p>Grazie per averci contattato. Abbiamo ricevuto il tuo messaggio e ti risponderemmo al più presto.</p>
   </div>
 
   <jsp:include page="Footer.jsp"></jsp:include>

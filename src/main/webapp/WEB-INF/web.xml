@@ -32,8 +32,8 @@
         <url-pattern>/publicPageController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>AdminStuff</servlet-name>
-        <url-pattern>/adminStuff</url-pattern>
+        <servlet-name>AdminFunctions</servlet-name>
+        <url-pattern>/adminFunctions</url-pattern>
     </servlet-mapping>
 
     <session-config>
