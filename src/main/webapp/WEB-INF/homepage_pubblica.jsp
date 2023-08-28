@@ -39,7 +39,7 @@
         </p>
     </div>
     <div class="download_btn">
-        <a href="materiale/Tum4World.pdf" download="Tum4World_pamplet.pdf">
+        <a href="materiale/Tum4World.pdf" download="Tum4World_pamphlet.pdf">
             <button>Download Pamphlet</button>
         </a>
     </div>
