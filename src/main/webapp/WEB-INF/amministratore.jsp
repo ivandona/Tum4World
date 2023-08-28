@@ -33,69 +33,39 @@
         </div>
     </div>
 
-    <script>
-        //robe che non riesco a spostare nel js (wtf??)
-        var resetButtonAdded = false;
-        const servletButton = document.createElement("button");
-        const users = document.getElementById("users");
-        const simpatizzanti = document.getElementById("simpatizzanti");
-        const aderenti = document.getElementById("aderenti");
-        const visits = document.getElementById("visits");
-        const donations = document.getElementById("donations");
-        const tableContainer = document.getElementById("tableContainer");
-        const table = document.querySelector("table");
 
-        // users.addEventListener("click", redirectToAdminStuff("first"));
-        // Scrivere così è sbagliato perchè chiama immediatamente la funzione redirectToAdminStuff("first").
-        // Per evitarlo si utilizzano funzioni anonime come quelle sotto
+<script>
+    var resetButtonAdded = false;
+    const servletButton = document.createElement("button");
+    const users = document.getElementById("users");
+    const simpatizzanti = document.getElementById("simpatizzanti");
+    const aderenti = document.getElementById("aderenti");
+    const visits = document.getElementById("visits");
+    const donations = document.getElementById("donations");
+    const tableContainer = document.getElementById("tableContainer");
+    const table = document.querySelector("table");
 
-        users.addEventListener("click", function() {
-            removeResetButton();
-            redirectToAdminStuff("users");
-        });
-        simpatizzanti.addEventListener("click", function() {
-            removeResetButton();
-            redirectToAdminStuff("simpatizzanti");
-        });
-        aderenti.addEventListener("click", function() {
-            removeResetButton();
-            redirectToAdminStuff("aderenti");
-        });
-        visits.addEventListener("click", function() {
-            redirectToAdminStuffGraph("visits");
-
-            if (!resetButtonAdded) {
-                debugger;
-                servletButton.className = "button";
-                // servletButton.id = "resetButton"
-                servletButton.textContent = "Reset delle visite";
-                servletButton.addEventListener("click", function() {
-                    resetVisits();
-                });
-
-                // Aggiungo il bottone alla pagina
-                tableContainer.appendChild(servletButton);
-                tableContainer.style.display = "block";
-                resetButtonAdded = true;
-            }
-        });
-        donations.addEventListener("click", function() {
-            removeResetButton();
-            redirectToAdminStuffGraph("donations");
-        });
-
-
-        /**
-         * Funzione utilizzata per rimuover il pulsante "Reset delle viiste" ogni volta che si clicca su un altro pulsante
-         * (eccetto "mostra visite")
-         */
-        function removeResetButton() {
-            if (resetButtonAdded) {
-                servletButton.remove();
-                resetButtonAdded = false;
-            }
-        }
-    </script>
+    users.addEventListener("click", function() {
+        removeResetButton();
+        redirectToAdminFunctions("users");
+    });
+    simpatizzanti.addEventListener("click", function() {
+        removeResetButton();
+        redirectToAdminFunctions("simpatizzanti");
+    });
+    aderenti.addEventListener("click", function() {
+        removeResetButton();
+        redirectToAdminFunctions("aderenti");
+    });
+    visits.addEventListener("click", function() {
+        redirectToAdminFunctionsGraph("visits");
+        resetButtonCreation();
+    });
+    donations.addEventListener("click", function() {
+        removeResetButton();
+        redirectToAdminFunctionsGraph("donations");
+    });
+</script>
 
     <jsp:include page="Footer.jsp"></jsp:include>
 </body>

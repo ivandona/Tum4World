@@ -1,21 +1,31 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const popup = document.getElementById("popup"); //prendo il "div" cookiesinfo_popup da mostrare se necessario
+    const popup = document.getElementById("popup");
     const tastoOk = document.getElementById("ok");
 
-    //document.cookie = "cookies_accepted=false";
-
-    //Controlla se l'utente ha accettato i cookies precedentemente
-    if (!(getCookie("cookies_accepted") === "true")) {
-        popup.style.display = "block"; //se l'utente non ha accettato i cookies mostro il popup dell'informativa cambiandone il display:none
+    try {
+        // Controlla se l'utente ha accettato i cookie precedentemente
+        if (!(sessionStorage.getItem("cookies_accepted") === "true") && !(getCookie("cookies_accepted"))) {
+            popup.style.display = "block";
+        }
+    } catch (error) {
+        // Se l'utente ha i cookies disabilitati catturiamo l'errore e non facciamo comparire l'informativa
+        // A logica, se l'utente blocca tutti i cookies, noi non ne utilizziamo nessuno quindi non serve farla comparire
+        console.error("Errore nell'accesso a sessionStorage:", error);
+        console.error("Controlla di aver abilitato i cookies");
+        popup.style.display = "none";
     }
 
     tastoOk.addEventListener("click", function () {
-        //Potrebbero esserci problemi: se l'utente ha i cookies disabilitati come faccio a sapere se è già entrato?
-        popup.style.display = "none"; //il popup scompare
-        document.cookie = "cookies_accepted=true";
-    })
+        try {
+            popup.style.display = "none";
+            sessionStorage.setItem("cookies_accepted", "true");
+            document.cookie = "cookies_accepted=true"
+        } catch (error) {
+            console.error("Errore nell'accesso a sessionStorage:", error);
+            console.error("Controlla di aver abilitato i cookies");
+        }
+    });
 });
-
 function getCookie(name) {
     var cookies = document.cookie.split("; ");
     for (var i = 0; i < cookies.length; i++) {
