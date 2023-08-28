@@ -69,7 +69,7 @@ function redirectToAdminStuffGraph(button_pressed) {
                         text: graphtext
                     }
                 },
-                colors: ['black'], // Colori personalizzati
+                colors: ['#8B0000'], // Colori personalizzati
                 series: [{
                     name: graphColumns,
                     data: graphData

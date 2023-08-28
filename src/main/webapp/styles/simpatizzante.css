@@ -1,24 +1,58 @@
-h3 {
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.pagina {
+    width: 92%;
+    margin-left: 3%;
+}
+.pagina h1{
+    text-align: center;
+    text-decoration: underline;
+}
+
+h2 {
+    margin-top: 2%;
     text-align: center;
 }
 
-li, p {
-    font-family: Verdana;
-
-}
-label {
-    font-family: Verdana;
-    padding: 10px;
-}
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+.container ul{
+    line-height: 30px;
+    margin-left: 3%;
+    font-family: Verdana;
+}
+
+label {
+    font-family: Verdana;
+    padding: 1%;
+}
+
+.button {
+    margin: 1%;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    font-family: Verdana;
+    background-color: #3498db;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
 
 .activity {
     text-align: center;
-    margin: 10px;
+    margin: 2%;
+    width: 25%;
 }
 
 .activity label {
@@ -32,22 +66,8 @@ label {
     margin: 0 auto;
 }
 
-.button {
-    margin: 8px;
-    padding: 10px 30px;
-    border: none;
-    border-radius: 5px;
-    font-family: Verdana;
-}
-#datiBtn, #attivitaBtn{
-    background-color:black;
-    color: white;
-}
-input[type=submit], #deleteUserBtn {
-    background-color:darkred;
+#deleteUserBtn {
+    background-color: black;
     color: white;
 }
 
-.hidden {
-    display: none;
-}

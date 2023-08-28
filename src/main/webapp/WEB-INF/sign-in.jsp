@@ -65,6 +65,8 @@
         <br><br><br><br>
         <%= request.getAttribute("errorMessage") != null ? request.getAttribute("errorMessage") : "" %>
     </div>
+
+    <jsp:include page="informativa-cookies.jsp"></jsp:include>
     <jsp:include page="Footer.jsp"></jsp:include>
 </body>
 </html>

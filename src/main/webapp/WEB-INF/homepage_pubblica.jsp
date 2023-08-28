@@ -40,7 +40,7 @@
     </div>
     <div class="download_btn">
         <a href="materiale/Tum4World.pdf" download="Tum4World_pamplet.pdf">
-            <button>Download Pamplet</button>
+            <button>Download Pamphlet</button>
         </a>
     </div>
 
