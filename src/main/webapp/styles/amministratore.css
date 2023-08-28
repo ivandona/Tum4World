@@ -1,0 +1,60 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.pagina {
+    width: 93%;
+    margin-left: 3%;
+}
+.pagina h1{
+    text-align: center;
+    text-decoration: underline;
+}
+
+.dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2%;
+}
+
+.button {
+    margin: 1%;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    flex-grow: 1;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: darkred;
+    color: white;
+    cursor: pointer;
+}
+
+.table-container {
+    width: 100%;
+    margin-top: 3%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.graph_container {
+    width: 100%;
+    margin-top: 3%;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: lightgray;
+}
