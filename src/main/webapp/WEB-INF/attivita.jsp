@@ -9,14 +9,12 @@
     <script src="scripts/admin-functions.js"></script>
 </head>
 <body>
-    <jsp:include page="Header.jsp"></jsp:include>
-
     <script>
-        // chiama updatePageCounter appena la pagina si è caricata completamente
         document.addEventListener("DOMContentLoaded", function() {
             updatePageCounter("ATTIVITA");
         });
     </script>
+    <jsp:include page="Header.jsp"></jsp:include>
 
     <div class="page">
         <h1>Riepilogo attività</h1>

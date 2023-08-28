@@ -23,7 +23,7 @@ body, html {
     font-weight: bold;
     border-bottom-style:solid;
     border-bottom-color: black;
-    border-bottom-width: 0.1 px;
+    border-bottom-width: 0.1px;
     padding: 1%;
 }
 
@@ -36,8 +36,8 @@ body, html {
     align-items: center;
     border-bottom-style:solid;
     border-bottom-color: black;
-    border-bottom-width: 0.1 px;
-    padding: 0.2% 0.5%;
+    border-bottom-width: 0.1px;
+    padding: 0.1% 0.4%;
 }
 
 .nav_lista li {
@@ -75,7 +75,7 @@ body, html {
     text-align: center;
     border-top-style:solid;
     border-top-color: black;
-    border-top-width: 0.1 px;
+    border-top-width: 0.1px;
     font-style: italic;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 1%;
@@ -87,7 +87,7 @@ body, html {
     background-color: lightgray;
     border-top-style:solid;
     border-top-color: black;
-    border-top-width: 0.1 px;
+    border-top-width: 0.1px;
 }
 
 .contact_info {
@@ -100,7 +100,7 @@ body, html {
 
 .contact_info p{
     display: inline-block;
-    margin-left: 8%;
+    margin-left: 10%;
 }
 
 .logo2 {

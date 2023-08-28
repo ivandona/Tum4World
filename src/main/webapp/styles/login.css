@@ -1,38 +1,43 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
 }
-h1 {
-    font-family: Helvetica, Arial;
-    font-weight: bold;
+
+.container {
+    position: relative;
+    width: 33%;
+    margin: auto;
+}
+.container h1 {
     text-align: center;
 }
-a, label {
+
+label {
     font-family: Verdana;
+    margin-top: 2%;
     padding: 10px;
 }
-.container {
-    width: 33%;
-}
-input[type=text], input[type=password] {
+
+.input {
     width: 100%;
-    padding: 12px;
-    margin: 8px;
+    padding: 2%;
+    margin: 1%;
     font-family: Helvetica, Arial;
     box-sizing: border-box;
     border-radius: 5px;
     border: 1px solid lightgray;
 }
+
 .button {
-    margin: 8px 0px;
+    position: absolute;
+    right: 0;
+    margin-top: 1%;
     padding: 10px 30px;
     border: none;
     border-radius: 5px;
     font-family: Verdana;
-}
-input[type=submit] {
-    float: right;
-    background-color:darkred;
+    background-color: #3498db;
     color: white;
 }

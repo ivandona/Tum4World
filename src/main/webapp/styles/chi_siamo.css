@@ -4,6 +4,7 @@ body, html {
     width: 100%;
     height: 100%;
 }
+
 .storia {
     width: 92%;
     margin-left: 3%;
@@ -11,17 +12,23 @@ body, html {
 .storia h1 {
     text-align: center;
 }
-
-.paragrafo {
-    margin-top: 8%;
+.storia p {
+    margin-top: 2%;
     margin-bottom: 8%;
 }
 
+.paragrafo {
+    margin-bottom: 2%;
+}
+
+.risposta {
+    display: flex;
+}
 .risposta p {
     font-style: italic;
 }
 .risposta img {
-    width: 18%;
-    float: right;
-    margin-left: 5%;
+    max-width: 14%;
+    height: auto;
+    margin-left: 3%;
 }

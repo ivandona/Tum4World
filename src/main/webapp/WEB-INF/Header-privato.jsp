@@ -12,7 +12,7 @@
 
       <nav class="navbar">
         <ul class="nav_lista">
-          <li> <a href="${pageContext.request.contextPath}/publicPageController?page=homepage_pubblica"> Home Page </a> </li>
+          <li> <a href="${pageContext.request.contextPath}/publicPageController?page=homepage_pubblica"> Home </a> </li>
           <li> <a href="${pageContext.request.contextPath}/publicPageController?page=chi_siamo"> Chi siamo </a> </li>
           <li> <a href="${pageContext.request.contextPath}/publicPageController?page=attivita"> Attività </a> </li>
           <li> <a href="${pageContext.request.contextPath}/publicPageController?page=contatti"> Contatti </a> </li>

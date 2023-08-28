@@ -15,12 +15,13 @@ body, html {
 
 .row {
     display: flex;
-    width: 92%;
+    width: 100%;
     margin: 0.5%;
     background-color: lightgray;
 }
 .row p {
     padding: 2%;
+    width: 50%;
 }
 
 .text_img {

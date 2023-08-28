@@ -9,12 +9,12 @@
     <script src="scripts/admin-functions.js"></script>
 </head>
 <body>
-<script>
-    // chiama updatePageCounter appena la pagina si è caricata completamente
-    document.addEventListener("DOMContentLoaded", function() {
-        updatePageCounter("HOME");
-    });
-</script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            updatePageCounter("HOME");
+        });
+    </script>
+
     <jsp:include page="Header.jsp"></jsp:include>
 
     <img src="materiale/home-associazione.jpg" class="img_principale" alt="Associazione">

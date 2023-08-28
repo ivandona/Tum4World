@@ -1,18 +1,19 @@
-<%@ page contentType="text/html;charset=UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tum4World</title>
-  <link rel="stylesheet" href="styles/style.css">
-  <link rel="stylesheet" href="styles/sign-in-confirmed">
+    <title>Tum4World</title>
+    <link rel="shortcut icon" type="image/png" href="materiale/logo.png">
+    <link rel="stylesheet" href="styles/sign-in-confirmed.css">
+    <link rel="stylesheet" type="text/css" href="styles/format.css">
 </head>
-<jsp:include page="Header.jsp"></jsp:include>
 <body>
-<div class="container">
-  <h1>Registrazione Confermata!</h1>
-  <p>Grazie per esserti registrato sul nostro sito. Il tuo account ora è attivo.</p>
-</div>
+    <jsp:include page="Header.jsp"></jsp:include>
+
+    <div class="pagina">
+        <h1>Registrazione Confermata!</h1>
+        <p>Grazie per esserti registrato sul nostro sito. Il tuo account ora è attivo.</p>
+    </div>
+
+    <jsp:include page="Footer.jsp"></jsp:include>
 </body>
-<jsp:include page="Footer.jsp"></jsp:include>
 </html>
