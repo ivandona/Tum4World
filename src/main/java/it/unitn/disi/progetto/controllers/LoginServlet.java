@@ -55,25 +55,25 @@ public class LoginServlet extends HttpServlet {
 
         if(verifiedUser != null) {
             if (!CookieController.checkAcceptedCookies(request)) {
-                request.getRequestDispatcher("index.jsp");
-                return;
-            }
+                request.getRequestDispatcher("index.jsp").forward(request, response);
+            } else {
+                //login ha avuto successo
 
-            //login ha avuto successo
-
-            CookieController.addCookies(request, response, verifiedUser);
-            System.out.println(verifiedUser.getUserRole());
-            //controllo il ruolo dell'utente e rimando alla pagina corrispondente
-            switch(verifiedUser.getUserRole()) {
-                case AMMINISTRATORE:
-                    request.getRequestDispatcher("/WEB-INF/amministratore.jsp").forward(request, response);
-                    break;
-                case ADERENTE:
-                    request.getRequestDispatcher("/WEB-INF/aderente.jsp").forward(request, response);
-                    break;
-                case SIMPATIZZANTE:
-                    request.getRequestDispatcher("/WEB-INF/simpatizzante.jsp").forward(request, response);
-                    break;
+                CookieController.addCookies(request, response, verifiedUser);
+                System.out.println(verifiedUser.getUserRole());
+                //controllo il ruolo dell'utente e rimando alla pagina corrispondente
+                switch(verifiedUser.getUserRole()) {
+                    case AMMINISTRATORE:
+                        request.getRequestDispatcher("/WEB-INF/amministratore.jsp").forward(request, response);
+                        break;
+                    case ADERENTE:
+                        request.getRequestDispatcher("/WEB-INF/aderente.jsp").forward(request, response);
+                        break;
+                    case SIMPATIZZANTE:
+                        request.getRequestDispatcher("/WEB-INF/simpatizzante.jsp").forward(request, response);
+                        break;
+                }
+                request.getRequestDispatcher("index.jsp").forward(request, response);
             }
         } else {
             //login non ha avuto successo
