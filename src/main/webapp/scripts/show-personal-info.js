@@ -39,15 +39,12 @@ function showCookiesAsList(cookies, idList) {
 function getSessionAttributes(context, idList) {
     let url = context + "/getSessionAttributesServlet";
     let list = document.getElementById(idList);
-    console.log(url);
     // Svuoto la lista per evitare che mi stampi una nuova lista
     // ogni volta che chiamo questo metodo
     list.innerHTML = "";
     fetch(url)
         .then(response => response.json())
         .then(attributes => {
-            console.log("fetch getSessionAttributes");
-            console.log(attributes);
             for (let attribute in attributes) {
                 if (engToIta.has(attribute)) {
                     let value = attributes[attribute];
