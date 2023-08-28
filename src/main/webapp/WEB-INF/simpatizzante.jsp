@@ -19,7 +19,7 @@
     <div class="pagina">
         <h1>Simpatizzante</h1>
         <div class="container">
-            <button class="button" id="datiBtn" onclick="showPersonalInfo(context, 'personal-info')">Informazioni personali</button>
+            <button class="button" id="datiBtn">Informazioni personali</button>
             <button class="button" id="attivitaBtn">Mostra Attività</button>
         </div>
         <div id="dati" class="hidden">

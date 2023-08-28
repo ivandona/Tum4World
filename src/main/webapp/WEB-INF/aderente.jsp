@@ -20,7 +20,7 @@
         <h1>Aderente</h1>
         <div class="container">
             <button class="button" id="attivitaBtn">Mostra Attività</button>
-            <button class="button" id="datiBtn" onclick="showPersonalInfo(context, 'personal-info')">Informazioni personali</button>
+            <button class="button" id="datiBtn">Informazioni personali</button>
             <button class="button" id="donazioneBtn">Donazione</button>
         </div>
         <div id="dati" class="hidden">
