@@ -8,21 +8,24 @@ body, html {
 .pagina {
     width: 93%;
     margin-left: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
-.pagina h1 {
+h1 {
     text-align: center;
-    margin-bottom: 2%   ;
+    margin-bottom: 2%;
 }
 
 .contact-info {
     width: 33%;
     text-align: center;
-    margin: auto;
 }
 
 .contact-form {
     width: 33%;
-    margin: auto;
+
 }
 
 .etichetta {

@@ -11,7 +11,6 @@ datiBtn.addEventListener("click", () => {
     showPersonalInfo(context, "personal-info");
     dati.classList.toggle("hidden");
     attivita.classList.add("hidden");
-
     if(donazione != null)
         donazione.classList.add("hidden");
 });
