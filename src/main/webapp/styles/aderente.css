@@ -30,7 +30,7 @@ h2 {
     font-family: Verdana;
 }
 
-label {
+label, span {
     font-family: Verdana;
     padding: 1%;
 }
@@ -74,4 +74,10 @@ label {
 input[type=number] {
     padding: 0.5%;
     font-family: Helvetica, Arial;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
