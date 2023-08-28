@@ -8,22 +8,27 @@ const attivita = document.getElementById("attivita");
 const donazione = document.getElementById("donazione");
 
 datiBtn.addEventListener("click", () => {
+    showPersonalInfo(context, "personal-info");
     dati.classList.toggle("hidden");
     attivita.classList.add("hidden");
-    donazione.classList.add("hidden");
+
+    if(donazione != null)
+        donazione.classList.add("hidden");
 });
 attivitaBtn.addEventListener("click", () => {
     getActivities(context);
     attivita.classList.toggle("hidden");
     dati.classList.add("hidden");
-    donazione.classList.add("hidden");
+    if(donazione != null)
+        donazione.classList.add("hidden");
 });
-donazioneBtn.addEventListener("click", () => {
-    donazione.classList.toggle("hidden");
-    dati.classList.add("hidden");
-    attivita.classList.add("hidden");
-});
-
+if (donazione != null) {
+    donazioneBtn.addEventListener("click", () => {
+        donazione.classList.toggle("hidden");
+        dati.classList.add("hidden");
+        attivita.classList.add("hidden");
+    });
+}
 deleteUserBtn.addEventListener("click", () => {
     let url = context + "/deleteUserServlet";
     fetch(url, {
@@ -44,20 +49,15 @@ deleteUserBtn.addEventListener("click", () => {
 });
 
 async function getActivities(context) {
-    let url = context + "/activitiesServlet"
+    let url = context + "/activitiesServlet";
     fetch(url)
         .then(response => response.json())
         .then(activities => {
-            console.log(activities);
             for (let activity in activities) {
-                console.log(activity);
-                console.log(activities[activity]);
                 let checkbox = document.getElementById(activity);
                 if (activities[activity]) {
-                    console.log("Iscritto a: " + activity)
                     checkbox.checked = true;
                 } else {
-                    console.log("Non iscritto a: " + activity)
                     checkbox.checked = false;
                 }
             }

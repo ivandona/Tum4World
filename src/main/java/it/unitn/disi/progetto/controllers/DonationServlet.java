@@ -1,8 +1,6 @@
 package it.unitn.disi.progetto.controllers;
 
-import it.unitn.disi.progetto.models.UserBean;
 import it.unitn.disi.progetto.models.UserDAO;
-import it.unitn.disi.progetto.models.UserRole;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -10,14 +8,13 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.sql.*;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 /*
 || Servlet per gestire login e registrazione
  */
 
 @WebServlet(name = "DonationServlet", value = "/donationServlet")
-public class donationServlet extends HttpServlet {
+public class DonationServlet extends HttpServlet {
     private static final String DB_URL = "jdbc:derby://localhost:1527/tum-db";
     private static final String DB_USERNAME = "APP";
     private static final String DB_PASSWORD = "password";
