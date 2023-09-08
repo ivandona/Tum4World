@@ -14,7 +14,6 @@ import java.io.PrintWriter;
 public class GetSessionAttributesServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Do come parametro false per evitare di creare una nuova sessione
         HttpSession session = request.getSession();
         if (session != null) {
             // Metto gli attributi della sessione in un json

@@ -5,7 +5,7 @@ function redirectToAdminFunctions(button_pressed) {
         .then(data => {
             updateTableContent(data)
         })
-        .catch(error => console.error("Errore nella funzione 'redirectToAdminStuff':", error));
+        .catch(error => console.error("Errore nella funzione 'redirectToAdminFunctions':", error));
 }
 
 /**
@@ -82,7 +82,7 @@ function redirectToAdminFunctionsGraph(button_pressed) {
             });
             graphContainer.style.display = "block";
         })
-        .catch(error => console.error("Errore nella funzione 'redirectToAdminStuffGraph':", error));
+        .catch(error => console.error("Errore nella funzione 'redirectToAdminFunctionsGraph':", error));
 }
 
 /**

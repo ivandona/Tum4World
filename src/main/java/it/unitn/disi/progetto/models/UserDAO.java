@@ -8,7 +8,7 @@ import java.time.LocalDate;
 */
 
 public class UserDAO {
-    //verifica username e password nel database e ritorna le informazioni dell'utente, altrimenti ritorna null
+    // Verifica username e password nel database e ritorna le informazioni dell'utente, altrimenti ritorna null
     public UserBean checkCredentials(Connection connection, String username, String password) {
         String query = "SELECT * FROM users WHERE username = ? AND password = ?";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
@@ -20,7 +20,7 @@ public class UserDAO {
                     user.setName(resultSet.getString("name"));
                     user.setSurname(resultSet.getString("surname"));
                     user.setEmail(resultSet.getString("email"));
-                    user.setBirthdate((resultSet.getDate("birthdate")).toLocalDate()); //converto la data da Date (sql) a LocalDate
+                    user.setBirthdate((resultSet.getDate("birthdate")).toLocalDate()); //Converto la data da Date (sql) a LocalDate
                     user.setPhoneNumber(resultSet.getString("phone_number"));
                     user.setUserRole(UserRole.valueOf(resultSet.getString("user_role")));
                     user.setUsername(resultSet.getString("username"));
@@ -39,7 +39,7 @@ public class UserDAO {
         return null;
     }
 
-    //inserisce dati dell'utente nel db
+    // Inserisce i dati dell'utente nel database
     public void saveUser(Connection connection, UserBean user) {
        String query = "INSERT INTO users (name, surname, email, birthdate, phone_number, user_role, username, password, ACTIVITY_1, ACTIVITY_2, ACTIVITY_3) " +
                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -74,7 +74,7 @@ public class UserDAO {
             e.printStackTrace();
         }
     }
-    // Cancella l'utente dal db
+    // Cancella l'utente dal database
     public void deleteUser(Connection connection, String username) {
         String query = "DELETE FROM users WHERE username = ?";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
@@ -85,7 +85,7 @@ public class UserDAO {
         }
     }
 
-    //metodo per controllare se lo username esiste già
+    // Metodo per controllare se l'username esiste già
     public boolean isUsernameTaken(Connection connection, String username) {
         String query = "SELECT COUNT(*) FROM users WHERE username = ?";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
@@ -93,7 +93,7 @@ public class UserDAO {
             try (ResultSet resultSet = statement.executeQuery()) {
                 if (resultSet.next()) {
                     int count = resultSet.getInt(1);
-                    return count > 0; // Se count è maggiore di 0, allora lo username è già preso
+                    return count > 0; // Se count è maggiore di 0, allora l'username è già preso
                 }
             }
         } catch (SQLException e) {

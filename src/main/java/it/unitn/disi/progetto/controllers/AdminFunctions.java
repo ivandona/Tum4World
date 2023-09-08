@@ -23,8 +23,8 @@ public class AdminFunctions extends HttpServlet {
     UserDAO db = new UserDAO();
     Connection connection = null;
 
-    //creo connessione al db quando la servlet viene inizializzata
-    //e la distruggo quando viene chiamato il metodo destroy()
+    // Creo la connessione al database quando la servlet viene inizializzata
+    // e la distruggo quando viene chiamato il metodo destroy()
     public void init() {
         try {
             Class.forName("org.apache.derby.jdbc.ClientDriver");
@@ -41,11 +41,12 @@ public class AdminFunctions extends HttpServlet {
         String button_pressed = request.getParameter("button_pressed");
 
         ResultSet rs = null;
-        Statement stmt = null;
+        Statement stmt;
 
         try {
             stmt = connection.createStatement();
 
+            // In base al pulsante premuto nella pagina 'amministratore' viene svolta l'azione corrispondente
             switch (button_pressed) {
                 case "users":
                     showAllUsers(stmt, rs, out);
@@ -56,6 +57,8 @@ public class AdminFunctions extends HttpServlet {
                 case "aderenti":
                     showAllAderenti(stmt, rs, out);
                     break;
+                    // Per queste ultime due casistiche, il risultato viene salvato su un array JSON per essere poi
+                    // mostrato sul grafico.
                 case "visits":
                     int[] siteVisits = showAllVisits(stmt, rs, out);
                     response.setContentType("application/json");
@@ -74,12 +77,13 @@ public class AdminFunctions extends HttpServlet {
         }
     }
 
+    // La doPost viene chiamata solamente quando è necessario mettere mano al database delle visite
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String page_name = request.getParameter("page_name");
 
         ResultSet rs = null;
-        Statement stmt = null;
+        Statement stmt;
 
         try {
             stmt = connection.createStatement();
@@ -122,6 +126,7 @@ public class AdminFunctions extends HttpServlet {
         }
     }
 
+    // Ritorna un array contenente le varie visite al sito
     public int[] showAllVisits(Statement stmt, ResultSet rs, PrintWriter out) {
         int[] visits = new int[12];
         Arrays.fill(visits, 0);
@@ -142,6 +147,7 @@ public class AdminFunctions extends HttpServlet {
         return visits;
     }
 
+    // Ritorna un array contenente le donazioni effettuate nei vari mesi
     public int[] showAllDonations(Connection connection, ResultSet rs, PrintWriter out) {
         int[] tot_mesi = new int[12];
         for (int i = 0; i < 12; i++) {

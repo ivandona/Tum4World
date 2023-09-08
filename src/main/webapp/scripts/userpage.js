@@ -34,7 +34,6 @@ deleteUserBtn.addEventListener("click", () => {
         method: "POST"
     })
         .then(response => {
-            // Check response status and handle accordingly
             if (response.ok) {
                 console.log("User deleted.");
                 location.reload();

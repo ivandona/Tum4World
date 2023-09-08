@@ -18,10 +18,10 @@ document.addEventListener("DOMContentLoaded", function () {
         do {
             number = Math.floor(Math.random()*(max - min +1));
         } while (number === pastn);
-        testo.textContent = frasi[number]; //cambio il contenuto dell'elemento "quote"
+        testo.textContent = frasi[number]; // Cambio il contenuto dell'elemento "quote"
         pastn = number;
     }
 
-    cambiaTesto(); //lo chiamo subito per caricare la prima frase all'avvio della pagina
-    setInterval(cambiaTesto, 20000); //ogni 20 secondi richiamo la funzione che cambia la frase
+    cambiaTesto(); // Lo chiamo subito per caricare la prima frase all'avvio della pagina
+    setInterval(cambiaTesto, 20000); // Ogni 20 secondi richiamo la funzione che cambia la frase
 });

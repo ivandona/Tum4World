@@ -21,7 +21,6 @@ body, html {
 .column {
     text-align: center;
     width: 30%;
-    /*margin: auto;*/
     margin: 2%;
     border-style: solid;
     border-color: black;

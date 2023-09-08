@@ -14,8 +14,8 @@ public class UserBean implements Serializable {
     UserRole userRole;
     String username;
     String password;
-    // activity_1 = true -> utente iscritto a quella attività
-    // activity_1 = false -> utente non è iscritto a quella attività
+    // activity_1 = true -> l'utente è iscritto a quella attività
+    // activity_1 = false -> l'utente non è iscritto a quella attività
     Boolean activity_1;
     Boolean activity_2;
     Boolean activity_3;

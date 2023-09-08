@@ -24,8 +24,8 @@ public class ActivitiesServlet extends HttpServlet {
     UserDAO db = new UserDAO();
     Connection connection = null;
 
-    //creo connessione al db quando la servlet viene inizializzata
-    //e la distruggo quando viene chiamato il metodo destroy()
+    // Creo la connessione al database quando la servlet viene inizializzata
+    // e la distruggo quando viene chiamato il metodo destroy()
     public void init () {
         try {
             Class.forName("org.apache.derby.jdbc.ClientDriver");
@@ -35,13 +35,13 @@ public class ActivitiesServlet extends HttpServlet {
         }
     }
 
-    // Metodo per controllare a quali attività è iscritto l'utente
-    // Rimanda indietro un json
+    // Metodo per controllare a quali attività è iscritto l'utente.
+    // Ritorna un file .json
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Boolean[] activities = new Boolean[3];
+        Boolean[] activities;
         String username = CookieController.getSomething(request, "username");
-        System.out.println(username);
+//        System.out.println(username);
         activities = db.getActivities(connection, username);
         if (activities != null) {
             JSONObject subscribedActivities = new JSONObject();
@@ -49,18 +49,19 @@ public class ActivitiesServlet extends HttpServlet {
             subscribedActivities.put("activity_2", activities[1]);
             subscribedActivities.put("activity_3", activities[2]);
 
-            System.out.println(subscribedActivities);
+//            System.out.println(subscribedActivities);
 
             response.setContentType("application/json");
             PrintWriter out = response.getWriter();
             out.print(subscribedActivities);
             out.flush();
-        }else {
+        } else {
+            // Controllo lo stato della risposta
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);
         }
     }
 
-    // Metodo per inserire/togliere iscrizione attività dal db
+    // Metodo per inserire/togliere l'iscrizione alle attività dal database
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = CookieController.getSomething(request,"username");

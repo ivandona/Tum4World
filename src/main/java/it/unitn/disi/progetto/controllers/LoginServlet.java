@@ -57,11 +57,11 @@ public class LoginServlet extends HttpServlet {
             if (!CookieController.checkAcceptedCookies(request)) {
                 request.getRequestDispatcher("index.jsp").forward(request, response);
             } else {
-                //login ha avuto successo
+                // Il login ha avuto successo
 
                 CookieController.addCookies(request, response, verifiedUser);
                 System.out.println(verifiedUser.getUserRole());
-                //controllo il ruolo dell'utente e rimando alla pagina corrispondente
+                // Controllo il ruolo dell'utente e rimando alla pagina privata corrispondente
                 switch(verifiedUser.getUserRole()) {
                     case AMMINISTRATORE:
                         request.getRequestDispatcher("/WEB-INF/amministratore.jsp").forward(request, response);
@@ -76,8 +76,7 @@ public class LoginServlet extends HttpServlet {
                 request.getRequestDispatcher("index.jsp").forward(request, response);
             }
         } else {
-            //login non ha avuto successo
-            //rimando alla pagina di login
+            // Il login non ha avuto successo quindi rimando l'utente alla pagina di login
             request.getSession().setAttribute("errorMessage", errorMessage);
             request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
         }

@@ -19,19 +19,19 @@ public class AccessFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
         HttpServletRequest req = (HttpServletRequest) request;
-        System.out.println("Entrato in AccessFilter");
+//        System.out.println("Entrato in AccessFilter");
 
         String page = req.getParameter("page");
         if ("amministratore".equals(page) || "aderente".equals(page) || "simpatizzante".equals(page)) {
+            // Se l'utente ha i cookies disabilitati e prova ad accedere ad una pagina privata, viene reindirizzato alla home
             if (!CookieController.checkAcceptedCookies(req)) {
                 req.getRequestDispatcher("index.jsp").forward(request, response);
-                System.out.println("cookie non trovati");
+//                System.out.println("cookies non trovati");
             } else {
-                // Se l'utente sta provando ad accedere una pagina privata,
-                // giro la richiesta a servlet di login
+                // Se l'utente sta provando ad accedere una pagina privata (con i cookies),
+                // giro la richiesta alla servlet di login
                 req.getRequestDispatcher("/loginServlet").forward(request, response);
             }
-
         }
         // Altrimenti faccio passare la richiesta
         chain.doFilter(request, response);

@@ -20,8 +20,8 @@ public class DeleteUserServlet extends HttpServlet {
     UserDAO db = new UserDAO();
     Connection connection = null;
 
-    //creo connessione al db quando la servlet viene inizializzata
-    //e la distruggo quando viene chiamato il metodo destroy()
+    // Creo la connessione al database quando la servlet viene inizializzata
+    // e la distruggo quando viene chiamato il metodo destroy()
     public void init () {
         try {
             Class.forName("org.apache.derby.jdbc.ClientDriver");

@@ -68,14 +68,14 @@ public class CookieController {
     }
 
     /**
-     * Funzione utilizzata per ritornare o l'username o il ruolo dell'utente. Controlla automaticamente se i cookies sono
+     * Funzione utilizzata per ritornare il valore di un qualsiasi cookie. Controlla automaticamente se i cookies sono
      * abilitati o meno, e si comporta di conseguenza.
      * @param request
-     * @param something può essere qualsiasi dei campi inseriti dall'utente durante il sign in
-     * @return rispettivamente: lo username o il ruolo dell'utente
+     * @param something può essere qualsiasi dei campi inseriti dall'utente durante il sign in.
+     * @return il value di something
      */
     public static String getSomething(HttpServletRequest request, String something) {
-        //Se i cookies sono abilitati lo cerco qui
+        // Se i cookies sono abilitati cerco il value di something nel vettore di cookies
         if (checkAcceptedCookies(request)) {
             Cookie[] cookies = request.getCookies();
 
@@ -88,7 +88,7 @@ public class CookieController {
             }
         }
 
-        //In caso l'utente non volesse i cookies, li cerco sulla session
+        // In caso l'utente abbia disabilitato i cookies di terze parti, li cerco sulla session
         HttpSession session = request.getSession();
 
         return (String) session.getAttribute(something);

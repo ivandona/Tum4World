@@ -21,8 +21,8 @@ public class DonationServlet extends HttpServlet {
     UserDAO db = new UserDAO();
     Connection connection = null;
 
-    //creo connessione al db quando la servlet viene inizializzata
-    //e la distruggo quando viene chiamato il metodo destroy()
+    // Creo la connessione al database quando la servlet viene inizializzata
+    // e la distruggo quando viene chiamato il metodo destroy()
     public void init () {
         try {
             Class.forName("org.apache.derby.jdbc.ClientDriver");
@@ -32,14 +32,14 @@ public class DonationServlet extends HttpServlet {
         }
     }
 
-    //metodo chiamato per registrazione
+    // Metodo chiamato per la registrazione
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //prendo l'importo ricevuti dal form
+        // Prendo l'importo ricevuto dal form
         int importo = Integer.parseInt(request.getParameter("importo"));
         String username = CookieController.getSomething(request, "username");
 
-        //prendo la data del momento in cui e avvenuta la donazione
+        // Prendo la data del momento in cui è avvenuta la donazione
         LocalDate currentDate = LocalDate.now();
         int giorno = currentDate.getDayOfMonth();
         int mese = currentDate.getMonthValue();

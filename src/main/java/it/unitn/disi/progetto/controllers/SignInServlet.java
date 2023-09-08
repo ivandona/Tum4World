@@ -24,8 +24,8 @@ public class SignInServlet extends HttpServlet {
     UserDAO db = new UserDAO();
     Connection connection = null;
 
-    //creo connessione al db quando la servlet viene inizializzata
-    //e la distruggo quando viene chiamato il metodo destroy()
+    // Creo la connessione al database quando la servlet viene inizializzata
+    // e la distruggo quando viene chiamato il metodo destroy()
     public void init () {
         try {
             Class.forName("org.apache.derby.jdbc.ClientDriver");
@@ -35,10 +35,10 @@ public class SignInServlet extends HttpServlet {
         }
     }
 
-    //metodo chiamato per registrazione
+    // Metodo chiamato per la registrazione
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //prendo parametri ricevuti dal form
+        // Prendo i parametri ricevuti dal form
         String name = request.getParameter("name");
         String surname = request.getParameter("surname");
         String email = request.getParameter("email");
@@ -47,17 +47,17 @@ public class SignInServlet extends HttpServlet {
         String userRoleString = request.getParameter("userRole");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        // Di default, un nuovo utente non è iscritto ad attività
+        // Di default, un nuovo utente non è iscritto a nessuna attività
         Boolean activity_1 = false;
         Boolean activity_2 = false;
         Boolean activity_3 = false;
 
 
-        //converto la data da String a LocalDate
+        // Converto la data da String a LocalDate
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate birthdate = LocalDate.parse(birthdateString);
 
-        //converto userRoleString da String a UserRole
+        // Converto userRoleString da String a UserRole
         UserRole userRole = null;
         switch(userRoleString) {
             case "SIMPATIZZANTE":
@@ -65,22 +65,22 @@ public class SignInServlet extends HttpServlet {
                 break;
             case "ADERENTE":
                 userRole = UserRole.ADERENTE;
-            //notare che non c'è admin perché non posso registrarmi come admin dal sito
+            // Non c'è il case AMMINISTRATORE perché non posso registrarmi come admin dal sito
         }
 
         UserBean user = new UserBean(name, surname, email, birthdate, phoneNumber, userRole,
                 username, password, activity_1, activity_2, activity_3);
 
         if(db.isUsernameTaken(connection, username)) {
-            //username già preso
+            // L'username è già preso
             request.setAttribute("errorMessage", "37: username già preso");
             request.getRequestDispatcher("/WEB-INF/sign-in.jsp").forward(request, response);
         } else {
-            //inserisco i cookies
+            // Inserisco i cookies
             CookieController.addCookies(request, response, user);
 
-            //username non esiste nel db, quindi registrazione confermata
-            db.saveUser(connection, user); //registro le informazioni dell'utente nel db
+            // L'username è stato appena creato, non esiste nel database, quindi registrazione confermata
+            db.saveUser(connection, user); //registro le informazioni dell'utente nel database
             request.getRequestDispatcher("/WEB-INF/sign-in-confirmed.jsp").forward(request, response);
         }
     }
