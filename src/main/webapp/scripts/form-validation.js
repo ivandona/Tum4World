@@ -34,7 +34,7 @@ function validateBirthdate(birthdate) {
 
 function validatePassword(password, confirm_password) {
     // Controllo complessità password
-    let complexityPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$!?)(?=.*[ilmvILMV])[A-Za-z\d$!?]{8}$/;
+    let complexityPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$!?])(?=.*[ilmvILMV])[A-Za-z\d$!?]{8}$/;
     if (!complexityPattern.test(password)) {
         alert("La password essere lunga esattamente 8 caratteri e deve contenere almeno una i, v, l e m.\n" +
             "Deve contenere anche almeno un carattere numerico, un carattere maiuscolo e un carattere tra $, ! e ?");
